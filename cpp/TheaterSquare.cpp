@@ -1,23 +1,19 @@
 #include <iostream>
 
-int retTotalTiles(int x, int y) {
+long long retTotalTiles(long long  x, long long y) {
     return x * y;
 }
 
 int main() {
-  int x;
-  int y;
+//we're using long long to avoid overflow, as it allows 16-bit size integers
+  long long x;
+  long long y;
   int z;
-  int sq_x;
-  int sq_y;
+  long long sq_x;
+  long long sq_y;
 
 //get initial values
-  std::cout << "Enter width" << std::endl;
-  std::cin >> x;
-  std::cout << "Enter height" << std::endl;
-  std::cin >> y;
-  std::cout << "Enter tile size" << std::endl;
-  std::cin >> z;
+  std::cin >> x >> y >> z;
 
 //check if width & height / tiles is not exact & assign correct number to sq_x&y
   if (x % z != 0) {
@@ -31,7 +27,7 @@ int main() {
     sq_y = (y/z);
   }
 
-  std::cout << "The num of tiles needed to fill the teather is " << retTotalTiles(sq_x, sq_y) << std::endl;
+  std::cout << retTotalTiles(sq_x, sq_y) << std::endl;
 
 
 return 0;
