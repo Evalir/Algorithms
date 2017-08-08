@@ -1,3 +1,4 @@
+/*Theater Square algorithm problem from codeforces.*/
 #include <iostream>
 
 long long retTotalTiles(long long  x, long long y) {
