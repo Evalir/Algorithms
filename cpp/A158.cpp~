@@ -1,0 +1,25 @@
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <stdlib.h>
+using namespace std;
+
+int main(int argc, char *argv[]) {
+  int n, k;
+  int winners;
+  string mystring;
+  string scores;
+  
+  cin >> n >> k;
+  cin.ignore();
+  getline(cin , scores); 
+
+  for(int i = 0; i < scores.length(); i++) {
+    int scoresList = atoi(scores);
+
+      if (scores[i] > k) winners++;
+    
+  }
+  cout << scores.length() << endl;
+  cout << winners << endl;
+}
