@@ -24,10 +24,6 @@ int main(){
     cout << numbers[i];
     if(i < numbers.size() - 1 ) cout << "+";
     if(i == numbers.size()) cout << "\n";
-  //  addition += string(1, numbers[i]);
-  //if(i < numbers.size() - 1 ) addition += "+";
   }
 
-
-  //cout << addition << endl;
 }
