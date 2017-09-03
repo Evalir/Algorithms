@@ -15,8 +15,6 @@ cin >> players;
 
 for (int i = 0; i < players.length(); i++) {
 
-
-
   if (players[i] == '0' && players[i + 1] != '1') {
     counter0++;
 
@@ -45,7 +43,6 @@ for (int i = 0; i < players.length(); i++) {
   }
 
   }
-
+  
   if (counter1 < 7 && counter0 < 7) cout << "NO";
-  //cout << "NO" << " " << counter1 << " " << counter0 << endl;
 }
