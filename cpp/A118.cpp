@@ -1,38 +1,38 @@
+//Problem A118 String task from codeforces
+//by evalir.io
+
 #include <iostream>
 #include <string>
 
 using namespace std;
 
+bool isVowel(char ch) {
+if(ch=='a' || ch=='e' || ch=='i' || ch=='o' || ch=='u' || ch=='y')
+         return true;
+    else return false;
+}
+
 int main() {
-  string s;
-  string ns;
-  cin >> s;
+    string task;
+    string ns;
+    cin >> task;
 
-  for(int i = 0; i < s.length(); i++) {
-    s[i] = tolower(s[i]);
-  }
-  cout << ".";
-
-  for(int i = 0; i < s.length(); i++) {
-    if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') {
-      s[i] = '.';
+    for(int i = 0; i < task.length(); i++) {
+	task[i] = tolower(task[i]);
     }
-  }
 
+    for (int i = 0; i < task.length(); i++) {
 
-  for (int i = 0; i < s.length(); i++) {
-    if(s == "c.d.f.rc.s") {
-      cout << "c.d.f.r.c.s";
-      break;
+    	if (isVowel(task[i]) ) {       	     	     
+	} else {
+	    ns += '.';
+	    ns += task[i];
+	}    
     }
-    if(s[i] == '.' && s[i + 1] == '.' ) {
-      cout << ".";
-      i++;
-    } else {
-      cout << s[i];
-    }
-  }
 
+    cout << ns << endl;
 
-  return 0;
+    
+    return 0;
+
 }
