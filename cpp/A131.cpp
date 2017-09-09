@@ -4,22 +4,30 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include <locale>
+
 using namespace std;
 
 int main(){
-  locale loc;
-  string word;
-  cin >> word;
+    string caps;
+    int counter = 0;
 
-  if (all_of(word.begin(), word.end(), isupper ) || all_of(word[1], word.end(), isupper)) {
-    for(int i = 0; i < word.length(); i++) {
-      word[i] = tolower(word[i]);
+    cin >> caps;
+
+    for(int i = 0; i < caps.length(); i++) {
+      if (caps[i] >= 65 && caps[i] <= 90) counter++;
     }
-  }
 
-  word[0] = toupper(word[0], loc);
+    if( (counter == caps.length() - 1 || counter == caps.length()) && caps[caps.length() - 1] <= 90) {
 
+      caps[0] = toupper(caps[0]);
+      for (int i = 1; i < caps.length(); i++) {
+        caps[i] = tolower(caps[i]);
+      }
+    }
+
+    cout << caps << endl;
+
+
+
+    return 0;
 }
-
-//Fix code, does not compile.

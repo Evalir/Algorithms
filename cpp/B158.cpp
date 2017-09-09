@@ -15,7 +15,7 @@ int main() {
   //read number of groups
   cin >> n;
 
-  for (int i = 0; i < n; i++) {
+for (int i = 0; i < n; i++) {
     int group = 0;
     cin >> group;
     groups.push_back(group);
