@@ -13,6 +13,7 @@ int main() {
     std::cin >> word;
 
     if(word.length() > 10){
+      
       int between = word.length() - 2;
       std::cout << word[0] << between << word[word.length() -1 ] << std::endl;
     } else {

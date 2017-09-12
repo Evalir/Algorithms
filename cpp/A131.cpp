@@ -14,14 +14,16 @@ int main(){
     cin >> caps;
 
     for(int i = 0; i < caps.length(); i++) {
-      if (caps[i] >= 65 && caps[i] <= 90) counter++;
+      if (caps[i] > 90 && i != 0) counter - 2;
+      else if (caps[i] >= 65 && caps[i] <= 90) counter++;
     }
 
-    if( (counter == caps.length() - 1 || counter == caps.length()) && caps[caps.length() - 1] <= 90) {
+    if( (counter == caps.length() - 1 || counter == caps.length()) {
+      for (int i = 0; i < caps.length(); i++) {
 
-      caps[0] = toupper(caps[0]);
-      for (int i = 1; i < caps.length(); i++) {
-        caps[i] = tolower(caps[i]);
+        if (caps[i] >= 65 && caps[i] <= 90) caps[i] = tolower(caps[i]);
+        if (caps[i] > 90) caps[i] = toupper(caps[i]);
+
       }
     }
 
