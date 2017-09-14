@@ -12,8 +12,8 @@ bool isVowel(char c) {
 }
 
 bool isCaps(char c) {
-  if (char c >= 65 && char c <= 90) return true;
-  else if (char c >= 97 && char c <= 117) return false;
+  if (c >= 65 && c <= 90) return true;
+  else if (c >= 97 && c <= 117) return false;
 }
 
 int main() {
@@ -32,13 +32,8 @@ int main() {
 
       else if(isCaps(palabra[i]) == false && isCaps(palabra[i+1]) == true) cout << palabra[i] << 'H';
 
-      else if(isCaps(palabra[i]) == false && isCaps(palabra[i+1]) == false) cout << palabra[i] << 'H';
+      else if(isCaps(palabra[i]) == false && isCaps(palabra[i+1]) == false) cout << palabra[i] << 'h';
     }
     else cout << palabra[i];
-
   }
-
-
-
-
 }
