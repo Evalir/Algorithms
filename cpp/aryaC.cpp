@@ -6,7 +6,7 @@ using namespace std;
 int main() {
   int n, k;
   int candy;
-  int days;
+  int days = 0;
   int acc = 0;
   vector<int> candies;
   cin >> n >> k;
@@ -19,6 +19,10 @@ int main() {
   candy = 0; //Now this variable will be used for bryan's candies
 
   for (int i = 0; i < n; i++) {
+   
+    if (candy >= k) {
+      break;
+    }
 
     if (candies[i] > 8) {
         acc += candies[i] - 8;
@@ -29,16 +33,16 @@ int main() {
       candy += candies[i];
       days++;
     }
+    if (candy >= k) {
+      break;
+    }
     if (acc != 0 && acc >= 8) {
       candy += 8;
       acc -= 8;
       days++;
     }
 
-    if (candy >= k) {
-      break;
-    }
-
+     
   }
 
   if(candy >= k) {
