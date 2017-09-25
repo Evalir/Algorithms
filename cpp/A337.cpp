@@ -18,7 +18,7 @@ int main() {
     cin >> piece;
     pieces.push_back(piece);
   }
-
+  //Source of problem for solution: this for loop runs once, not until it finds solution
   for (int i = 0; i < n; i++) {
     int x = 0;
     int y = n;
