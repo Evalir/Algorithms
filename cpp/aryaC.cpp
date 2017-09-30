@@ -24,6 +24,16 @@ int main() {
       break;
     }
 
+    if (acc >= 8) {
+      candy += 8;
+      acc -= 8;
+      days++;
+    } else if (acc < 8) {
+      candy += acc;
+      
+    }
+
+    if (candies[i] > 8)
     if (candies[i] > 8) {
         acc += candies[i] - 8;
         candy += 8;
@@ -33,16 +43,6 @@ int main() {
       candy += candies[i];
       days++;
     }
-    if (candy >= k) {
-      break;
-    }
-    if (acc != 0 && acc >= 8) {
-      candy += 8;
-      acc -= 8;
-      days++;
-    }
-
-     
   }
 
   if(candy >= k) {
