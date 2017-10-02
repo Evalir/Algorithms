@@ -131,6 +131,12 @@
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A339.cpp">
 			<Option target="cpp"/>
 		</Unit>
+		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A41.cpp">
+			<Option target="cpp"/>
+		</Unit>
+		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A41.h">
+			<Option target="cpp"/>
+		</Unit>
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A467.cpp">
 			<Option target="cpp"/>
 		</Unit>
@@ -141,6 +147,9 @@
 			<Option target="cpp"/>
 		</Unit>
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A58.cpp">
+			<Option target="cpp"/>
+		</Unit>
+		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A580.cpp">
 			<Option target="cpp"/>
 		</Unit>
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/A69.cpp">
@@ -177,6 +186,9 @@
 			<Option target="cpp"/>
 		</Unit>
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/contest2017/AmateurMeteorologist.cpp">
+			<Option target="cpp"/>
+		</Unit>
+		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/ellatigo.cpp">
 			<Option target="cpp"/>
 		</Unit>
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/hackerrankarray.cpp">

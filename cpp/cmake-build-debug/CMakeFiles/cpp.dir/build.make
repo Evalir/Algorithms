@@ -993,6 +993,78 @@ CMakeFiles/cpp.dir/Watermelon.cpp.o.provides: CMakeFiles/cpp.dir/Watermelon.cpp.
 CMakeFiles/cpp.dir/Watermelon.cpp.o.provides.build: CMakeFiles/cpp.dir/Watermelon.cpp.o
 
 
+CMakeFiles/cpp.dir/A41.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/A41.cpp.o: ../A41.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/cpp.dir/A41.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/A41.cpp.o -c /Users/Evalir/Documents/Programming/Algorithms/cpp/A41.cpp
+
+CMakeFiles/cpp.dir/A41.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/A41.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Evalir/Documents/Programming/Algorithms/cpp/A41.cpp > CMakeFiles/cpp.dir/A41.cpp.i
+
+CMakeFiles/cpp.dir/A41.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/A41.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Evalir/Documents/Programming/Algorithms/cpp/A41.cpp -o CMakeFiles/cpp.dir/A41.cpp.s
+
+CMakeFiles/cpp.dir/A41.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp.dir/A41.cpp.o.requires
+
+CMakeFiles/cpp.dir/A41.cpp.o.provides: CMakeFiles/cpp.dir/A41.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A41.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/A41.cpp.o.provides
+
+CMakeFiles/cpp.dir/A41.cpp.o.provides.build: CMakeFiles/cpp.dir/A41.cpp.o
+
+
+CMakeFiles/cpp.dir/A580.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/A580.cpp.o: ../A580.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/cpp.dir/A580.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/A580.cpp.o -c /Users/Evalir/Documents/Programming/Algorithms/cpp/A580.cpp
+
+CMakeFiles/cpp.dir/A580.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/A580.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Evalir/Documents/Programming/Algorithms/cpp/A580.cpp > CMakeFiles/cpp.dir/A580.cpp.i
+
+CMakeFiles/cpp.dir/A580.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/A580.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Evalir/Documents/Programming/Algorithms/cpp/A580.cpp -o CMakeFiles/cpp.dir/A580.cpp.s
+
+CMakeFiles/cpp.dir/A580.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp.dir/A580.cpp.o.requires
+
+CMakeFiles/cpp.dir/A580.cpp.o.provides: CMakeFiles/cpp.dir/A580.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A580.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/A580.cpp.o.provides
+
+CMakeFiles/cpp.dir/A580.cpp.o.provides.build: CMakeFiles/cpp.dir/A580.cpp.o
+
+
+CMakeFiles/cpp.dir/ellatigo.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/ellatigo.cpp.o: ../ellatigo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/cpp.dir/ellatigo.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/ellatigo.cpp.o -c /Users/Evalir/Documents/Programming/Algorithms/cpp/ellatigo.cpp
+
+CMakeFiles/cpp.dir/ellatigo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/ellatigo.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Evalir/Documents/Programming/Algorithms/cpp/ellatigo.cpp > CMakeFiles/cpp.dir/ellatigo.cpp.i
+
+CMakeFiles/cpp.dir/ellatigo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/ellatigo.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Evalir/Documents/Programming/Algorithms/cpp/ellatigo.cpp -o CMakeFiles/cpp.dir/ellatigo.cpp.s
+
+CMakeFiles/cpp.dir/ellatigo.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp.dir/ellatigo.cpp.o.requires
+
+CMakeFiles/cpp.dir/ellatigo.cpp.o.provides: CMakeFiles/cpp.dir/ellatigo.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/ellatigo.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/ellatigo.cpp.o.provides
+
+CMakeFiles/cpp.dir/ellatigo.cpp.o.provides.build: CMakeFiles/cpp.dir/ellatigo.cpp.o
+
+
 # Object files for target cpp
 cpp_OBJECTS = \
 "CMakeFiles/cpp.dir/contest2017/AmateurMeteorologist.cpp.o" \
@@ -1033,7 +1105,10 @@ cpp_OBJECTS = \
 "CMakeFiles/cpp.dir/palabras.cpp.o" \
 "CMakeFiles/cpp.dir/sashaA.cpp.o" \
 "CMakeFiles/cpp.dir/TheaterSquare.cpp.o" \
-"CMakeFiles/cpp.dir/Watermelon.cpp.o"
+"CMakeFiles/cpp.dir/Watermelon.cpp.o" \
+"CMakeFiles/cpp.dir/A41.cpp.o" \
+"CMakeFiles/cpp.dir/A580.cpp.o" \
+"CMakeFiles/cpp.dir/ellatigo.cpp.o"
 
 # External object files for target cpp
 cpp_EXTERNAL_OBJECTS =
@@ -1077,9 +1152,12 @@ cpp: CMakeFiles/cpp.dir/palabras.cpp.o
 cpp: CMakeFiles/cpp.dir/sashaA.cpp.o
 cpp: CMakeFiles/cpp.dir/TheaterSquare.cpp.o
 cpp: CMakeFiles/cpp.dir/Watermelon.cpp.o
+cpp: CMakeFiles/cpp.dir/A41.cpp.o
+cpp: CMakeFiles/cpp.dir/A580.cpp.o
+cpp: CMakeFiles/cpp.dir/ellatigo.cpp.o
 cpp: CMakeFiles/cpp.dir/build.make
 cpp: CMakeFiles/cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Linking CXX executable cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Linking CXX executable cpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1126,6 +1204,9 @@ CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/palabras.cpp.o.requires
 CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/sashaA.cpp.o.requires
 CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/TheaterSquare.cpp.o.requires
 CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/Watermelon.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/A41.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/A580.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/ellatigo.cpp.o.requires
 
 .PHONY : CMakeFiles/cpp.dir/requires
 

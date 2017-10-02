@@ -14,7 +14,6 @@ int main() {
   cin >> stops;
 
   for(int i = 0; i < stops; i++) {
-    //read passengers that exited
     cin >> a;
     cin >> b;
     pcount -= a;

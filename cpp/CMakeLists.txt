@@ -42,6 +42,6 @@ set(SOURCE_FILES
         palabras.cpp
         sashaA.cpp
         TheaterSquare.cpp
-        Watermelon.cpp)
+        Watermelon.cpp A41.cpp A41.h A580.cpp ellatigo.cpp)
 
 add_executable(cpp ${SOURCE_FILES})

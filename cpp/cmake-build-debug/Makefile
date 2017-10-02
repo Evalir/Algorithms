@@ -582,6 +582,33 @@ A339.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A339.cpp.s
 .PHONY : A339.cpp.s
 
+A41.o: A41.cpp.o
+
+.PHONY : A41.o
+
+# target to build an object file
+A41.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A41.cpp.o
+.PHONY : A41.cpp.o
+
+A41.i: A41.cpp.i
+
+.PHONY : A41.i
+
+# target to preprocess a source file
+A41.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A41.cpp.i
+.PHONY : A41.cpp.i
+
+A41.s: A41.cpp.s
+
+.PHONY : A41.s
+
+# target to generate assembly for a file
+A41.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A41.cpp.s
+.PHONY : A41.cpp.s
+
 A467.o: A467.cpp.o
 
 .PHONY : A467.o
@@ -689,6 +716,33 @@ A58.s: A58.cpp.s
 A58.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A58.cpp.s
 .PHONY : A58.cpp.s
+
+A580.o: A580.cpp.o
+
+.PHONY : A580.o
+
+# target to build an object file
+A580.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A580.cpp.o
+.PHONY : A580.cpp.o
+
+A580.i: A580.cpp.i
+
+.PHONY : A580.i
+
+# target to preprocess a source file
+A580.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A580.cpp.i
+.PHONY : A580.cpp.i
+
+A580.s: A580.cpp.s
+
+.PHONY : A580.s
+
+# target to generate assembly for a file
+A580.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/A580.cpp.s
+.PHONY : A580.cpp.s
 
 A69.o: A69.cpp.o
 
@@ -1014,6 +1068,33 @@ contest2017/AmateurMeteorologist.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/contest2017/AmateurMeteorologist.cpp.s
 .PHONY : contest2017/AmateurMeteorologist.cpp.s
 
+ellatigo.o: ellatigo.cpp.o
+
+.PHONY : ellatigo.o
+
+# target to build an object file
+ellatigo.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/ellatigo.cpp.o
+.PHONY : ellatigo.cpp.o
+
+ellatigo.i: ellatigo.cpp.i
+
+.PHONY : ellatigo.i
+
+# target to preprocess a source file
+ellatigo.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/ellatigo.cpp.i
+.PHONY : ellatigo.cpp.i
+
+ellatigo.s: ellatigo.cpp.s
+
+.PHONY : ellatigo.s
+
+# target to generate assembly for a file
+ellatigo.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/ellatigo.cpp.s
+.PHONY : ellatigo.cpp.s
+
 hackerrankarray.o: hackerrankarray.cpp.o
 
 .PHONY : hackerrankarray.o
@@ -1236,6 +1317,9 @@ help:
 	@echo "... A339.o"
 	@echo "... A339.i"
 	@echo "... A339.s"
+	@echo "... A41.o"
+	@echo "... A41.i"
+	@echo "... A41.s"
 	@echo "... A467.o"
 	@echo "... A467.i"
 	@echo "... A467.s"
@@ -1248,6 +1332,9 @@ help:
 	@echo "... A58.o"
 	@echo "... A58.i"
 	@echo "... A58.s"
+	@echo "... A580.o"
+	@echo "... A580.i"
+	@echo "... A580.s"
 	@echo "... A69.o"
 	@echo "... A69.i"
 	@echo "... A69.s"
@@ -1284,6 +1371,9 @@ help:
 	@echo "... contest2017/AmateurMeteorologist.o"
 	@echo "... contest2017/AmateurMeteorologist.i"
 	@echo "... contest2017/AmateurMeteorologist.s"
+	@echo "... ellatigo.o"
+	@echo "... ellatigo.i"
+	@echo "... ellatigo.s"
 	@echo "... hackerrankarray.o"
 	@echo "... hackerrankarray.i"
 	@echo "... hackerrankarray.s"
