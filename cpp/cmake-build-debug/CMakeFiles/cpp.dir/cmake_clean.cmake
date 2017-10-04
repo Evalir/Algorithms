@@ -41,6 +41,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp.dir/A41.cpp.o"
   "CMakeFiles/cpp.dir/A580.cpp.o"
   "CMakeFiles/cpp.dir/ellatigo.cpp.o"
+  "CMakeFiles/cpp.dir/A479.cpp.o"
+  "CMakeFiles/cpp.dir/A486.cpp.o"
   "cpp.pdb"
   "cpp"
 )

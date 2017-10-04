@@ -23,6 +23,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/A339.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A339.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/A41.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A41.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/A467.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A467.cpp.o"
+  "/Users/Evalir/Documents/Programming/Algorithms/cpp/A479.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A479.cpp.o"
+  "/Users/Evalir/Documents/Programming/Algorithms/cpp/A486.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A486.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/A50.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A50.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/A546.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A546.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/A58.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/A58.cpp.o"
