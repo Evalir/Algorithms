@@ -1338,6 +1338,60 @@ simulacion2015/palabras.cpp.s:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacion2015/palabras.cpp.s
 .PHONY : simulacion2015/palabras.cpp.s
 
+simulacionp2017/Ashark.o: simulacionp2017/Ashark.cpp.o
+
+.PHONY : simulacionp2017/Ashark.o
+
+# target to build an object file
+simulacionp2017/Ashark.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o
+.PHONY : simulacionp2017/Ashark.cpp.o
+
+simulacionp2017/Ashark.i: simulacionp2017/Ashark.cpp.i
+
+.PHONY : simulacionp2017/Ashark.i
+
+# target to preprocess a source file
+simulacionp2017/Ashark.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.i
+.PHONY : simulacionp2017/Ashark.cpp.i
+
+simulacionp2017/Ashark.s: simulacionp2017/Ashark.cpp.s
+
+.PHONY : simulacionp2017/Ashark.s
+
+# target to generate assembly for a file
+simulacionp2017/Ashark.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.s
+.PHONY : simulacionp2017/Ashark.cpp.s
+
+simulacionp2017/Clunch.o: simulacionp2017/Clunch.cpp.o
+
+.PHONY : simulacionp2017/Clunch.o
+
+# target to build an object file
+simulacionp2017/Clunch.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o
+.PHONY : simulacionp2017/Clunch.cpp.o
+
+simulacionp2017/Clunch.i: simulacionp2017/Clunch.cpp.i
+
+.PHONY : simulacionp2017/Clunch.i
+
+# target to preprocess a source file
+simulacionp2017/Clunch.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.i
+.PHONY : simulacionp2017/Clunch.cpp.i
+
+simulacionp2017/Clunch.s: simulacionp2017/Clunch.cpp.s
+
+.PHONY : simulacionp2017/Clunch.s
+
+# target to generate assembly for a file
+simulacionp2017/Clunch.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.s
+.PHONY : simulacionp2017/Clunch.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -1482,6 +1536,12 @@ help:
 	@echo "... simulacion2015/palabras.o"
 	@echo "... simulacion2015/palabras.i"
 	@echo "... simulacion2015/palabras.s"
+	@echo "... simulacionp2017/Ashark.o"
+	@echo "... simulacionp2017/Ashark.i"
+	@echo "... simulacionp2017/Ashark.s"
+	@echo "... simulacionp2017/Clunch.o"
+	@echo "... simulacionp2017/Clunch.i"
+	@echo "... simulacionp2017/Clunch.s"
 .PHONY : help
 
 

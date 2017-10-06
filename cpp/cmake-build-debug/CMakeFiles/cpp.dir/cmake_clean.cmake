@@ -44,6 +44,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/cpp.dir/A479.cpp.o"
   "CMakeFiles/cpp.dir/A486.cpp.o"
   "CMakeFiles/cpp.dir/208.cpp.o"
+  "CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o"
+  "CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o"
   "cpp.pdb"
   "cpp"
 )

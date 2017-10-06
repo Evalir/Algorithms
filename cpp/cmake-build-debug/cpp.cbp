@@ -218,6 +218,12 @@
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacion2015/palabras.cpp">
 			<Option target="cpp"/>
 		</Unit>
+		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Ashark.cpp">
+			<Option target="cpp"/>
+		</Unit>
+		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Clunch.cpp">
+			<Option target="cpp"/>
+		</Unit>
 		<Unit filename="/Users/Evalir/Documents/Programming/Algorithms/cpp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

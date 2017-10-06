@@ -49,6 +49,8 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/sashaA.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/sashaA.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacion2015/navidad.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/simulacion2015/navidad.cpp.o"
   "/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacion2015/palabras.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/simulacion2015/palabras.cpp.o"
+  "/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Ashark.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o"
+  "/Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Clunch.cpp" "/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

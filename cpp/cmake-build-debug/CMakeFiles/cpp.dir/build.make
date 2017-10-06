@@ -1137,6 +1137,54 @@ CMakeFiles/cpp.dir/208.cpp.o.provides: CMakeFiles/cpp.dir/208.cpp.o.requires
 CMakeFiles/cpp.dir/208.cpp.o.provides.build: CMakeFiles/cpp.dir/208.cpp.o
 
 
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o: ../simulacionp2017/Clunch.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o -c /Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Clunch.cpp
+
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Clunch.cpp > CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.i
+
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Clunch.cpp -o CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.s
+
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.requires
+
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.provides: CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.provides
+
+CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.provides.build: CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o
+
+
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o: CMakeFiles/cpp.dir/flags.make
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o: ../simulacionp2017/Ashark.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o -c /Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Ashark.cpp
+
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Ashark.cpp > CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.i
+
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/Evalir/Documents/Programming/Algorithms/cpp/simulacionp2017/Ashark.cpp -o CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.s
+
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.requires:
+
+.PHONY : CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.requires
+
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.provides: CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.requires
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.provides.build
+.PHONY : CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.provides
+
+CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.provides.build: CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o
+
+
 # Object files for target cpp
 cpp_OBJECTS = \
 "CMakeFiles/cpp.dir/contest2017/AmateurMeteorologist.cpp.o" \
@@ -1183,7 +1231,9 @@ cpp_OBJECTS = \
 "CMakeFiles/cpp.dir/ellatigo.cpp.o" \
 "CMakeFiles/cpp.dir/A479.cpp.o" \
 "CMakeFiles/cpp.dir/A486.cpp.o" \
-"CMakeFiles/cpp.dir/208.cpp.o"
+"CMakeFiles/cpp.dir/208.cpp.o" \
+"CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o" \
+"CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o"
 
 # External object files for target cpp
 cpp_EXTERNAL_OBJECTS =
@@ -1233,9 +1283,11 @@ cpp: CMakeFiles/cpp.dir/ellatigo.cpp.o
 cpp: CMakeFiles/cpp.dir/A479.cpp.o
 cpp: CMakeFiles/cpp.dir/A486.cpp.o
 cpp: CMakeFiles/cpp.dir/208.cpp.o
+cpp: CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o
+cpp: CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o
 cpp: CMakeFiles/cpp.dir/build.make
 cpp: CMakeFiles/cpp.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Linking CXX executable cpp"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/Evalir/Documents/Programming/Algorithms/cpp/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Linking CXX executable cpp"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cpp.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1288,6 +1340,8 @@ CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/ellatigo.cpp.o.requires
 CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/A479.cpp.o.requires
 CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/A486.cpp.o.requires
 CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/208.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/simulacionp2017/Clunch.cpp.o.requires
+CMakeFiles/cpp.dir/requires: CMakeFiles/cpp.dir/simulacionp2017/Ashark.cpp.o.requires
 
 .PHONY : CMakeFiles/cpp.dir/requires
 

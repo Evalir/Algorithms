@@ -42,6 +42,6 @@ set(SOURCE_FILES
         palabras.cpp
         sashaA.cpp
         TheaterSquare.cpp
-        Watermelon.cpp A41.cpp A41.h A580.cpp ellatigo.cpp A479.cpp A486.cpp 208.cpp)
+        Watermelon.cpp A41.cpp A41.h A580.cpp ellatigo.cpp A479.cpp A486.cpp 208.cpp simulacionp2017/Clunch.cpp simulacionp2017/Ashark.cpp)
 
 add_executable(cpp ${SOURCE_FILES})
