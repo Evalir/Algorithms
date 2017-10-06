@@ -123,6 +123,33 @@ cpp/fast:
 	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/build
 .PHONY : cpp/fast
 
+208.o: 208.cpp.o
+
+.PHONY : 208.o
+
+# target to build an object file
+208.cpp.o:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/208.cpp.o
+.PHONY : 208.cpp.o
+
+208.i: 208.cpp.i
+
+.PHONY : 208.i
+
+# target to preprocess a source file
+208.cpp.i:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/208.cpp.i
+.PHONY : 208.cpp.i
+
+208.s: 208.cpp.s
+
+.PHONY : 208.s
+
+# target to generate assembly for a file
+208.cpp.s:
+	$(MAKE) -f CMakeFiles/cpp.dir/build.make CMakeFiles/cpp.dir/208.cpp.s
+.PHONY : 208.cpp.s
+
 A110.o: A110.cpp.o
 
 .PHONY : A110.o
@@ -1320,6 +1347,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... cpp"
+	@echo "... 208.o"
+	@echo "... 208.i"
+	@echo "... 208.s"
 	@echo "... A110.o"
 	@echo "... A110.i"
 	@echo "... A110.s"
