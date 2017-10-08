@@ -19,8 +19,11 @@ int main() {
   }
 
   for (int i = 0; i < days.size(); i++) {
+
     if (i == 0) {
+
       if (days[i] == "sunny") pred++;
+      
     } else {
       
       if (days[i] == "sunny" && days[i - 1] == "sunny") {
