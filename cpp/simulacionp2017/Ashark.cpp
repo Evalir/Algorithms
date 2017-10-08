@@ -4,26 +4,43 @@
 
 #include <iostream>
 #include <vector>
+#include <algorithm>
 using namespace std;
 
 int main() {
     long long n;
     long long in;
-    vector<int> nums;
+    vector<int> enums;
+    vector<int> onums;
     long long bestsum = 0;
-    long long currsum = 0;
+    long long esum = 0;
+    long long osum = 0;
 
     cin >> n;
     for(int i = 0; i < n; i++) {
         cin >> in;
-        nums.push_back(in);
+        if (in % 2 == 0) enums.push_back(in);
+        else onums.push_back(in);
     }
 
-    for (int i = 0; i < n; i++) {
-        currsum += nums[i];
-        if (currsum % 2 == 0 && currsum > bestsum) bestsum = currsum;
+    sort(onums.begin(), onums.end(), greater<int>());
 
+    for (int i = 0; i < enums.size(); i++) {
+        esum += enums[i];
     }
+
+    if (onums.size() % 2 == 0) {
+        for (int i = 0; i < onums.size(); i++) {
+            osum += onums[i];
+        }
+    } else {
+        for (int i = 0; i < onums.size() - 1; i++) {
+            osum += onums[i];
+        }
+    }
+
+    bestsum = esum + osum;
+
 
     cout << bestsum << endl;
 
