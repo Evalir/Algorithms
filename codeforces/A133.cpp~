@@ -14,8 +14,7 @@ int main() {
       cout << "NO" << endl;
       break;
     }
-
   }
 
-  return 0;
+
 }
