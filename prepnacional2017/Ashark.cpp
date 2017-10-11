@@ -15,14 +15,14 @@ int main() {
     long long bestsum = 0;
     long long esum = 0;
     long long osum = 0;
-
+    //read n, then add even and odd numbers to corresponding arrays
     cin >> n;
     for(int i = 0; i < n; i++) {
         cin >> in;
         if (in % 2 == 0) enums.push_back(in);
         else onums.push_back(in);
     }
-
+    //sort odd numbers to guarantee even sum of them will always be highest
     sort(onums.begin(), onums.end(), greater<int>());
 
     for (int i = 0; i < enums.size(); i++) {

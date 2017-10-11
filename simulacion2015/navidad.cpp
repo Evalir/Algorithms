@@ -17,11 +17,15 @@ int main() {
       asteriscos += 2;
       cout << "\n";
     }
-    for(int j = 0; j < espacios; j++) {
+    for (int j = 0; j < espacios; j++) {
       cout << espacio;
     }
     for (int k = 0; k < asteriscos; k++) {
       cout << asterisco;
     }
-  }
+    if (i == lineas - 1) {
+    cout << "\n";
+    }
+  
+    }
 }
