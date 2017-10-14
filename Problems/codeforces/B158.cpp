@@ -20,35 +20,19 @@ for (int i = 0; i < n; i++) {
     cin >> group;
     groups.push_back(group);
   }
-
-  //sort from descending order
-  sort(groups.begin(), groups.end(), greater<int>());
-
-  for (int i = 0; i < groups.size(); i++) {
-    if (groups[i] == 4) {
-      taxis++;
-      groups[i] = 0;
-    }
-   else if (groups[i] == 3) {
-      taxis++;
-      groups[i] = 0;
-    }
-   else if (groups[i] == 2 && groups[i + 1] == 2 ) {
-      taxis++;
-      groups[i] = 0;
-      groups[i + 1] = 0;
-    }
-   else if (groups[i] == 1 && groups[i + 1] == 1) {
-      taxis++;
-      groups[i] = 0;
-      groups[i + 1] = 0;
-    }
-   else if (groups[i] == 1 && groups[i + 1] != 1) {
-      taxis++;
-      groups[i] = 0;
-    }
+  
+  int n4 = 0, n3 = 0, n2 =0, n1 = 0;
+  
+  for(int i = 0; i < n; i++) {
+    if (groups[i] == 4) n4++;
+    else if (groups[i] == 3) n3++;
+    else if (groups[i] == 2) n2++;
+    else if (groups[i] == 1) n1++;
   }
-
+  //Ya tenemos la cantidad de 4, 3, 2 y 1, lo que queda es saber como lo dividiremos.
+  taxis += n4; //mandar todos los de 4 automaticamente
+  
+  
   cout << taxis << endl;
 
 
