@@ -53,6 +53,6 @@ set(SOURCE_FILES
         prepnacional2017/Ashark.cpp
         prepnacional2017/Clunch.cpp
         simulacion2015/navidad.cpp
-        simulacion2015/palabras.cpp nacional2017/ATriangle.cpp)
+        simulacion2015/palabras.cpp nacional2017/ATriangle.cpp learnCpp/CDsOp.cpp Problems/UVA/Hoax11136.cpp Problems/UVA/Prune12049.cpp)
 
 add_executable(Algorithms ${SOURCE_FILES})

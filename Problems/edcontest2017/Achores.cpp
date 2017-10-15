@@ -19,9 +19,6 @@ int main(){
     for(int i = 0; i < k; i++) 
 	if (chores[i] > x) chores[i] = x;
     
-//    for (int i = 0; i < chores.size(); i++)
-//	cout << chores[i] << endl;
-    
     int sum = 0;
     for(int i = 0; i < chores.size(); i++)
 	sum += chores[i];
