@@ -9,52 +9,43 @@ bool match(set<int> A, set<int> B, int V) {
 
 int main() {
     int N, M;
-    int next;
     int x;
     int y;
     int counter = 0;
-    int bigger = 0;
     //read and check at the same time
     //while (cin >> N >> M && N != 0 && M != 0) {
     while ((2==scanf("%d %d", &N, &M)) && N != 0 && M != 0) {
         set<int> Jack;
         set<int> Jill;
+        set<int>::iterator Jiterator;
+
+        for (int i = 0; i < N; i++) {
+            scanf("%d", &x);
+            Jack.insert(x);
+        }
+
+        for (int i = 0; i < M; i++) {
+            scanf("%d", &y);
+            Jill.insert(y);
+        }
+
         if (N > M) {
-            for (int i = 0; i < N; i++) {
-                scanf("%d", &x);
-                Jack.insert(x);
-            }
 
-            for (int i = 0; i < M; i++) {
-                scanf("%d", &y);
-                Jill.insert(y);
-            }
-
-            for (int i = 0; i < Jack.size(); i++) {
-                if (match(Jack, Jill, i)) counter++;
+            for (Jiterator = Jack.begin(); Jiterator != Jack.end(); ++Jiterator) {
+                if (match(Jack, Jill, *Jiterator)) counter++;
             }
 
             printf("%d\n", counter);
             counter = 0;
-            bigger = 0;
+
         } else {
-            for (int i = 0; i < N; i++) {
-                scanf("%d", &x);
-                Jack.insert(x);
-            }
 
-            for (int i = 0; i < M; i++) {
-                scanf("%d", &y);
-                Jill.insert(y);
-            }
-
-            for (int i = 0; i < Jill.size(); i++) {
-                if (match(Jack, Jill, i)) counter++;
+            for (Jiterator = Jill.begin(); Jiterator != Jill.end(); ++Jiterator) {
+                if (match(Jack, Jill, *Jiterator)) counter++;
             }
 
             printf("%d\n", counter);
             counter = 0;
-            bigger = 0;
 
         }
     }
