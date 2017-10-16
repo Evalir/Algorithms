@@ -32,27 +32,24 @@ int main() {
             List2.insert(y);
         }
 
-        for (it = List1.begin(); it != List1.end(); it++) {
-          while (List1.count(*it) < List2.count(*it)) {
-            List2.erase(List2.find(*it));
-            counter++;
+        if (N > M) {
+          for (int x : List1) {
+            if (List2.count(x) > 0) {
+            List2.erase(List2.find(x));
+            }
           }
-          if (List2.count(*it) == 0) {
-            counter++;
-          }
+          counter = List2.size();
+          printf("%d\n", counter);
         }
-
-        for (it = List2.begin(); it != List2.end(); it++) {
-          while (List1.count(*it) > List2.count(*it)) {
-            List1.erase(List1.find(*it));
-            counter++;
+        else {
+          for (int x : List2) {
+            if (List1.count(x) > 0) {
+            List1.erase(List1.find(x));
+            }
           }
-          if (List1.count(*it) == 0) {
-            counter++;
-          }
+          counter = List1.size();
+          printf("%d\n", counter);
         }
-
-        printf("%d\n", counter);
 
     }
 
