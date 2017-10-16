@@ -1,45 +1,58 @@
 //
 // Created by Enrique Ortiz on 10/15/17.
 //
-#include <iostream>
+#include <cstdio>
 #include <set>
 using namespace std;
 
 int main() {
     int T;
+    //cin >> T;
+    scanf("%d", &T);
 
-    while((1==scanf("%d", &T))) {
+    for (int i = 0; i < T; i++) {
+
         multiset<int> List1;
         multiset<int> List2;
-        multiset<int>::iterator sIterator;
+        multiset<int>::iterator it;
         int N, M;
         int x, y;
         int counter = 0;
 
-        cin >> N >> M;
+        scanf("%d %d", &N, &M);
 
         for (int i = 0; i < N; i++) {
-            cin >> x;
+            scanf("%d", &x);
             List1.insert(x);
         }
 
         for (int i = 0; i < M; i++) {
-            cin >> y;
+            scanf("%d", &y);
             List2.insert(y);
         }
 
-        for (sIterator = List1.begin(); sIterator != List1.end(); sIterator++) {
-          if (List1.count(*sIterator) > List2.count(*sIterator)) {
-            cout << List1.count(*sIterator) << endl;
+        for (it = List1.begin(); it != List1.end(); it++) {
+          if (List1.count(*it) < List2.count(*it)) {
+            List2.erase(List2.find(*it));
+            counter++;
+          }
+          else if (List2.count(*it) == 0) {
+            counter++;
           }
         }
-        cout << endl;
-        for (sIterator = List1.begin(); sIterator != List1.end(); sIterator++) {
-          cout << *sIterator << endl;
+        for (it = List2.begin(); it != List2.end(); it++) {
+          if (List1.count(*it) > List2.count(*it)) {
+            List1.erase(List1.find(*it));
+            counter++;
+          }
+          else if (List1.count(*it) == 0) {
+            counter++;
+          }
         }
 
-
+        printf("%d\n", counter);
 
     }
+
     return 0;
 }
