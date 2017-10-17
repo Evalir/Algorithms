@@ -22,7 +22,8 @@ int main() {
   //find maximum non-decreasing subsegment
   //for a subsegment to not be non-decreasing it has to either contain equal or arising numbers.
   for (int i = 0; i < nums.size() - 1; i++) {
-    if (n == 1 && nums[0] == 1) {
+    
+    if (nums.size() == 1 && nums[0] == 1) {
       best = 1;
       break;
     }
