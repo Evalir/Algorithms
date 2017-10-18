@@ -17,28 +17,30 @@ int main()
         harry.push(coin);
     }
     //get number of instructions and x
-    int is, x;
-    cin >> is >> x;
+    int q, x;
+    cin >> q >> x;
+    //variable for getting the sum of coins and query
+    long sumcoin = 0;
+    string query;
+    for (int i = 0; i < q; i++) {
+      if (sumcoin == x) break;
+      cin >> query;
 
-    int ccoins = -1;
-    for(int i = 0; i < is; i++) {
-        string s;
-        cin >> s;
+      if (query == "Harry") {
+        long coin = harry.top(); //get val of coin
+        harry.pop(); //harry pops the coin to monk
+        monk.push(coin); // monk pushes coin
+        sumcoin += coin; //the sum of all coins now equals that
+      }
 
-        if (monk.size() == x) {
-            ccoins = monk.size();
-            break;
-        }
-
-        if (s == "Harry") {
-            int z = harry.top();
-            harry.pop();
-            monk.push(z);
-        }
-        if (s == "Remove") {
-            if (!monk.empty()) monk.pop();
-        }
+      if (query == "Remove") {
+        long coin = monk.top();
+        monk.pop();
+        sumcoin -= coin;
+      }
     }
 
-    cout << ccoins << endl;
+    if (sumcoin == x) cout << monk.size() << endl;
+    else cout << - 1 << endl;
+
 }
