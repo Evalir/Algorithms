@@ -1,1 +1,49 @@
-// Problem 580 A from codeforces// Created by Enrique Ortiz on 9/30/17.//#include <iostream>#include <vector>using namespace std;int main() {    long n;    long long a;    vector<int> nums;    int counter = 0;    int best = 0;    cin >> n;    for (int i = 0; i < n; i++) {        cin >> a;        nums.push_back(a);    }    for (int i = 0; i < nums.size(); i++) {        if (i == 0) {            counter++;        } else {            if (nums[i - 1] <= nums[i]) {            counter++;        } else if (nums[i -1] > nums[i] && best < counter) {                best = counter;                counter = 0;                counter++;            }    }    }    if (best < counter) {        best = counter;    }    cout << best  << endl;}
+//Problem A580 from codeforces
+//by evalir.io
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  int best = 0;
+  int counter = 0;
+  int n;
+  long sub;
+  bool firstelement = true;
+  vector<int> nums;
+
+  cin >> n;
+  //read sequence
+  for (int i = 0; i < n; i++) {
+    cin >> sub;
+    nums.push_back(sub);
+  }
+
+  //find maximum non-decreasing subsegment
+  //for a subsegment to not be non-decreasing it has to either contain equal or arising numbers.
+  for (int i = 0; i < nums.size() - 1; i++) {
+    
+    if (nums.size() == 1 && nums[0] == 1) {
+      best = 1;
+      break;
+    }
+    //cout << "CURRENT: " << counter << " AT I: " << i << endl;
+    if (firstelement) {
+      counter++;
+      firstelement = false;
+      }
+    //cout << "CURRENT: " << counter << " AT I: " << i << endl;
+    if (nums[i+1] >= nums[i]) {
+      counter++;
+      }
+
+    if (best < counter) best = counter;
+    //  cout << "CURRENT BEST: " << best << " AT I: "  << i << endl;
+    if (nums[i+1] < nums[i]) {
+      counter = 0;
+      firstelement = true;
+      }
+    }
+
+  cout << best << endl;
+} //end of main
