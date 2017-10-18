@@ -4,9 +4,11 @@
 using namespace std;
 
 int bSearch(vector<int> arr, int goal){
+
   int max = arr.size() - 1;
   int min = 0;
   int guess = 0;
+
   while(min <= max) {
     guess = (max + min) / 2;
     if(arr[guess] == goal) {

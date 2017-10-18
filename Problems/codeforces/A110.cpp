@@ -7,7 +7,7 @@ using namespace std;
 
 int main(){
   string num;
-  cin >> num; //Implement this with scanf();
+  cin >> num;
   int counter = 0;
   
   for(int i = 0; i < num.length(); i++) {
