@@ -7,38 +7,40 @@ int main()
 {
     int N;
     cin >> N;
-    stack<int> harry;
-    stack<int> monk;
+    stack<long long> harry;
+    stack<long long> monk;
 
     //get coins in harry's stack
     for (int i = 0; i < N; i++) {
-        int coin;
+        long long coin;
         cin >> coin;
         harry.push(coin);
     }
     //get number of instructions and x
-    int is, x;
-    cin >> is >> x;
+    long long q, x;
+    cin >> q >> x;
+    //variable for getting the sum of coins and query
+    long long sumcoin = 0;
+    string query;
+    for (int i = 0; i < q; i++) {
+      if (sumcoin == x) break;
+      cin >> query;
 
-    int ccoins = -1;
-    for(int i = 0; i < is; i++) {
-        string s;
-        cin >> s;
+      if (query == "Harry") {
+        long long coin = harry.top(); //get val of coin
+        harry.pop(); //harry pops the coin to monk
+        monk.push(coin); // monk pushes coin
+        sumcoin += coin; //the sum of all coins now equals that
+      }
 
-        if (monk.size() == x) {
-            ccoins = monk.size();
-            break;
-        }
-
-        if (s == "Harry") {
-            int z = harry.top();
-            harry.pop();
-            monk.push(z);
-        }
-        if (s == "Remove") {
-            if (!monk.empty()) monk.pop();
-        }
+      if (query == "Remove") {
+        long long coin = monk.top();
+        monk.pop();
+        sumcoin -= coin;
+      }
     }
 
-    cout << ccoins << endl;
+    if (sumcoin == x) cout << monk.size() << endl;
+    else cout << - 1 << endl;
+
 }
