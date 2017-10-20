@@ -18,6 +18,7 @@ int main() {
     for (long long i = 0; i < n / 2; i++) {
         even += i;
     }
+    
     even = even*2;
     if ( n % 2 != 0) even++;
 

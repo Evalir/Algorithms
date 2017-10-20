@@ -22,17 +22,7 @@ int main() {
   //find maximum non-decreasing subsegment
   //for a subsegment to not be non-decreasing it has to either contain equal or arising numbers.
   for (int i = 0; i < nums.size() - 1; i++) {
-    
-    if (nums.size() == 1 && nums[0] == 1) {
-      best = 1;
-      break;
-    }
-    //cout << "CURRENT: " << counter << " AT I: " << i << endl;
-    if (firstelement) {
-      counter++;
-      firstelement = false;
-      }
-    //cout << "CURRENT: " << counter << " AT I: " << i << endl;
+
     if (nums[i+1] >= nums[i]) {
       counter++;
       }
@@ -41,9 +31,8 @@ int main() {
     //  cout << "CURRENT BEST: " << best << " AT I: "  << i << endl;
     if (nums[i+1] < nums[i]) {
       counter = 0;
-      firstelement = true;
       }
     }
 
-  cout << best << endl;
+  cout << best+1 << endl;
 } //end of main
