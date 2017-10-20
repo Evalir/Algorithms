@@ -44,12 +44,10 @@ int main() {
       if (mostp < primes) {
         besto = counter;
         mostp = primes;
-
         primes = 0;
       }
 
       }
-
 
       //cout << winners.count(3) << endl;
       if (winners.count(mostp) > 1) tie = true;
