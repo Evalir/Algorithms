@@ -6,10 +6,10 @@
 using namespace std;
 
 int main() {
-  int n, m; //n of students and puzzles
-  int throne;
-  int piece;
-  vector<int> pieces;
+  int n = 0, m = 0; //n of students and puzzles
+  int throne = 100060;
+  int piece = 0;
+  vector<int> pieces(60, 0);
 
   cin >> n >> m;
 
@@ -17,27 +17,16 @@ int main() {
     cin >> piece;
     pieces.push_back(piece);
   }
-  //Source of problem for solution: this for loop runs once, not until it finds solution
 
-  for (int i = 0; i < m - 3; i++) {
-    int currentp = i;
-    vector<int> subset;
+  sort(pieces.begin(), pieces.end(), greater<int>());
 
-
-    for (int j = 0; j < 4; j++) {
-      subset.push_back(pieces[i]);
-      i++;
-      cout << pieces[i] << " ";
-        
+  for(int i = 0; i < m; i++) {
+    if (pieces[i]-pieces[i+(n-1)] < throne && pieces[i]-pieces[i+(n-1)] != pieces[i]) {
+      int best = pieces[i]-pieces[i+(n-1)];
+      throne = best;
     }
-
-    sort(subset.begin(), subset.end(), greater<int>());
-    if (i == 0) throne = subset[0] - subset[subset.size() - 1]; 
-    else if(subset[0] - subset[subset.size() - 1] < throne) throne = subset[0] - subset[subset.size() - 1]; 
-    
   }
-  
+
   cout << throne << endl;
 
 }
-
