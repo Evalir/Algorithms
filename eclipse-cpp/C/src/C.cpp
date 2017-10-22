@@ -1,11 +1,3 @@
-//============================================================================
-// Name        : C.cpp
-// Author      : Enrique Ortiz
-// Version     :
-// Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
-//============================================================================
-
 #include <iostream>
 #include <cstdlib>
 using namespace std;
