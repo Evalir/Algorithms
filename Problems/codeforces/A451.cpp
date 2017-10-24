@@ -2,12 +2,12 @@
 using namespace std;
 
 int main() {
-  int n, m, intersection;
+  int n, m, biggest;
   cin >> n >> m;
+  if (n < m) biggest = n;
+  else biggest = m;
 
-  intersection = n * m;
-
-  if (intersection % 2 == 0) cout << "Malkiva" << endl;
+  if (biggest % 2 == 0) cout << "Malvika" << endl;
   else cout << "Akshat" << endl;
 
 }
