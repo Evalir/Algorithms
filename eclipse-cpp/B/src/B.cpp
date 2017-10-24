@@ -2,11 +2,14 @@
 #include <string>
 using namespace std;
 
+
+
 int main() {
 	string s;
 	cin >> s;
 
 	int best = 0;
+	int strcounter = 0;
 
 	for (int i = 0; i < s.length(); i++) {
 		int counterA = 0;
