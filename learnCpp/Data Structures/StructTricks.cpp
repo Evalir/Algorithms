@@ -9,6 +9,7 @@
 using namespace std;
 
 struct Dragon {
+
    int nivel, bono;
    string nombre;
    bool  operator<  ( const Dragon& right ) const {
