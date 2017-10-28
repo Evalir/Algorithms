@@ -6,8 +6,6 @@ using namespace std;
 typedef long long llong;
 typedef vector<int> VI;
 typedef vector<VI> VII;
-
-
 using namespace std;
 
 /*Recursive function to calculate factorial*/

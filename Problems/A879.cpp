@@ -9,6 +9,7 @@
 #include <bitset>
 #include <list>
 #define INF (int)1e9;
+#define MAX (int)1e7
 using namespace std;
 typedef long long llong;
 typedef unsigned long long uint64;
@@ -24,6 +25,7 @@ int main() {
   int N;
   cin >> N;
   vector<Doctor> doctors;
+  
   for(int i = 0; i < N; i++) {
     long long x, y;
     cin >> x >> y;
