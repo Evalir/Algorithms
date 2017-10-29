@@ -41,6 +41,7 @@ void SieveOfEratosthenes(int n)
        if (prime[p])
           cout << p << " ";
 }
+//TODO; implement way to create an array of prime elements with sieve of Eratosthenes.
 
 int main() {
 	int N;

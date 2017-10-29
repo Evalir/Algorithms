@@ -31,7 +31,10 @@ int main() {
     }
 
     //display prefix sum.
-    
+    for(int i = 0; i < N; i++) {
+        cout << "POS: " << i << " EL: " << teibol[i] << endl;
+        cout << "POS: " << i << " SU: " << PS[i] << endl;
+    }
 
 
 
