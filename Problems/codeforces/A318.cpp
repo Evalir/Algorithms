@@ -1,30 +1,35 @@
 #include <iostream>
 #include <vector>
-#include <cmath>
 #include <set>
+#include <map>
+#include <stack>
+#include <queue>
+#include <cmath>
+#include <algorithm>
+#include <bitset>
+#include <list>
+#define INF (int)1e9;
 using namespace std;
+typedef long long llong;
+typedef unsigned long long uint64;
+typedef vector<int> VI;
+typedef vector<VI> VII;
+
 int main() {
-	unsigned long long N, K;
+	long long N, K, oddiv;
 	cin >> N >> K;
-	int apos = K - (N / 2);
+	long long res;
+	
+	oddiv = (N/2)+1;
 
-	cout << apos << endl;
-	vector<unsigned long long> odeven;
-
-	if (K < N / 2) {
-		for(int i = 1; i <= N; i+= 2) {
-			odeven.push_back(i);
-			cout << i << " GEN"<< endl;
-		}
-		cout << odeven[K-1] << endl;
+	if (K <= N / 2) {
+		res = (2*K-1);
+		cout << res << endl;
 	}
-	else if (K > N / 2) {
-		for(int i = 2; i <= N; i+= 2) {
-			odeven.push_back(i);
-			cout << i << " EVEN GEN" << endl;
-		}
-		cout << odeven[apos-1] << endl;
+	else {
+		res =  2*(K - (N+1)/2);
+		cout << res << endl;
 	}
-
+ 
 	return 0;
 }
