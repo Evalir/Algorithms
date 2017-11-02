@@ -16,18 +16,20 @@ typedef vector<int> VI;
 typedef vector<VI> VII;
 
 int main() {
-   long long int N,K;
-   cin >> N >> K;
-   
-   if(K<=(N+1)/2) {
-       long long res = (K*2)-1;
-       cout<< res << endl;
-       return 0;
-   }
-   if(K>(N+1)/2) {
-       long long res = (K-((N+1)/2))*2;
-       cout << res << endl;
+    int N;
+    cin >> N;
+    int x, y;
 
-   }
+    if (N % 2 != 0) {
+        x = 9;
+        y = N-9;
+    }
+    else if (N % 2 == 0) {
+        x = 8;
+        y = N-8;
+    }
+    cout << x << " " << y << endl;
+
+ 
     return 0;
 }

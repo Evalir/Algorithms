@@ -43,10 +43,39 @@ void SieveOfEratosthenes(int n)
 }
 //TODO; implement way to create an array of prime elements with sieve of Eratosthenes.
 
+vector<int> SievePrimes(int n) { //Complexity -> O()
+
+    bool prime[n+1];
+    VI primes;
+    memset(prime, true, sizeof(prime));
+
+    for(int p = 2; p*p <= n; p++) { //loop only runs until the square root of n, there for this loop is sqrt(N)
+        if (prime[p] == true) {
+            for(int i= p*2; i <= n; i += p) {
+                prime[i] = false;
+                cout << i << " IS FALSE" << endl;
+            }
+        }
+    }
+
+    for(int i = 2; i < n; i++) {
+        if (prime[i] == false) primes.push_back(i);
+    }
+
+    return primes;
+}
+
 int main() {
 	int N;
 	cin >> N;
-	SieveOfEratosthenes(N);
+    //SieveOfEratosthenes(N);
+    VI primeArray = SievePrimes(N);
+
+    for(int i = 2; i < primeArray.size(); i++) {
+        cout << primeArray[i] << " in Array" << endl;
+    }
+
+
 
 	return 0;
 

@@ -2,8 +2,16 @@
 #include <vector>
 #include <set>
 #include <map>
+#include <stack>
+#include <queue>
+#include <cmath>
+#include <algorithm>
+#include <list>
+#include <bitset>
+#define INF (int)1e9;
 using namespace std;
 typedef long long llong;
+typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
 
@@ -23,7 +31,7 @@ unsigned int fact(int n) {
 int memFib[10000];
 unsigned int fib(int n) {
 
-	if (n == 0) return 1;
+	if (n == 0) return 0;
 	if (n == 1) return 1;
 	if (n <= 1) return n;
 
@@ -49,7 +57,7 @@ int main() {
 	}
 
 	for(int x : fibs) {
-			cout << x << " IN FIB ARRAY " <<endl;
+		cout << x << " IN FIB ARRAY " <<endl;
 	}
 
 	return 0;

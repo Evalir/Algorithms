@@ -16,18 +16,21 @@ typedef vector<int> VI;
 typedef vector<VI> VII;
 
 int main() {
-   long long int N,K;
-   cin >> N >> K;
-   
-   if(K<=(N+1)/2) {
-       long long res = (K*2)-1;
-       cout<< res << endl;
-       return 0;
-   }
-   if(K>(N+1)/2) {
-       long long res = (K-((N+1)/2))*2;
-       cout << res << endl;
+    string N, K;
+    cin >> N >> K;
+    string Nstring = "";
+    for(int i = 0; i < N.length(); i++) {
 
-   }
+        //check if nums are equal;
+        if(N[i] == K[i]) {
+            Nstring += '0';
+        }
+        else if (N[i] != K[i]) {
+            Nstring += '1';
+        }
+    }
+
+    cout << Nstring << endl;
+ 
     return 0;
 }

@@ -17,7 +17,7 @@ typedef vector<VI> VII;
 
 bool compareEl (vector<int> &el, int l, int r) {
     for(int i = l; i < r; i++){
-        if((el[l+1] > el[l] && el[r-1] > el[l])) {
+        if((el[l+1] > el[l] && el[r-1] > el[r])) {
             return true;
             cout << "CUMPLIO" << endl;
         }
@@ -25,11 +25,13 @@ bool compareEl (vector<int> &el, int l, int r) {
     }
     return false;
 }
+
 int main() {
     int N;
     cin >> N;
 
     for(int i = 0; i < N; i++) {
+
         vector<int> el;
         int dataSet;
         int counter = 0;
