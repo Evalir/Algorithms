@@ -67,14 +67,18 @@ int main() {
     }
     int minC = 0;
 
+    if (S.length() < 6) {
+        minC = 6 - S.length();
+        cout << minC << endl;
+        return 0;
+    }
+
     if (dig == false) minC++;
     if (low == false) minC++;
     if (high == false) minC++;
     if (sp == false) minC++;
 
-    if (minC + S.length() < 6) {
-        minC += 6 - (minC - S.length());
-    }
+
     cout << minC << endl;
 
 
