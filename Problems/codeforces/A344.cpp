@@ -16,9 +16,8 @@ typedef vector<int> VI;
 typedef vector<VI> VII;
 
 int main() {
-    int N, K;
-    int counter = 0;
-    int lonemag = 1;
+    int N;
+    int counter = 1;
     cin >> N;
     vector<string> magnets;
 
@@ -29,14 +28,10 @@ int main() {
     }
 
     for(int i = 0; i < N - 1; i++) {
-        if (magnets[i] == magnets[i+1]) {
+        if (magnets[i] != magnets[i+1]) {
             counter++;
         } 
-        else lonemag++;
     }
-
-    if (magnets.size() == 1) counter = 1;
-    if (lonemag == magnets.size()) counter = lonemag;
 
     cout << counter << endl;
  
