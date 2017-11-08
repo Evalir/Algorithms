@@ -19,7 +19,7 @@ typedef vector<VI> VII;
 int main() {
   int S, B; //n of soldiers and case report
 
-  while(2==scanf("%d %d", &S, &B) && S != 0 && B != 0) {
+  while (2==scanf("%d %d", &S, &B) && S != 0 && B != 0) {
     set<int> el;
 
     //init set
