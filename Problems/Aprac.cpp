@@ -17,25 +17,18 @@ typedef vector<int> VI;
 typedef vector<VI> VII;
 
 int main() {
+    int N;
     string S;
     set<char> letters;
-    getline(cin, S);
-
-    for(int i = 0; i < S.length(); i++) {
-
-        if (S[i] == '{' || S[i] == '}' || S[i] == ',') {
-            //cout <<"changed " << S[i] << endl;
-            S[i] = ' ';
-            
+    while(cin >> S) {
+        for(int i = 0; i < S.length(); i++) {
+            letters.insert(S[i]);
         }
     }
 
-    for(int i = 0; i < S.length(); i++) {
-        if (S[i] != ' ') letters.insert(S[i]);
-    }
+    if (letters.size() == 26) cout << "Y" << endl;
+    else cout << "N" << endl;
 
-    //cout << S << endl;
-    cout << letters.size() << endl;
-
+ 
     return 0;
 }
