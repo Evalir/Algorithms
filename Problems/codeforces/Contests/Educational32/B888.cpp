@@ -21,7 +21,8 @@ struct Point {
     int x,y;
 };
 
-int main() {
+int main() { //hey
+    
     int N;
     int best = 0;
     int counter = 0;
