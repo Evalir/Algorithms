@@ -20,9 +20,8 @@ int main() {
     //sort manually with bubble sort
     //Running time of this algorithm ->  O(n^2)
     for(int i = 0; i < x; i++) {
-
     		for (int j = 0; j < x-1; j++) {
-	    
+
     			if (vi[j] > vi[j+1]) {
     				int temp = vi[j+1];
     				vi[j+1] = vi[j];

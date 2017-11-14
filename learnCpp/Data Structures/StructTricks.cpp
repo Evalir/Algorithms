@@ -1,11 +1,8 @@
 #include <iostream>
-
 #include <cstring>
-
 #include <string>
 #include <vector>
 #include <algorithm>
-
 using namespace std;
 
 struct Dragon {
