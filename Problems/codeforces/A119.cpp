@@ -21,7 +21,6 @@ int joa(int a, int h) {
     for(int i = 1; i <= a; i++) {
         if (a % i == 0 && h % i == 0) counter = i;
     }
-    //cout << "TOOK COUNT " << counter << endl;
     return counter;
 }
 
@@ -31,14 +30,10 @@ int main() {
     int A, B, HEAP; //vars to read
     int rheap = 1;
     int counter = 0;
-    cin >> A >> B >> HEAP; //read
-    // while(HEAP != 0) {
-    //     rheap = joa(A, HEAP);
-    //     HEAP -= rheap;
-    //     counter++;
-    // }
+    cin >> A >> B >> HEAP;
 
     for(int i = 0; HEAP > 0; i++) {
+
         if (played == false) {
         rheap = joa(A, HEAP);
         HEAP -= rheap;
@@ -52,10 +47,9 @@ int main() {
             played = false;
         }
     }
-    //Antisimon - 1, Simon - 0.
+
     if (counter % 2 == 0) cout << "1" << endl;
     else cout << "0" << endl;
- //   cout << counter << endl;
  
     return 0;
 }
