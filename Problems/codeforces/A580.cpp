@@ -8,13 +8,12 @@ int main() {
   int best = 0;
   int counter = 0;
   int n;
-  long sub;
-  bool firstelement = true;
   vector<int> nums;
 
   cin >> n;
   //read sequence
   for (int i = 0; i < n; i++) {
+    long sub;
     cin >> sub;
     nums.push_back(sub);
   }

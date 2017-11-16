@@ -18,6 +18,9 @@
         "set": "cpp",
         "stack": "cpp",
         "utility": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "algorithm": "cpp",
+        "chrono": "cpp",
+        "limits": "cpp"
     }
 }
