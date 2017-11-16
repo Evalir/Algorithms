@@ -21,36 +21,34 @@ typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
  
- int greatSum(VI& arr, int N, int MAX) {
+ long greatSum(VI& arr, long N, long MAX) {
     int l = 0, r = 0;
-    int sum = 0;
-    int ans = 0;
+    long sum = 0;
+    long ans = 0;
     while(l < N) {
         while (r < N && sum + arr[r] <= MAX ) {
             sum += arr[r];
-            cout << "USED " << arr[r] << endl;
             r++;
         }
         ans = max(ans, sum);
         sum -= arr[l];
-        cout << "SUBTRACTED " << arr[l] << endl;
         l++;
     }
 
     return ans;
  }
 int main(){
-    int N, M;
+    long N, M;
     cin >> N >> M;
     VI arr;
 
     for(int i = 0; i < N; i++) {
-        int x;
+        long x;
         cin >> x;
         arr.push_back(x);
     }
 
-    int res = greatSum(arr, N, M);
+    long res = greatSum(arr, N, M);
 
     cout << res << endl;
 
