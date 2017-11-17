@@ -43,7 +43,7 @@ int main(int argc, char* argv[]) {
    // sort( dragones.begin(), dragones.end(), compare_dragons );
 
    // usa un anonymous function (lambda) de C++11
-   sort( dragones.begin(), dragones.end(),
+   sort(dragones.begin(), dragones.end(),
          [&] (const Dragon& d1, const Dragon& d2) -> bool {
             if (d1.nivel < d2.nivel)
                return true;
@@ -58,3 +58,5 @@ int main(int argc, char* argv[]) {
 
    return 0;
 }
+
+   

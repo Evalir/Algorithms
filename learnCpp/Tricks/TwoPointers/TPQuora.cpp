@@ -1,6 +1,5 @@
 /*
 Motivation Problem: Given a sorted array A,A, having N integers. You need to find any pair(i,j)(i,j) having sum as given number XX.
-
 Constraints: Array AA contains about 105105 integers with each having values around 109109.
 */
 
@@ -25,6 +24,7 @@ struct tuple {
     int l, r;
 };
 
+//function to get pair that sums S;
 tuple getPair(VI& el, int S, int N) {
     int l = 0, r = N-1;
     while( l < r) {
@@ -61,8 +61,3 @@ int main(){
     cout << p.l << " AND "<< p.r << endl;
 
 }
-
-/*
-6 10
-1 3 4 6 8 10
-*/

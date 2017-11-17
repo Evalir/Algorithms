@@ -37,6 +37,7 @@ typedef vector<VI> VII;
 
     return ans;
  }
+
 int main(){
     long N, M;
     cin >> N >> M;
