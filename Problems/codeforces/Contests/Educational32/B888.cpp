@@ -16,45 +16,32 @@ typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
 
-
 struct Point {
     int x,y;
 };
 
-int main() { //hey
-    
+int main() {
+
     int N;
-    int best = 0;
-    int counter = 0;
-    string M;
     Point p;
-    cin >> N;
-    
-        cin >> M;
+    p.x = 0;
+    p.y = 0;
+    string steps;
+    cin >> N >> steps;
 
-    for(int i = 0; i < M.length(); i++) {
-        counter++;
-        //cout << p.x << " X Y " << p.y << endl;
-
-        if(M[i] == 'U') {
+    for(int i = 0; i < N; i++) {
+        if (steps[i] == 'U')
             p.y += 1;
-        }
-        if(M[i] == 'D') {
+        else if (steps[i] == 'D')
             p.y -= 1;
-        }
-        if(M[i] == 'L') {
+        else if (steps[i] == 'L')
             p.x -= 1;
-        }
-        if(M[i] == 'R') {
+        else if (steps[i] == 'R')
             p.x += 1;
-        }
-
-        if(p.x == 0 && p.y == 0) {
-            best = counter;
-        }
     }
-
-    cout << best << endl;
- 
+    
+    int dx = abs(p.x);
+    int dy = abs(p.y);
+    cout << N - dx - dy << endl;
     return 0;
 }

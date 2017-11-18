@@ -21,6 +21,7 @@ typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
  
+ //two pointers technique to find biggest sum that is <= MAX
  long greatSum(VI& arr, long N, long MAX) {
     int l = 0, r = 0;
     long sum = 0;
