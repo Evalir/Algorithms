@@ -19,18 +19,18 @@ typedef vector<VI> VII;
 int main() {
     int N;
     cin >> N;
-    if (N < 6) {
-        if(N-1 == 0) cout << "Sheldon" << endl;
-        else if (N-1 == 1) cout << "Leonard" << endl;
-        else if (N-1 == 2) cout << "Penny" << endl;
-        else if (N-1 == 3) cout << "Rajesh" << endl;
-        else if (N-1 == 4) cout << "Howard" << endl;
-    } else if (N > 6) {
-        if(N%6 == 0) cout << "Sheldon" << endl;
-        else if (N%6 == 1) cout << "Leonard" << endl;
-        else if (N%6 == 2) cout << "Penny" << endl;
-        else if (N%6 == 3) cout << "Rajesh" << endl;
-        else if (N%6 == 4) cout << "Howard" << endl;
+    if (N % 2 == 0) {
+        if((N % 5)-1 == 0) cout << "Sheldon" << endl;
+        else if ((N % 5)-1 == 1) cout << "Leonard" << endl;
+        else if ((N % 5)-1 == 2) cout << "Penny" << endl;
+        else if ((N % 5)-1 == 3) cout << "Rajesh" << endl;
+        else if ((N % 5)-1 == -1) cout << "Howard" << endl;
+    } else if (N % 2 != 0) {
+        if((N % 5)-1 == 0) cout << "Sheldon" << endl;
+        else if ((N % 5)-1== 1) cout << "Leonard" << endl;
+        else if ((N % 5)-1 == 2) cout << "Penny" << endl;
+        else if ((N % 5)-1 == 3) cout << "Rajesh" << endl;
+        else if ((N % 5)-1 == -1) cout << "Howard" << endl;
     }
 
 

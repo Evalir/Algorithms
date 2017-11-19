@@ -1,0 +1,12 @@
+ mem(N, 0);
+  for(int i = 1; i <= N; i++) {
+    int x;
+    cin >> x;
+    mem[x] = i;
+  }
+
+  for(int i = 1; i <= N; i++) {
+    cout << mem[i] << " ";
+  }
+  return 0;
+}
