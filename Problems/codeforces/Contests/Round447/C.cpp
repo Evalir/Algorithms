@@ -17,7 +17,7 @@ typedef vector<VI> VII;
 
 int GCD(int a, int b) {
    if (b==0) return a;
-   //cout << b << " " << a%b << endl;
+ 
    return GCD(b,a%b);
 }
 
@@ -25,38 +25,38 @@ int main() {
 	int N;
 	cin >> N;
 	VI el;
-	VI freq(N, 0);
+	
 
 	for(int i = 0; i < N; i++) {
 		int x;
 		cin >> x;
-		freq[x]++;
 		el.push_back(x);
 	}
 
-	multiset<int> seq;
-	set<int> atseq;
-	for(int i = 0; i < N-1; i++) {
-		seq.insert(GCD(el[i], el[i+1]));
+	int G = el[0];
+	for(int i = 0; i < el.size()-1; i++) {
+		G = GCD(G, el[i+1]);
+		if (G != el[0]) {
+			cout << "-1" << endl;
+			return 0;
+		} else {
+			continue;
+		}
 	}
-
+	vector<int>newseq;
 	for(int i = 0; i < el.size(); i++) {
-		if (seq.count(el[i]) <= 1){
-			cout << el[i] << endl;
-			atseq.insert(el[i]);
+
+		if (i == 0) continue;
+		else {
+			newseq.push_back(G);
+			newseq.push_back(el[i]);
 		}
 	}
-
-
-	if(atseq.size() != 0) {
-		cout << atseq.size() << endl;
-		for(int x: atseq) {
-			cout << x << " ";
-		}
-	}
-	else {
-		cout << -1 << endl;
+	cout << newseq.size() + 1 << endl;
+	for (int i = 0; i < newseq.size(); ++i) {
+		cout << newseq[i] << " ";
 	}
 
+	cout << G << endl;
 	return 0;
 }
