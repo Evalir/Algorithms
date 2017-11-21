@@ -1,0 +1,41 @@
+nt ap = 0;
+
+    for(int i = 0; i < N; i++) {
+        int x;
+        cin >> x;
+        el.push_back(x);
+    }
+
+    for(int i = 0; i < N; i++) {
+        if (i == 0) {
+            if (el[i+1] > el[i]) ap++;
+            else if (el[i+1] < el[i]) ap++;
+        }
+        else if (i > 1){
+            int counter = 0;
+            for(int j = i-1; j > -1; j--) {
+                //cout << " RAN BIG AT I: " << i << " WITH EL " << el[i] <<" " << el[j] << endl;
+                if (el[i] > el[j]) {
+                    counter++;
+                //cout << "EL " << el[i] << " IS BIGGER THAN " << el[j] << endl;
+                }
+                else br                else br             ou     == i) {
+                a                     //cout << "CO              " <                a " <                ;
+                                r = 0                r(int                       {
+                                rOW AT I: " << i << " WITH                        el[j]  <endl;
+                         < e                            counter++;
+                  //  cout << "EL " << el[i] << " IS SMOL THAN " << el[j] << endl;
+                }
+                else break;
+            if (counter == i) {
+                ap++;
+                //cout << "COUNTED low I: " << i << " COUNTER: " << counter <<endl;
+            }
+            }
+        }
+    }
+
+    cout << ap << endl;
+
+}
+
