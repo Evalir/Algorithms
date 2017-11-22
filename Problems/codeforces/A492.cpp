@@ -28,14 +28,25 @@ int main(){
     cin >> N;
     VI cubes;
     int sum = 0;
-    //int x = recurseSum(25);
-    for(int i = 1; sum < N; i++) {
+    int track = 0;
+
+    for(int i = 0; sum < N; i++) {
+        
         sum += i;
+        track++;
+        int check = 0;
         cubes.push_back(i);
+        for(int j = 0; j < cubes.size(); j++) {
+            check += cubes[j];
+            cout << check << " THIS IS"<<endl;
+
+            if(check > N) break;
+        }
+        
     }
         //cout << x << endl;
     //cout  << counter << endl;
     cout << sum << endl;
-    cout << cubes.size() << endl;
+    cout << track << endl;
     return 0;
 }

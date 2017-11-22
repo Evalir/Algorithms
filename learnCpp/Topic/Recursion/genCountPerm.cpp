@@ -30,26 +30,22 @@ vector<vector<int> > generateAllPermutations(vector<int> numbers) {
     return ret;
 }
 
-// int countPermutations(vector<int> numbers) {
-//     int counter = 0;
+int countPermutations(vector<int> numbers) {
+    int counter = 0;
     
-//     if(numbers.size() == 0){
-//         return 1;
-//     }
-//     for(int i = 0; i < numbers.size(); i++) {
-//         int v = numbers[i];
-//         vector<int> remaining = numbers;
-//         remaining.erase(remaining.begin() + i);
+    if(numbers.size() == 0){
+        return 1;
+    }
+    for(int i = 0; i < numbers.size(); i++) {
+        int v = numbers[i];
+        vector<int> remaining = numbers;
+        remaining.erase(remaining.begin() + i);
         
-//         vector<vector<int> > subPermutations = countPermutations(remaining);
-
-//         for(vector<int> subPermutation : subPermutations) {
-//             subPermutation.insert(subPermutation.begin(), v);
-
-//         }
-//     }
-//     return counter;
-// }
+        int subPermutations = countPermutations(remaining);
+        counter += subPermutations;
+    }
+    return counter;
+}
 
 int recurseSum(vector<int> nums, int idx) {
     int addArr = 0;
@@ -84,14 +80,15 @@ int main(){
     n.push_back(1);
     n.push_back(2);
     n.push_back(3);
-    n.push_back(4);
+    //n.push_back(4);
+    //n.push_back(5);
     // for(vector<int> permutation : generateAllPermutations(n)) {
     //     for(int v : permutation)
     //         cout << v << " ";
     //     cout << endl;
     // }
-        
-    cout << recurseSum(n,n.size()) << endl;
-    cout << cPWithVector(n, n.size()) << endl;
+    cout << countPermutations(n) << endl;  
+    //cout << recurseSum(n,n.size()) << endl;
+    //cout << cPWithVector(n, n.size()) << endl;
     return 0;
 }
