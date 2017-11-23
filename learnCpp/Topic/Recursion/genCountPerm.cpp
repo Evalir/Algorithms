@@ -37,7 +37,6 @@ int countPermutations(vector<int> numbers) {
         return 1;
     }
     for(int i = 0; i < numbers.size(); i++) {
-        int v = numbers[i];
         vector<int> remaining = numbers;
         remaining.erase(remaining.begin() + i);
         

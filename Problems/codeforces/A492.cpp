@@ -14,39 +14,53 @@ typedef long long llong;
 typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
- 
-int counter = 0;
+
+int N;
+
 int recurseSum(int idx) {
-    counter++;
-    if (idx == 0) return 1;
-
-    return idx - recurseSum(idx-1);
-}
- 
-int main(){
-    int N;
-    cin >> N;
-    VI cubes;
-    int sum = 0;
-    int track = 0;
-
-    for(int i = 0; sum < N; i++) {
-        
-        sum += i;
-        track++;
-        int check = 0;
-        cubes.push_back(i);
-        for(int j = 0; j < cubes.size(); j++) {
-            check += cubes[j];
-            cout << check << " THIS IS"<<endl;
-
-            if(check > N) break;
-        }
-        
+    if (idx == 0) {
+        return 0;
     }
-        //cout << x << endl;
-    //cout  << counter << endl;
-    cout << sum << endl;
-    cout << track << endl;
+
+    int sum = idx + recurseSum(idx-1);
+
+    return sum;
+}
+int main(){
+    cin >> N;
+
+    if (N == 1){ 
+        cout << 1 << endl;
+        return 0;
+    }
+
+    VI PS;
+    VI PS2;
+    int acc = 0;
+    for(int i = 1; i <= N; i++) {
+        acc = recurseSum(i);
+
+        PS.push_back(acc);
+    //    cout << acc << " HEY" << endl;
+    }
+
+    for (int i = 0; i <= N; i++) {
+        if (i != 0) {
+        PS2.push_back(PS[i] + PS2[i-1]);   
+        }
+        else {
+        PS2.push_back(1);
+        }
+    }
+
+    for(int i = 0; i < N; i++) {
+        if (PS2[i] > N) {
+            cout << i << endl;
+            return 0;
+        }
+    }
+   
+    int ans = 0;
+
     return 0;
 }
