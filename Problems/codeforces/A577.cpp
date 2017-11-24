@@ -15,7 +15,7 @@ typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
  
- bool isPrime(int N) {
+ bool isPrime(long N) {
      for(int i = 2; i*i < N; i++) {
         if (N % i == 0) return false;
     }
@@ -25,13 +25,12 @@ int main(){
     long T, N;
     cin >> T >> N;
     int counter = 0;
-    if (isPrime(N)) {
-        cout << 0 << endl;
-        cout << "IS PRIME" << endl;
-        return 0;
-    }
-    else {
-    if (N % 2 != 0 && !isPrime(N)){
+
+    if (N % 2 != 0){
+        if (isPrime(N) && N > 10) {
+            cout << 0 << endl;
+            return 0;
+        }
         for(int i = 1; i <= T; i++) {
             if (N % i == 0) {
                 counter++;
@@ -51,7 +50,6 @@ int main(){
             }
         }
     } 
-} 
 
     cout << counter << endl;
 
