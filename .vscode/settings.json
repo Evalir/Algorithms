@@ -27,6 +27,7 @@
         "__bit_reference": "cpp",
         "functional": "cpp",
         "memory": "cpp",
-        "tuple": "cpp"
+        "tuple": "cpp",
+        "__functional_03": "cpp"
     }
 }
