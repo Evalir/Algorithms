@@ -22,48 +22,21 @@ int main() {
 	int rides = 0;
 	int cost = 0;
 	int best = INF;
-
-	//simulate buying one way tickets
+	bool taken = 0;
 	while (rides < N) {
-		rides++;
-		cost += A;
+		if (!taken) {
+			rides += M;
+			cost += B;
+			taken = 1;
+		}
+		else {
+			rides++;
+			cost += A;
+			taken = 0;
+		}
 	}
 
-	best = min(best, cost);
+	cout << cost << endl;
 
-	//now simulate buying special tickets
-	rides = 0;
-	cost = 0;
-	while (rides < N) {
-		cost += B;
-		rides += M;
-	}
-
-	best = min(best, cost);
-
-	//simulate both
-	rides = 0;
-	cost = 0;
-	cost = B * (N / M);
-	rides = M * (N / M);
-	if (rides < N) {
-		cost += A;
-		rides++;
-	}
-	best = min (best, cost);
-		//cout << "COST BEFORE IT IS " << cost << endl;
-	cout << best << endl;
-
-
-	// if (N % 2 == 0) {
-	// 	cost = B * (N / M);
-	// 	rides = M * (N / M);
-	// }
-
-	// if (rides < N) {
-	// 	cost += A;
-	// 	rides++;
-	// }
-	
 	return 0;
 }

@@ -26,30 +26,10 @@ int main(){
     cin >> T >> N;
     int counter = 0;
 
-    if (N % 2 != 0){
-        if (isPrime(N) && N > 10) {
-            cout << 0 << endl;
-            return 0;
-        }
-        for(int i = 1; i <= T; i++) {
-            if (N % i == 0) {
-                counter++;
-                //cout << N << " AND " << i << " DIVISIBLE" << endl;
-            }
-        // else if (N % i == 1) {
-        //     if (i == 5) counter++;
-        //     //cout << N << " AND " << i << " DIVISIBLE" << endl;
-        // }
-        }
+    for(int i = 1; i <= T; i++) {
+        if (N % i == 0 && N/i <= T) counter++;
     }
-    else {
-        for(int i = 1; i <= T; i++) {
-            if (N % i == 0 && i != 1) {
-                counter++;
-                //cout << N << " AND " << i << " DIVISIBLE" << endl;
-            }
-        }
-    } 
+    
 
     cout << counter << endl;
 

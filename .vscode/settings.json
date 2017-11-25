@@ -23,6 +23,10 @@
         "chrono": "cpp",
         "limits": "cpp",
         "iosfwd": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "__bit_reference": "cpp",
+        "functional": "cpp",
+        "memory": "cpp",
+        "tuple": "cpp"
     }
 }
