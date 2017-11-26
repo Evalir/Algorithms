@@ -37,6 +37,7 @@ int main(){
         elements.insert(x);
         freq2[x]++;
     }
+    
     for(auto x : freq1) {
         auto search = freq2.find(x.first);
 
