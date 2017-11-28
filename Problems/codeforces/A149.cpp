@@ -43,5 +43,7 @@ int main(){
                 
         }
     }
+
+    if (ans == INF || ans > 100000000) ans = -1;
     cout << ans << endl;
 }

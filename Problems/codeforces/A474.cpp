@@ -20,23 +20,32 @@ typedef vector<VI> VII;
 int main(){
     char P;
     cin >> P;
-    vector<char> keyboard = {'q','w','e','r','t','y','u','i','o','p','a','s','d','f','g',
-                            'h','j','k','l',';','z','x','c','v','b','n','m',',','.','/'};
     string message;
     cin >> message;
 
-    if (P == 'L') {
+    string keyboard = "qwertyuiopasdfghjkl;zxcvbnm,./";
+
+    if (P == 'R') {
         for(int i = 0; i < message.length(); i++) {
-            cout << 
+            //search for key and print
+            for (int j = 0; j < keyboard.length(); j++) {
+                //cout << "TRYING TO MATCH " << message[i] << " TO " << keyboard[j] << endl;
+                if (message[i] == keyboard[j]) {
+                    cout << keyboard[j-1];
+                    break;
+                }
+            }
         }
     }
-    
+    else {
+        for(int i = 0; i < message.length(); i++) {
+            for (int j = 0; j < keyboard.length(); j++) {
+                if (message[i] == keyboard[j]) {
+                    cout << keyboard[j+1];
+                }
+            }
+        }
+    }
+
     return 0;
-
 }
-
-/*
-qwertyuiop
-asdfghjkl;
-zxcvbnm,./
-*/
