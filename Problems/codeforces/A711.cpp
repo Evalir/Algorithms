@@ -64,16 +64,3 @@ int main(){
     else cout << "NO" << endl;
     return 0;
 }
-
-/*
-6
-OO|OX
-XO|XX
-OX|OO
-XX|OX
-OO|OO
-OO|XX
-
-OUTPUT : YES
-
-*/
