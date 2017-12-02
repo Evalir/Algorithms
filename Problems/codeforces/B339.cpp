@@ -5,33 +5,27 @@ using namespace std;
 typedef vector<int> VI;
 
 int main() {
-    int n, m;
-    cin >> n >> m;
+    int N, M;
+    cin >> N >> M;
     VI el;
 
-    for(int i = 0; i < m; i++) {
+    int counter = 0;
+
+    for(int i = 0; i < M; i++) {
         int x;
         cin >> x;
         el.push_back(x);
     }
-
-    int done = 0;
-    int counter = 0;
-
-    for(int i = 0; i < m; i++) {
-        if (el[i] == el[i+1]) {
-
+    counter = el[0] - 1;
+    for(int i = 1; i < M; i++) {
+        // if a <= b then b -a sec
+        if (el[i-1] <= el[i]) {
+            counter += el[i] - el[i-1];
         }
-        else {
-            for(int j = 0; j <= el[i]; j++) {
-                cout << counter << " AT el[i] " << el[i] << endl;
-                counter++;
-            }
-            done++;
+        else if (el[i-1] > el[i]) {
+            counter += abs(N - el[i-1] + el[i]);
         }
     }
-    
-
     cout << counter << endl;
     return 0;
 }
