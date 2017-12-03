@@ -1,5 +1,6 @@
 /*
-Motivation Problem: Given an array having NN integers,, find the contiguous subarray having sum as great as possible,, but not greater than MM. For details on the statement, refer the problem link here
+Motivation Problem: Given an array having NN integers,, find the contiguous subarray having sum as great as possible, 
+but not greater than MM. For details on the statement, refer the problem link here
 
 Constraints: Array can have atmost 105105 elements and each number will be non-negative and can be as big as 109109.
 */

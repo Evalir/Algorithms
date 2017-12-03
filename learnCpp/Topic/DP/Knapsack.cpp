@@ -23,7 +23,7 @@ struct Box {
 };
 
 
-int joa(vector<Box> boxes, int capacity) {
+int joaGetWeight(vector<Box> boxes, int capacity) {
 	int best = 0;
 
 	for(int i = 0; i < boxes.size(); i++) {

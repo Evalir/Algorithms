@@ -27,7 +27,7 @@ int joa(int L, int R) {
 	if (L > R)
 		return 0;
 
-	if (mem[N][N] != 0)
+	if (mem[N][N] != 0) //Uuuuh fix this?
 
 	int year = N - (R - L + 1) + 1;
 
