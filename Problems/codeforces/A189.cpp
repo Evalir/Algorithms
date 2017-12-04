@@ -14,7 +14,7 @@ typedef long long llong;
 typedef unsigned long long uint64;
 typedef vector<int> VI;
 typedef vector<VI> VII;
- 
+
 int counter = 0;
 int joa(int ribbonSize, int a, int b, int c) {
     counter++;
@@ -31,7 +31,8 @@ int joa(int ribbonSize, int a, int b, int c) {
         int mid2 = joa(ribbonSize/2, a, b, c);
     }
 
-    
+    return counter;
+}
 
 
 // }
