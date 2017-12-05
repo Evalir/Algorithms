@@ -31,6 +31,8 @@ int main() {
       continue;
   }
   if (counterF > counterS) cout << "YES" << endl;
-  cout << "NO" << endl;
+  else cout << "NO" << endl;
   return 0;
 }
+
+//is it fixed?
