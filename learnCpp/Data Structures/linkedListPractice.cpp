@@ -1,7 +1,18 @@
 #include <iostream>
-#include <list>
-using namespace std;
+#include <vector>
+#include <algorithm>
 
 int main() {
-    
+	int x;
+	cin >> x;
+	VI el;
+	for(int i = 0; i < x; i++){
+		int z;
+		cin >> z;
+		el.pb(z);
+	}
+
+	cout << el[0] << endl;
+	return 0;
+
 }
