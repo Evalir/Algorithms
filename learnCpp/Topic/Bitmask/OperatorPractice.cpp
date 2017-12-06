@@ -29,7 +29,7 @@ int main(){
     N = N << 1;
     cout << N << endl;
     //USE OR OPERATOR | TO TURN A BIT FROM SET
-    //THIS OPERATION WILL YIELD THE NUMBER 42, CONVERTING IT TO 101010
+    //THIS OPERATION WILL YIELD THE NUMBER 42 FROM 34, CONVERTING IT TO 101010
     N |= (1 << 3); //shift bit 1 three times to the left, putting it into 3rd position zero base
     cout << N << " WITH OR OPERATION, original was 34" << endl;
 
