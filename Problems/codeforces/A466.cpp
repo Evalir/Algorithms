@@ -21,19 +21,31 @@ int main() {
 
 	int rides = 0;
 	int cost = 0;
+	int best = INF;
 
-	while (rides < N) {
-
-		if (M*A <= B) {
-			rides++;
-			cost += A;
-			cout << "BOUGHT SINGLE" << "COST IS: " << cost<<endl;
-		}
-		else {
-			
-		}
+	if (N*A <= B) {
+		best = N*A;
+		cout << best << endl;
+		return 0;
 	}
 
-	cout << cost << endl;
+	best = min(best, cost);
+	
+	rides = 0;
+	cost = 0;
+	while (rides < N) {
+		cost += B;
+		rides += M;
+		int cost1 = cost;
+		int ridesc = rides;
+		while (ridesc < N) {
+			cost1 += A;
+			ridesc++;	
+		} 
+		best = min(best, cost1);
+	}
+
+	best = min(best, cost);
+	cout << best << endl;
 	return 0;
 }
