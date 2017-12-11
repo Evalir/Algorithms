@@ -28,11 +28,7 @@ int main() {
 		cout << best << endl;
 		return 0;
 	}
-
-	best = min(best, cost);
 	
-	rides = 0;
-	cost = 0;
 	while (rides < N) {
 		cost += B;
 		rides += M;

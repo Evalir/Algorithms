@@ -36,9 +36,9 @@ int main(){
         priority_queue<int, vector<int>, IntCompare > PQ;
     
         for(int i = 0; i < N; i++) {
-        int x;
-        cin >> x;
-        PQ.push(x);
+            int x;
+            cin >> x;
+            PQ.push(x);
         }
 
         while(PQ.size() > 1) {
@@ -51,10 +51,8 @@ int main(){
             acc += c;
             PQ.push(c);
         }
-
     cout << acc << endl;
-    
-}
+    }
 
     return 0;
 }
