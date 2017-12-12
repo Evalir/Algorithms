@@ -28,6 +28,7 @@ int joaGetTen(int a) {
 	}
 	return num;
 }
+
 int main() {
 	int T;
 	cin >> T;
