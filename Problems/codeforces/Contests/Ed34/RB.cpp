@@ -33,7 +33,7 @@ struct monst {
 };
 
 
-int main(){
+int main() {
     Vova vova;
     monst modcrab;
     cin >> vova.h >> vova.attack >> vova.pot;

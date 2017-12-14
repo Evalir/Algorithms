@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-
+#define pb push_back
 int main() {
 	int x;
 	cin >> x;

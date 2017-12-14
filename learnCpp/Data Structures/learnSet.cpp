@@ -17,7 +17,7 @@ int main() {
     S.erase(Y);
     
     cout << "Iterate over elements with c++11 style and print" << endl;
-    for(int x : S) //C++11 style loop
+    for(auto x : S) //C++11 style loop
 	cout << x << " ";
 
     cout << endl;

@@ -29,11 +29,12 @@ int main(int argc, char* argv[]) {
    int N;
    cin >> N;
    vector<Dragon> dragones;
+   
    for (int i = 0; i < N; i++) {
-      int nivel, bono;
-      string nombre;
-      cin >> nivel >> bono >> nombre;
-      dragones.push_back({ nivel, bono, nombre });
+            int nivel, bono;
+            string nombre;
+            cin >> nivel >> bono >> nombre;
+            dragones.push_back({ nivel, bono, nombre });
    }
 
    // usa el operator< definido en el struct Dragon
