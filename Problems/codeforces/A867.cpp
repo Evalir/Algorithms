@@ -34,5 +34,3 @@ int main() {
   else cout << "NO" << endl;
   return 0;
 }
-
-//is it fixed?
