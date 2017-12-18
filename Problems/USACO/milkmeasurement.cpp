@@ -47,12 +47,12 @@ int main(){
     currCow["Bessie"] = 7;
     currCow["Mildred"] = 7;
     currCow["Elsie"] = 7;
+    
     for(auto x : cows) {
         currCow[x.second.first] += x.second.second;
         int currHigh = 7;
-        tH = 0;
         for(auto x : cows) {
-            if (currCow[x.second.first] > pilaHigh) {
+            if (currCow[x.second.first] > pilaHigh && tH == 0) {
                 count++;
                 pilaHigh = currCow[x.second.first];
                 cout << "HIGH IS " << x.second.first << endl;
@@ -60,13 +60,15 @@ int main(){
             }
         }
 
-        // if (tH == 0) {
-        //     count++;
-        //     for(auto x : cows) {
-        //         pilaHigh = max(pilaHigh, currCow[x.second.first]);
-        //         cout << "NEW H IS " << x.second.first << endl;
-        //     }
-        // }
+        if (tH == 0) {
+            for(auto x : cows) {
+                if (currCow[x.second.first] > pilaHigh) {
+                    count++;
+                    pilaHigh = currCow[x.second.first];
+                    cout << "HIGH IS " << x.second.first << endl;
+                    }
+            }
+        }
     }
     cout << count << endl;
     return 0;
