@@ -28,6 +28,7 @@
         "functional": "cpp",
         "memory": "cpp",
         "tuple": "cpp",
-        "__functional_03": "cpp"
+        "__functional_03": "cpp",
+        "ios": "cpp"
     }
 }
