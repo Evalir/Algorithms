@@ -29,6 +29,8 @@
         "memory": "cpp",
         "tuple": "cpp",
         "__functional_03": "cpp",
-        "ios": "cpp"
+        "ios": "cpp",
+        "ratio": "cpp",
+        "sstream": "cpp"
     }
 }

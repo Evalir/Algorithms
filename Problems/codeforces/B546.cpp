@@ -27,21 +27,33 @@ typedef pair<int, int> ii;
 int main(){
     int N;
     cin >> N;
-    FREQ nums;
+    VI badges;
+    VI freq(N+10, 0);
+    int coins = 0;
     for(int i = 0; i < N; i++) {
         int x;
-        cin >> x;
-        nums[x]++;
+        cin >>x;
+        badges.pb(x);
+        freq[x]++;
     }
-    
-    if (nums.find(2) == nums.end()) cout << nums[1] / 3 << endl;
-    else if ((nums.find(1) == nums.end())) cout << 0 << endl;
-    else if (nums[2] != 0 && (nums[1] > nums[2])) {
-        int maxv = nums[2] + ((nums[1] - nums[2]) / 3);
-        cout << maxv << endl;
+
+    sort(all(badges));
+
+    for(int i = 0; i < N; i++) {
+        if (freq[badges[i]] > 1) {
+            cout << freq[badges[i]] << endl;
+            for(int j = 1; j < N*N; j++) {
+                if (freq[j] == 0) {
+                    badges[i] += j-badges[i];
+                    cout << "BADGE IS NOW " << badges[i] << endl;
+                    freq[badges[i]]--;
+                    freq[j]++;
+                    coins += j-badges[i];
+                    break;
+                }
+            }
         }
-    else if (nums[1] != 0 && (nums[1] == nums[2])) cout << nums[2] << endl;
-    else if (nums[1] != 0 && (nums[1] < nums[2])) cout << nums[1] << endl;
-    
+    }
+    cout << coins << endl;
     return 0;
 }

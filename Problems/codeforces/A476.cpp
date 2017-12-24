@@ -25,54 +25,19 @@ typedef map<int,int> FREQ;
 typedef pair<int, int> ii;
 
 int main(){
-    int N, M;
-    cin >> N >> M;
-    int steps = 1;
-    int climbed = 0;
-    int ans = INF;
-    bool br  = 0;
-    //alternate
-    //choose 1
-    int count = 0;
-    while(steps <= N && steps % M != 0) {
-        count++;
-        cout << "IT " << count << endl;
-        steps++;
-        climbed++;
-        int a = steps;
-        int b = climbed;
-        if (steps % M == 0 && climbed == N) ans = min(ans, steps);
-        //choose 2
-        while(a <= N && a % M != 0) {
-            a++;
-            b += 2;
-            if (a % M == 0 && b == N) {
-                ans = min(ans, a);
-                br = 1;
-                break;
-                }
+    int n, m;
+    cin >> n >> m;
+    set<int> nums;
+    if (n % 2 == 0) {
+        for(int i = n/2; i <= n; i++) {
+            if (i % m == 0) nums.insert(i);
         }
-
-        if (br == 1) break;
     }
-
-    cout << ans << endl;
-
+    else {
+        for(int i = (n+1)/2; i <= n; i++) {
+            if (i % m == 0) nums.insert(i);
+        }
+    }
+    if (nums.size() != 0) cout << *nums.begin() << endl;
+    else cout << -1 << endl;
 }
-
-//choose only 1
-    // while (steps <= N && steps % M != 0) {
-    //     steps++;
-    //     climbed++;
-    //     if (steps % M == 0 && climbed == N) ans = min(ans, steps);
-    // }
-    // climbed = 0;
-    // steps = 1;
-    // //choose only two
-    // while(steps <= N && steps % M != 0) {
-    //     steps++;
-    //     climbed += 2;
-    //     if (steps % M == 0 && climbed == N) ans = min(ans, steps);
-    // }
-    // climbed = 0;
-    // steps = 1;

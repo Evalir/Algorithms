@@ -27,21 +27,26 @@ typedef pair<int, int> ii;
 int main(){
     int N;
     cin >> N;
-    FREQ nums;
+    VI el;
+
     for(int i = 0; i < N; i++) {
         int x;
         cin >> x;
-        nums[x]++;
+        el.pb(x);
     }
-    
-    if (nums.find(2) == nums.end()) cout << nums[1] / 3 << endl;
-    else if ((nums.find(1) == nums.end())) cout << 0 << endl;
-    else if (nums[2] != 0 && (nums[1] > nums[2])) {
-        int maxv = nums[2] + ((nums[1] - nums[2]) / 3);
-        cout << maxv << endl;
-        }
-    else if (nums[1] != 0 && (nums[1] == nums[2])) cout << nums[2] << endl;
-    else if (nums[1] != 0 && (nums[1] < nums[2])) cout << nums[1] << endl;
+
+    printf("\nPRINTING ARRAY\n");
+    for(int i = 0; i < N; i++) { cout << el[i] << " "; }
+    printf("\n\nENTER LOWER BOUND TERM >>");
+    int temp;
+    cin >> temp;
+    cout << lower_bound(el.begin(), el.end(), temp)-el.begin() << endl;
+    printf("\n\nENTER UPPER BOUND TERM >> ");
+    cin >> temp;
+    cout << upper_bound(el.begin(), el.end(), temp)-el.begin() << endl;
+    printf("\n\nENTER BINARY SEARCH TERM >> ");
+    cin >> temp;
+    cout << binary_search(el.begin(), el.end(), temp) << endl;
     
     return 0;
 }

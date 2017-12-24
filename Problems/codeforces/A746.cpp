@@ -25,23 +25,21 @@ typedef map<int,int> FREQ;
 typedef pair<int, int> ii;
 
 int main(){
-    int N;
-    cin >> N;
-    FREQ nums;
-    for(int i = 0; i < N; i++) {
-        int x;
-        cin >> x;
-        nums[x]++;
+    int a, b, c, maxel = 0;
+    cin >> a >> b >> c;
+    if (a < 1 || b < 2 || c < 4) {
+        cout << 0 << endl;
+        return 0;
     }
-    
-    if (nums.find(2) == nums.end()) cout << nums[1] / 3 << endl;
-    else if ((nums.find(1) == nums.end())) cout << 0 << endl;
-    else if (nums[2] != 0 && (nums[1] > nums[2])) {
-        int maxv = nums[2] + ((nums[1] - nums[2]) / 3);
-        cout << maxv << endl;
+    else {
+        for(int i = 1; i <= 1000; i++) {
+            if (i*1 > a || i*2 > b || i*4 > c) {
+                cout << maxel << endl;
+                return 0;
+            }
+            else maxel = i*1 + i*2 + i*4;
         }
-    else if (nums[1] != 0 && (nums[1] == nums[2])) cout << nums[2] << endl;
-    else if (nums[1] != 0 && (nums[1] < nums[2])) cout << nums[1] << endl;
-    
+    }
+
     return 0;
 }

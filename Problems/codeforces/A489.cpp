@@ -27,21 +27,37 @@ typedef pair<int, int> ii;
 int main(){
     int N;
     cin >> N;
-    FREQ nums;
+    VI el;
+    int count = 0;
+    vector<pair<int, int> > swaps;
     for(int i = 0; i < N; i++) {
         int x;
         cin >> x;
-        nums[x]++;
+        el.pb(x);
     }
-    
-    if (nums.find(2) == nums.end()) cout << nums[1] / 3 << endl;
-    else if ((nums.find(1) == nums.end())) cout << 0 << endl;
-    else if (nums[2] != 0 && (nums[1] > nums[2])) {
-        int maxv = nums[2] + ((nums[1] - nums[2]) / 3);
-        cout << maxv << endl;
+
+    //bubble sort N^2
+    for(int i = 0; i < N-1; i++) {
+        for(int j = 0; j < N-i-1; j++) {
+            if (el[j] > el[j+1]) {
+                count++;
+                ii sw;
+                sw.first = j;
+                sw.second = j+1;
+                swaps.pb(sw);
+                int temp = el[j];
+                el[j] = el[j+1];
+                el[j+1] = temp;
+            }
         }
-    else if (nums[1] != 0 && (nums[1] == nums[2])) cout << nums[2] << endl;
-    else if (nums[1] != 0 && (nums[1] < nums[2])) cout << nums[1] << endl;
-    
+    }
+
+    if (count > 0) {
+        cout << count << endl;
+        for(int i = 0; i < swaps.size(); i++) {
+            cout << swaps[i].first << " " << swaps[i].second << endl;
+        }
+    }
+
     return 0;
 }

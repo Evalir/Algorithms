@@ -3,6 +3,14 @@ using namespace std;
 int main(){
     int n, a, b;
     cin >> n >> a >> b;
-    cout << n - a - abs(n-a-b)<< endl;
+    if (n - a == b) {
+        cout << b << endl;
+    }
+    else if (n - a < b) {
+        cout << n - a << endl;
+    }
+    else {
+        cout << b+1 << endl;
+    }
     return 0;
 }

@@ -25,21 +25,13 @@ typedef map<int,int> FREQ;
 typedef pair<int, int> ii;
 
 int main(){
-    int n, a, b, c;
-    int best = 0;
-    cin >> n >> a >> b >> c;
+    int s, v1, v2, t1, t2;
+    cin >> s >> v1 >> v2 >> t1 >> t2;
 
-    //N^2 brute force solution by wave
-    for(int cnta =0; cnta * a <= n; cnta++) {
-        for(int cntb = 0; cntb * b +  cnta * a <= n; cntb++) {
-            int rem = n - cnta*a - cntb*b;
-            if (rem % c == 0){
-                int cntc = rem / c;
-                if (cnta+cntb + cntc > best)
-                    best = cnta + cntb + cntc;
-            }
-        }
-    }
+    int Vel1 = 2*(t1) + s*(v1);
+    int Vel2 = 2*(t2) + s*(v2);
 
-    cout << best << endl;
+    if (Vel1 < Vel2) cout << "First" << endl;
+    else if (Vel1 > Vel2) cout << "Second" << endl;
+    else if (Vel1 == Vel2) cout << "Friendship" << endl;
 }
