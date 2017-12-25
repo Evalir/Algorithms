@@ -21,6 +21,7 @@ typedef long long llong;
 typedef unsigned long long ull;
 typedef vector<int> VI;
 typedef vector<VI> VII;
+typedef vector<int>::iterator VIT;
 typedef map<int,int> FREQ;
 typedef pair<int, int> ii;
 
@@ -30,6 +31,8 @@ int main(){
         VI soldiers;
         soldiers.pb(0);
         for(int i = 1; i <= S; i++) {soldiers.pb(i);} //generate soldiers
+        for(int i = 0; i <= S; i++) { cout << soldiers[i] << " ";}
+        cout << endl;
         //lISTEN TO QUERIES
         while(B--) {
             int L, R;
@@ -37,13 +40,16 @@ int main(){
             for(int i = L; i <= R; i++) {
                 soldiers[i] = 0;
             }
+            sort(all(soldiers));
             //GET SOLDIER LEFT AND RIGHT
             if (lower_bound(soldiers.begin(), soldiers.end(), L)-soldiers.begin() == 0) {
                 cout << "*";
             }
             else {
-                VI::iterator it = lower_bound(soldiers.begin(), soldiers.end(), L);
-                if (it != soldiers.begin()) cout << *it;
+                VIT it = lower_bound(soldiers.begin(), soldiers.end(), L);
+                cout << "POS BEFORE ROLLING BACK IS " << lower_bound(soldiers.begin(), soldiers.end(), L)-soldiers.begin() << endl;
+                it--;
+                if (it != soldiers.begin() || *it != 0) cout << *it;
                 else cout << "*";
             }
             cout << " ";
@@ -51,7 +57,7 @@ int main(){
                 cout << "*";
             }
             else {
-                VI::iterator it2 = upper_bound(soldiers.begin(), soldiers.end(), R);
+                VIT it2 = upper_bound(soldiers.begin(), soldiers.end(), R);
                 if (it2 != soldiers.end()) cout << *it2;
                 else cout << "*";
             }
@@ -60,3 +66,8 @@ int main(){
         cout << "-" << endl;
     }
 }
+
+//NEW IDEA
+/*
+Instead of vector, use set, that way we avoid duplicates, and the range killing can be converted into a simple delete operation, so we only have the numbers we need at any time. It will also help the binary search because we can then perform a lower_bound scan on L-1 and R+1, and then check if they are out of range or equal to 0 before printing.
+*/
