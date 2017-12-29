@@ -37,7 +37,7 @@ bool joaGetLength(int N, int goal) {
     else return false;
 }
 int main(){
-    int N, M, D = 0;;
+    int N, M, D = 0;
     cin >> N >> M;
 
     for(int i = 0; i < )
