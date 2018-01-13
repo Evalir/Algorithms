@@ -46,29 +46,39 @@ int main(){
             minpos = i;
             }
     } 
+    bool rl = 1; //1 big , 0 low
+    maxpos >= minpos ? rl = 1 : rl = 0;
+    //cerr << maxpos << endl;
+    //cerr << minpos << endl;
     //all on left side
-    if (maxpos && minpos <= N/2) {
-        maxdist = max(abs(N+1 - (maxpos+1)), abs(N+1 - minpos+1));
-        cerr << "HEY1" << endl;
-        
-        cerr << N+1 - (maxpos+1) << endl;
-        cerr << N+1 - (minpos+1) << endl;
+    if (maxpos <= N/2 && minpos <= N/2) {
+        //cerr << "HEY1" << endl;
+        //if big element is rightmost
+        if(rl) {
+            maxdist = abs(N-1 - minpos);
+            //cerr << maxdist << endl;
+        }
+        else {
+            maxdist = abs(N-1 - maxpos);
+          //  cerr << maxdist << endl;
+        }
     }
     //al on right side
-    else if (maxpos && minpos >= N/2) {
-        maxdist = max(abs(maxpos+1 - 1), abs(minpos+1 - 1));
-        cerr << "HEY2" << endl;
+    else if (maxpos >= N/2 && minpos >= N/2) {
+        maxdist = max(minpos, maxpos);
+        cout << "KLK" << endl;
     }
     //left on left, right on ride
     else if (minpos <= N/2 && maxpos > N/2) {
-        maxdist = max(abs(N+1 - minpos+1), abs(maxpos+1 - 1));
-        cerr << "HEY3" << endl;
+        maxdist = abs(N-1 - minpos);
+        //cerr << "HEY3" << endl;
     }
     //left on right, right on left
     else if (maxpos <= N / 2 && minpos > N/2) {
-        maxdist = max(abs(N+1 - maxpos+1), abs(minpos+1 - 1));
-        cerr << "HEY4" << endl;
+        maxdist = abs(N-1 - maxpos);
+        //cerr << "HEY4" << endl;
     }
+
     cout << maxdist << endl;
     return 0;
 }
