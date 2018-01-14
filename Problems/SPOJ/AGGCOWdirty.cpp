@@ -31,12 +31,45 @@ int N, C;
 int maxv = 0;
 map<int, int> stalls;
 
+// bool check(int mid) {
+//     int ncows = 0;
+//     int currdist = -1;
+//     int lcowd = 0;
+//     bool first = 1;
+//     for(int i = 0; i <= maxv; i++) {
+//         currdist++;
+//         //cout << "CHECKING DIST " << currdist << " WITH MID: " << mid << endl;
+//         if (first == 1) {
+//             if (stalls[i] > 0) {
+//                 ncows++;
+//               //  cout << "PUT COW AT " << i << endl;
+//                 lcowd = i;
+//                 first = 0;
+//             }
+//         }
+//         else {
+//             if (stalls[i] > 0 && abs(currdist - lcowd) >= mid) {
+//                 ncows++;
+//                 lcowd = i;
+//           //      cout << "FOUND STALL AT " << i << endl;
+//             }
+//         }
+
+//         if (ncows == C) return true;
+//     }
+
+//     if (ncows >= C) return true;
+//     else return false;
+// }
+
 bool check(int mid) {
+   // cout << "HEY" << endl;
     int ncows = 0;
     int lcow = 0;
     bool first = 1;
     for(auto x : stalls) {
         if (first == 1) {
+            //cout << "PUT COW AT " << i << endl;
             lcow = x.first;
             ncows++;
             first = 0;
@@ -45,6 +78,7 @@ bool check(int mid) {
             if (abs(x.first - lcow) >= mid) {
                 ncows++;
                 lcow = x.first;
+                //cout << "FOUND STALL AT " << x.first << endl;
             }
         }
 
