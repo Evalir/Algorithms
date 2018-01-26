@@ -28,15 +28,27 @@ typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
 int main(){
-    long N, M;
-    cin >> N >> M;
+    int N, K, S, T;
+    cin >> T;
 
-    if (N >= 27) {
-        cout << M << endl;
-    }
-    else {
-        long paw = pow(2, N);
-        cout << M % paw << endl;
+    while (T--) {
+        cin >> N >> K >> S;
+        //total chocolates to eat to survive
+        int totChoco = K * S; 
+        //total chocolates we can buy
+        int buyChoco = (N)*(S-(S/7));
+
+        if (totChoco > buyChoco || ((N-K)*6 < K && S >= 7)) {
+            cout << -1 << endl;
+        }
+        else {
+            if (ceil(totChoco%N) != 0) {
+                cout << (ceil(totChoco/N))+1 << endl;
+            }
+            else {
+                cout << (ceil(totChoco/N)) << endl;
+            }
+        }
     }
 
     return 0;

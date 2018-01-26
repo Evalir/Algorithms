@@ -28,16 +28,31 @@ typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
 int main(){
-    long N, M;
-    cin >> N >> M;
-
-    if (N >= 27) {
-        cout << M << endl;
+    int a,b,c;
+    cin >> a >> b >> c; //dario
+    vector<int> vals(a*b*c);
+    vector<int> nums(a*b*c);
+    for(int i = 1; i <= a; i++) {
+        for (int j = 1; j <= b; j++) {
+            for (int z = 1; z <= c; z++) {
+                vals.pb(i*j*z);
+            }
+        }
     }
-    else {
-        long paw = pow(2, N);
-        cout << M % paw << endl;
+    long long ans = 0;
+    long long pew = pow(2,30);
+    for (int i = 0; i < vals.size(); i++) {
+        int count = 0;
+        for(int x = 1; x <= (vals[i]); x++) {
+                    if ((vals[i]) % x == 0) count++;
+                }
+        nums.pb(count);
     }
 
+    for(int i = 0; i < nums.size(); i++) {
+        ans+=nums[i];
+    }
+
+    cout << ans % (1073741824 * pew) << endl;
     return 0;
 }

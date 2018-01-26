@@ -28,15 +28,21 @@ typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
 int main(){
-    long N, M;
-    cin >> N >> M;
-
-    if (N >= 27) {
-        cout << M << endl;
+    unsigned long long n;
+    cin >> n;
+    if (n <= 3) {
+        if (n == 1) cout << 1 << endl;
+        else if (n == 2) cout << 2 << endl;
+        else if (n == 3) cout << 6 << endl;
+    }
+    else if (n % 2 == 1) {
+        cout << (n-2)*(n-1)*n << endl;
+    }
+    else if (n % 3 == 0 && ((n-3)% 3 == 0)) {
+        cout << (n-1)*(n-2)*(n-3) << endl;
     }
     else {
-        long paw = pow(2, N);
-        cout << M % paw << endl;
+        cout << n*(n-1)*(n-3) << endl;
     }
 
     return 0;
