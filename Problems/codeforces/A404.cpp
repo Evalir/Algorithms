@@ -30,30 +30,46 @@ typedef map<char,int> FREQ;
 int main(){
     int N;
     cin >> N;
-    int dx[N][N];
+    char dx[N][N];
     FREQ occurr;
 
     for(int i = 0; i < N; i++) {
         for (int j = 0; j < N; j++) {
-            int x;
+            char x;
             cin >> x;
             dx[i][j] = x;
             occurr[x]++;
         }
     }
-
-    if (occurr.size() > 2) {
+    if (occurr.size() > 2 || occurr.size() <= 1) {
         cout << "NO" << endl;
-        cout << "HEY" << endl;
+        //cout << "HEY" << endl;
         return 0;
     }
+    int biggestfr = 0;
+    char rpeat;
+    for(auto x : occurr) {
+        if (x.second == (N*2)-1) {
+            biggestfr = x.second;
+            rpeat = x.first;
+            }
+        else continue;
+    }
+
+    if (biggestfr != (N*2)-1) {
+        cout << "NO" << endl;
+        return 0;
+    }
+
     int l = 0, r = N-1;
     bool YN = true;
     //check until middle
     for(int i = 0; i < (N/2)+1; i++) {
-        if (dx[i][l] == dx[i][r]) continue;
+        if (dx[i][l] == dx[i][r] && (dx[i][l] == rpeat) && (dx[i][r] == rpeat)) {}
         else {
             YN = false;
+            cerr << dx[i][l] << " " << dx[i][r] << " " << i <<  endl;
+            cerr << (dx[i][l] == dx[i][r]) << (dx[i][l] == rpeat) << (dx[i][r] == rpeat) << endl;
             break;
         }
         l++;
@@ -64,9 +80,11 @@ int main(){
 
     if (YN) {
         for(int i = (N/2)+1; i < (N); i++) {
-            if (dx[i][l] == dx[i][r]) continue;
+            if (dx[i][l] == dx[i][r] && (dx[i][l] == rpeat) && (dx[i][r] == rpeat)) {}
             else {
                 YN = false;
+                cerr << dx[i][l] << " " << dx[i][r] << " " << i <<  endl;
+                cerr << (dx[i][l] == dx[i][r]) << (dx[i][l] == rpeat) << (dx[i][r] == rpeat) << endl;
                 break;
             }
             l--;

@@ -2,8 +2,10 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+
 int n;
 int board[10][10];
+
 bool isAttacked(int x, int y, int n) {
     for (int i = 0 ; i < n; i++) {
         if (board[i][y] == 1 && i != x) return true;
@@ -33,12 +35,12 @@ bool joaPlacesQueens(int n, int dim) {
     
     for(int i = 0; i < dim; i++) {
             if (isAttacked(n,i, dim)) {
-                cout << n << ' ' << i << " IS ATTACKED" << endl;
+            //    cout << n << ' ' << i << " IS ATTACKED" << endl;
                 continue;
             }
             
             board[n][i] = 1;
-            cout << i << ' ' << n << " IS NOT ATTACKED" << endl;
+          //  cout << i << ' ' << n << " IS NOT ATTACKED" << endl;
 
             if (joaPlacesQueens(n+1, dim)) {
                 return true;
@@ -80,19 +82,3 @@ int main() {
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
