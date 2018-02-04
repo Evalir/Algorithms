@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <vector>
 #include <set>
 #include <map>
@@ -28,21 +29,13 @@ typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
 int main(){
-    int N;
-    cin >> N;
-    vector<string> names = {"Sheldon", "Leonard", "Penny", "Rajesh", "Howard"};
-    int trav = 0;
-    for(int i = 0; i < 27; i++) {
-        trav = i;
-        if (5 * pow(2, i) > N) {
-            cout << "FOUND" << endl;
-            break;
-        }
+    int c1,c2,c3,c4,c5;
+    scanf("%d %d %d %d %d", &c1, &c2, &c3, &c4, &c5);
+    int acc = c1+c2+c3+c4+c5;
+    if (acc % 5 == 0 && acc != 0) {
+        cout << acc / 5 << endl;
     }
-    cerr << trav << " TRAV" << endl;
-    long long ans = N / (pow(2, trav));
-    cerr << ans << " ANS" << endl;
-    cout << names[ans-1] << endl;
-
-    return 0;
+    else {
+        cout << -1 << endl;
+    }
 }

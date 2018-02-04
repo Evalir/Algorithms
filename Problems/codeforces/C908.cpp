@@ -1,4 +1,4 @@
-#include <iostream>
+#include <cstdio>
 #include <vector>
 #include <set>
 #include <map>
@@ -28,21 +28,31 @@ typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
 int main(){
-    int N;
-    cin >> N;
-    vector<string> names = {"Sheldon", "Leonard", "Penny", "Rajesh", "Howard"};
-    int trav = 0;
-    for(int i = 0; i < 27; i++) {
-        trav = i;
-        if (5 * pow(2, i) > N) {
-            cout << "FOUND" << endl;
-            break;
+    int n, r;
+    scanf("%d %d", &n, &r);
+    VI disks(n, 0);
+    vector<double> bdistances;
+
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &disks[i]);
+        double best = r; //if disk does not intercept best distance will be dist from ground to radius
+
+        for(int j = 0; j < i; j++) {
+            if (abs(disks[j]-disks[i]) <= 2*r) {
+                double dx = abs(disks[j]-disks[i]);
+                double ftrsq = 4*(r*r);
+                double ans = bdistances[j] + sqrt(ftrsq - dx*dx);
+                best = max(best, ans);
+            }
         }
+        bdistances.pb(best);
     }
-    cerr << trav << " TRAV" << endl;
-    long long ans = N / (pow(2, trav));
-    cerr << ans << " ANS" << endl;
-    cout << names[ans-1] << endl;
+
+    for(auto x : bdistances) {
+        printf("%0.10lf ", x);
+    }
+
+    printf("\n");
 
     return 0;
 }

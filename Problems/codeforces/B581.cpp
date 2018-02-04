@@ -27,22 +27,29 @@ typedef pair<int, int> ii;
 typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
-int main(){
-    int N;
-    cin >> N;
-    vector<string> names = {"Sheldon", "Leonard", "Penny", "Rajesh", "Howard"};
-    int trav = 0;
-    for(int i = 0; i < 27; i++) {
-        trav = i;
-        if (5 * pow(2, i) > N) {
-            cout << "FOUND" << endl;
-            break;
+
+int main() {
+    int n;
+    cin >> n;
+    vector<int> houses(n, 0);
+    VI heights(n, 0);
+
+    int bh = 0;
+    for(int i = 0; i < n; i++) {
+        cin >> houses[i];
+    }
+
+    for(int i = n-1; i >= 0; i--) {
+        if (i == n-1) {heights[i] = 0; bh = max(bh, houses[i]);}
+        else {
+            heights[i] = max(0, abs(houses[i] - (bh+1)));
+            bh = max(bh, houses[i]);
         }
     }
-    cerr << trav << " TRAV" << endl;
-    long long ans = N / (pow(2, trav));
-    cerr << ans << " ANS" << endl;
-    cout << names[ans-1] << endl;
 
+    for(int i = 0; i < n; i++) {
+        cout << heights[i] << " ";
+    }
     return 0;
+
 }
