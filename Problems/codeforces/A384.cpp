@@ -29,5 +29,38 @@ typedef map<int,int> FREQ;
 
 int main(){
     int n;
-    ci
+    int counter = 0;
+    cin >> n;
+    char mat[n][n];
+    for(int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            mat[i][j] = '.';
+        }
+    }
+
+    for(int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (j != 0) {
+                if (mat[i][j+1] != 'C' && mat[i][j-1] != 'C' && mat[i+1][j] != 'C' && mat[i-1][j] != 'C') {
+                    mat[i][j] = 'C';
+                    counter++;
+                }
+            }
+            else {
+                if (mat[i][j+1] != 'C' && mat[i][j-1] != 'C' && mat[i+1][j] != 'C') {
+                    mat[i][j] = 'C';
+                    counter++;
+                }
+            }
+        }
+    }
+    cout << counter << endl;
+    for(int i = 0; i < n; i++) {
+        for(int j = 0; j < n; j++) {
+            cout << mat[i][j];
+        }
+        cout << endl;
+    }
+
+    return 0;
 }
