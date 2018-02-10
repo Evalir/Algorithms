@@ -44,6 +44,7 @@ int main(){
                 double ans = bdistances[j] + sqrt(ftrsq - dx*dx);
                 best = max(best, ans);
             }
+            else continue;
         }
         bdistances.pb(best);
     }
