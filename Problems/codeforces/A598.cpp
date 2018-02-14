@@ -5,15 +5,6 @@ using namespace std;
 
 set<long long> el;
 
-bool isPowerOfTwo (int x) {
-    for(auto dx : el) {
-        if (dx == x) {
-            return true;
-        }
-  }
-    return false;
-}
- 
 int main() {
     int T;
     cin >> T;
