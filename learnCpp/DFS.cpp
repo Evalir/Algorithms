@@ -17,17 +17,40 @@ void printGraph(vector<vector<int> > graph) {
 }
 
 
-bool dfsCanReach(vector<vector<int> > adjMatrix, int destination, int current, vector<bool> adjVisited) {
+// bool dfsCanReach(vector<vector<int> > adjMatrix, int destination, int current, vector<bool> &adjVisited) {
+
+//     int nOfNodes = adjMatrix.size();
+
+//     if (adjVisited[destination]) return true;
+//     else {
+//         for(int i = 0; i < nOfNodes; i++) {
+//             if (adjMatrix[current][i] == 1) {
+//             cout << "GOING TO EDGE X Y " << current << ' ' << i << endl;
+//             adjVisited[current] = true;
+//             adjVisited[i] = true;
+//             if (dfsCanReach(adjMatrix, destination, i, adjVisited)) {
+//                 return true;
+//             }
+//             else
+//                 return false;
+//             }
+//         }
+//     }
+//     return false;
+// }
+
+bool dfsCanReach(vector<vector<int> > adjMatrix, int destination, int current, vector<bool> &adjVisited) {
 
     int nOfNodes = adjMatrix.size();
 
     if (adjVisited[destination]) return true;
     else {
-        for(int i = 0; i < nOfNodes; i++) {
-            if (adjMatrix[current][i] == 1) {
-            cout << "GOING TO EDGE X Y " << current << ' ' << i << endl;
+        for(int i = 0; i< nOfNodes; i++) {
+            if (adjMatrix[(current)][i]) {
+            cerr << "GOING TO EDGE X Y " << current << ' ' << i << " CURRENT " << adjVisited[current] << ' ' << adjVisited[i] << endl;
             adjVisited[current] = true;
-            if (dfsCanReach(adjMatrix, destination, i, adjVisited)) {
+            adjVisited[i] = true;
+            if (dfsCanReach(adjMatrix, destination, i, adjVisited) && !adjVisited[i]) {
                 return true;
             }
             else
@@ -37,6 +60,7 @@ bool dfsCanReach(vector<vector<int> > adjMatrix, int destination, int current, v
     }
     return false;
 }
+
 
 int main() {
     cin >> n;
@@ -53,7 +77,7 @@ int main() {
     }
 
     printGraph(adjMatrix);
-//    dfsCanReach(adjMatrix, 3, 1, adjVisited);
+    dfsCanReach(adjMatrix, 2, 0, adjVisited);
 
 
     return 0;
