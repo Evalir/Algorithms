@@ -41,25 +41,21 @@ bool check(double N) {
 }
 
 void bisection(double lo, double hi, double target) {
-
     double c = lo;
-
     for (int i = 0; i <= 80; i++) {
         // Find middle point
-        c = lo + (lo-hi) / 2;
- 
+        c = (lo + (lo-hi)) / 2;
         // Check if middle point is root
-        if (evaluate(c) == P || (hi-lo)/2 < 1.0e-7)
-            break;
- 
+        if (evaluate(c) == P || (hi-lo)/2 < 1.0e-7) {
+            cout << "The value of root is : ";
+            printf("%.08f", c);
+        }
         // Decide the side to repeat the steps
         else if (evaluate(c)*evaluate(lo) < 0)
             hi = c;
         else
             lo = c;
     }
-    cout << "The value of root is : ";
-    printf("%.08f", c);
 }
 
 int main(){

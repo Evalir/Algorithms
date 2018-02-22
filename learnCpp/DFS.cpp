@@ -17,19 +17,20 @@ void printGraph(vector<vector<int> > graph) {
 }
 
 
-bool dfsCanReach(vector<vector<int> > adjMatrix, int destination, int current,
-		vector<bool> &adjVisited) {
+bool dfsCanReach(vector<vector<int> > &adjMatrix, int destination, int current, vector<bool> &adjVisited) {
 
 	int nOfNodes = adjMatrix.size();
 	adjVisited[current] = true;
 
 	for (int i = 0; i < nOfNodes; i++) {
 		if (adjMatrix[(current)][i] && !adjVisited[i]) {
-			cout << "GOING TO EDGE X Y " << current << ' ' << i << endl;
+            //For debugging purposes
+			cerr << "GOING TO EDGE X Y " << current << ' ' << i << endl;
 			if (dfsCanReach(adjMatrix, destination, i, adjVisited)
 					&& !adjVisited[i]) {
 				return true;
-			} else
+			} 
+            else
 				return false;
 		}
 	}
@@ -38,7 +39,7 @@ bool dfsCanReach(vector<vector<int> > adjMatrix, int destination, int current,
 
 int main() {
     cin >> n;
-    vector<vector<int> > adjMatrix (n, vector<int> (n, 0));
+    vector<vector<int> > adjMatrix (n+1, vector<int> (n+1, 0));
     vector<bool> adjVisited(n, 0);
 
     for(int i = 0; i < n; i++) {
@@ -51,7 +52,11 @@ int main() {
     }
 
     printGraph(adjMatrix);
-    dfsCanReach(adjMatrix, 2, 0, adjVisited);
+    int x, y;
+    cin >> x >> y;
+    x--;
+    y--;
+    dfsCanReach(adjMatrix, y, x, adjVisited);
 
 
     return 0;
