@@ -7,7 +7,7 @@
 #include <cmath>
 #include <climits>
 #include <algorithm>
-#include <bitset>
+#include <bitset>=
 #include <list>
 #include <string>
 #include <sstream>
