@@ -18,7 +18,6 @@ void printGraph(vector<vector<int> > graph) {
 
 
 bool dfsCanReach(vector<vector<int> > &adjMatrix, int destination, int current, vector<bool> &adjVisited) {
-
 	int nOfNodes = adjMatrix.size();
 	adjVisited[current] = true;
 
