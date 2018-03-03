@@ -26,23 +26,38 @@ typedef vector<long long> VLL;
 typedef pair<int, int> ii;
 typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
+
+struct Friend { 
+    int money, ff; 
+    bool  operator<  ( const Friend& right ) const {
+        if (money < right.money)
+           return true;
+        else
+           return false;
+     }
+    };
+
+vector<Friend> fr;
+
 int main(){
     int n, d;
     cin >> n >> d;
-    VI el;
-    for(int i = 0; i < n; i++) {
-        int x;
-        cin >> x;
-        el.pb(x);
-    }
-
-    sort(el.begin(), el.end());
 
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            
-        }
+        int x, y;
+        cin >> x >> y;
+        Friend z;
+        z.money = x;
+        z.ff = y;
+        fr.pb(z);
     }
-    
+
+    int l = 0, r = 0;
+    int maxhp = 0;
+
+    while(l <= r) {
+        if ()
+    }
+
 
 }

@@ -26,23 +26,31 @@ typedef vector<long long> VLL;
 typedef pair<int, int> ii;
 typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
+
 int main(){
-    int n, d;
-    cin >> n >> d;
-    VI el;
+    int n, b, d;
+    cin >> n >> b >> d;
+    VI oranges;
     for(int i = 0; i < n; i++) {
         int x;
         cin >> x;
-        el.pb(x);
+        oranges.pb(x);
     }
 
-    sort(el.begin(), el.end());
+    int wcount = 0;
+    int flush = 0;
 
     for(int i = 0; i < n; i++) {
-        for(int j = 0; j < n; j++) {
-            
+        if (oranges[i] > b) continue;
+        else {
+            wcount += oranges[i];
+            if (wcount > d) {
+                wcount = 0;
+                flush++;
+            }
         }
     }
-    
 
+    cout << flush << endl;
+    return 0;
 }
