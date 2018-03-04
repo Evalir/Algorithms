@@ -6,7 +6,6 @@
 using namespace std;
 int n;
 
-
 void printGraph(vector<vector<int> > graph) {
     for(int i = 0; i < graph.size(); i++) {
         for(int j = 0; j < graph.size(); j++) {
