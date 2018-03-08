@@ -1,0 +1,45 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <math.h>
+#include <climits>
+using namespace std;
+
+struct Node {
+	vector<int> adj;
+	bool isVisited;
+    //we can add more properties to the graph by adding them to this struct, such as cost or color, etc
+};
+/// @param current: node that we are entering. Is passed as reference so 
+/// that changes to isVisited are done in the real nodes
+/// @param nodes: list of all nodes with the graph info
+// any other parameters can be passed onto the graph
+//OPTIONAL PARAMETERS:
+// isRoot -> true on first call, then pass on false on subcalls.
+// dfs(Node& current, vector<Node> &nodes, isRoot = true), then change to false on for loop/
+//PD: DO NOT alter parameters passed, create variables and pass them on the subcall.
+void dfs(Node& current, vector<Node> &nodes) { 
+	bool isLeaf = true;
+	current.isVisited = true;
+	for (int id : current.adj ) {
+		Node &v = nodes[id];
+		if (!v.isVisited) {
+			isLeaf = false; // since it called another node it means it is not a child
+            //do recursion
+		}
+	}
+	if (isLeaf) {
+		// this will run if all nodes are visited, and if all nodes are vis and is not root, then is leaf
+        //if not needed then delete
+	}
+}
+
+int main() {
+	int N;
+	cin >> N;
+	vector<Node> V(N); //creates all the nodes; set properties as needed.
+	for (Node &n : V) {
+		n.isVisited = false;
+	}
+	return 0;
+}

@@ -62,16 +62,11 @@ void dfs(int u) {
         }
        if (!visited[e.to]) {
          //  e.to es un hijo de u
-          cerr << "VISITING EDGE " << e.to+1 << " FROM " << e.from+1 << " WITH CAT COUNT"<< catCount << endl;
+          
           dfs(e.to);
        }
-       else if (visited[e.to]) {
-          if (!cats[e.from]) { //Currently at leaf, ++ on restaurants and reset catCount
-            cout << "RESETING COUNT ON LEAF " << e.from+1 << endl;
-            canGo++; 
-            catCount = 0;
-            break;
-         }
+       else if (visited[e.to]) { //is a leaf
+          
        }
    }
 }
