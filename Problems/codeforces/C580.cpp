@@ -22,6 +22,7 @@ vector<bool> cats;
 stack<int> lastVisit;
 int catCount = 0;
 int canGo = 0;
+bool isConsecutive = false;
 vector<bool> visited;
 
 void printGraph() {
@@ -37,23 +38,36 @@ void printGraph() {
 void dfs(int u) {
    visited[u] = true;
    for (Edge e : adj[u]) {
-       //cerr << "VISITING EDGE " << e.to+1 << " FROM " << e.from+1 << " WITH CAT COUNT"<< catCount << endl;
-       if (cats[e.to]) {
+       if (cats[e.from]) {
            catCount++;
-           //cout << "COUNTED CAT AT EDGE " << e.from+1 << endl;
+           cout << "COUNTED CAT AT NODE " << e.from+1 << endl;
            if (catCount > M) {
-            //cout << "CANNOT TRAVERSE, TOO MANY MEOWS" << endl;
+            cout << "CANNOT TRAVERSE, TOO MANY MEOWS" << endl;
             catCount = 0;
+            for(Edge e : adj[u]) {
+                visited[e.to] = true;
+            }
             break;
            }
+           if (visited[e.to]) {
+                cout << "RESETING COUNT ON LEAF WIHT CAT " << e.from+1 << endl;
+                canGo++; 
+                catCount = 0;
+                break;
+           }
+        }
+        else {
+            cout << "No cats on node" << e.from+1 << endl;
+            catCount = 0;
         }
        if (!visited[e.to]) {
-          // e.to es un hijo de u
+         //  e.to es un hijo de u
+          cerr << "VISITING EDGE " << e.to+1 << " FROM " << e.from+1 << " WITH CAT COUNT"<< catCount << endl;
           dfs(e.to);
        }
-       else if (visited[e.to] && adj[u].size() == 1) {
+       else if (visited[e.to]) {
           if (!cats[e.from]) { //Currently at leaf, ++ on restaurants and reset catCount
-            //cout << "RESETING COUNT ON LEAF " << e.from+1 << endl;
+            cout << "RESETING COUNT ON LEAF " << e.from+1 << endl;
             canGo++; 
             catCount = 0;
             break;
@@ -66,7 +80,6 @@ void dfs_all() {
    for (int u = 0; u < N; u++) {
       if (!visited[u]) {
         //cerr << "ENTERING COMPONENT STARTING AT " << u+1 << endl;
-        if (cats[u]) catCount++;
         dfs(u);
          //cout << comp_size << endl;
       }
