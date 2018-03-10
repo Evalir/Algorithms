@@ -7,6 +7,7 @@ using namespace std;
 
 struct Node {
 	vector<int> adj;
+	int identifier;
 	bool isVisited;
     //we can add more properties to the graph by adding them to this struct, such as cost or color, etc
 };

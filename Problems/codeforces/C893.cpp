@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <math.h>
 #include <climits>
+#define INF 1000000000000003
 using namespace std;
 
 struct Node {
@@ -12,41 +13,35 @@ struct Node {
 	bool isVisited;
 };
 
-
 long long N, M;
 long long totalCost = 0;
-long long bestValue = 100000000000003;
+long long bestValue = INF;
 vector<long long> bestVals;
 
 void dfs(Node& current, vector<Node> &nodes) { 
-    //cout << current.identifier << " with cost: " << current.cost << endl;
-    if(!current.isVisited) {
+        //cout << current.identifier << " with cost: " << current.cost << endl;
         bestValue = min(bestValue, current.cost);
         current.isVisited = true;
-        }
-	else {
-        //cout << "Already calculated weight at this node" << endl;
-        bestValue = 0;
-        return;
-    }
-    
    // cout << "bestValue: " << bestValue << " current: " << current.cost << endl;
-	for (long long id : current.adj ) {
-		Node &v = nodes[id];
-		if (!v.isVisited) {
-            dfs(v, nodes);
-		}
-	}
+	    for (long long id : current.adj ) {
+		    Node &v = nodes[id];
+		    if (!v.isVisited) {
+                dfs(v, nodes);
+		    }
+	    }
 
 }
 
 void dfsAll(vector<Node> &nodes) {
     for(long long i = 0; i < N; i++) {
-        //cout << "To node: " << nodes[i].identifier << endl;
-        dfs(nodes[i], nodes);
-      //  cout << bestValue << endl;
+        if(!nodes[i].isVisited) {
+            //cout << "To node: " << nodes[i].identifier << endl;
+            dfs(nodes[i], nodes);
+        //  cout << bestValue << endl;
         bestVals.push_back(bestValue);
-        bestValue = 1000000000000003;
+        bestValue = INF;
+        }
+        else continue;
     }
 }
 
