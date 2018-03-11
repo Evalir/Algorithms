@@ -13,22 +13,21 @@ struct Node {
 	int nOfLeaves;
 };
 
-void dfs(Node& current, vector<Node> &nodes, int Parent) { 
-	bool isLeaf = true;
-	current.isVisited = true;
-	for (int id : current.adj ) {
-		Node &v = nodes[id];
+void dfs(Node& Current, vector<Node> &Nodes, int Parent) { 
+	Current.isLeaf = true;
+	Current.isVisited = true;
+	for (int id : Current.adj ) {
+		Node &v = Nodes[id];
 		if (!v.isVisited) {
-			isLeaf = false; // since it called another node it means it is not a child
-			current.isLeaf = false;
+			Current.isLeaf = false;
 			//cerr << current.identifier << " is not a child" << endl;
-            dfs(v, nodes, current.identifier);
+            dfs(v, Nodes, Current.identifier);
 		}
 	}
-	if (isLeaf) {
+	if (Current.isLeaf) {
 		//if is leaf, get parent node and increment number of leaves
-		current.isLeaf = true;
-		nodes[Parent].nOfLeaves++;
+		Current.isLeaf = true;
+		Nodes[Parent].nOfLeaves++;
 	}
 }
 

@@ -32,8 +32,6 @@ int main(){
     int N, M;
     cin >> N >> M;
     char past[N][M];
-    bool isWolf = 0;
-    bool isSheep = 0;
     for(int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             cin >> past[i][j];
@@ -42,8 +40,8 @@ int main(){
     for(int i = 0; i < N; i++) {
         for(int j = 0; j < M; j++) {
             //cout no and return, invalid solution
-            if ((past[i][j] == 'S' && past[i][j+1] == 'W' && j != M-1) || (past[i][j] == 'S' && past[i][j-1] == 'W' && j != 0) || 
-                (past[i][j] == 'S' && past[i+1][j] == 'W' && i != N-1) || (past[i][j] == 'S' && past[i-1][j] == 'W' && i != 0)) {
+            if ((past[i][j] == 'S' && j != M-1 && past[i][j+1] == 'W') || (past[i][j] == 'S' && j != 0 && past[i][j-1] == 'W') || 
+                (past[i][j] == 'S' && i != N-1 && past[i+1][j] == 'W') || (past[i][j] == 'S' && i != 0 && past[i-1][j] == 'W')) {
                     cout << "No" << endl;
                     return 0;
                 }

@@ -28,27 +28,25 @@ typedef vector<vector<ii> > Graph;
 typedef map<int,int> FREQ;
 
 int main(){
-    string Ter;
-    string B;
-    cin >> Ter;
-    for(int i = 0; i < Ter.size(); i++) {
-        if ((Ter[i] == '-' && Ter[i+1] == '.') || (Ter[i] == '-' && Ter[i+1] == '.' && B[i-1] == '0')) {
-            B += '1';
-			Ter[i] = '/';
-			Ter[i+1] = '/';
-        }
-        else if ((Ter[i] == '-' && Ter[i+1] == '-')) {
-            B += '2';
-			Ter[i] = '/';
-			Ter[i+1] = '/';
-        }
-		else if (Ter[i] == '.') {
-			B += '0';
+	int a,b;
+	cin >> a >> b;
+	int sum = 0;
+
+	if (b == 0) {
+		cout << 0 << endl;
+		return 0;
+	}
+	if (b % 2 == 0) {
+		for(int i = 3; i <= 10000000; i+= 2) {
+			if (i % b != 0 && i / b <= a) sum += i;
 		}
-    }
+	}
+	if (b % 2 != 0) {
+		for(int i = 2; i <= 10000000; i+= 2) {
+			
+		}
+	}
 
-    cout << B << endl;
 
+	cout << sum << endl;
 }
-
-// .-.--

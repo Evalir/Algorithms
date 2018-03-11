@@ -5,10 +5,13 @@
 #include <climits>
 using namespace std;
 
+int N;
+
 struct Node {
 	vector<int> adj;
 	int identifier;
 	bool isVisited;
+	bool isLeaf;
     //we can add more properties to the graph by adding them to this struct, such as cost or color, etc
 };
 /// @param current: node that we are entering. Is passed as reference so 
@@ -19,17 +22,17 @@ struct Node {
 // isRoot -> true on first call, then pass on false on subcalls.
 // dfs(Node& current, vector<Node> &nodes, isRoot = true), then change to false on for loop/
 //PD: DO NOT alter parameters passed, create variables and pass them on the subcall.
-void dfs(Node& current, vector<Node> &nodes) { 
-	bool isLeaf = true;
-	current.isVisited = true;
-	for (int id : current.adj ) {
-		Node &v = nodes[id];
+void dfs(Node& Current, vector<Node> &Nodes) { 
+	Current.isLeaf = true;
+	Current.isVisited = true;
+	for (int id : Current.adj ) {
+		Node &v = Nodes[id];
 		if (!v.isVisited) {
-			isLeaf = false; // since it called another node it means it is not a child
+			Current.isLeaf = false; // since it called another node it means it is not a child
             //do recursion
 		}
 	}
-	if (isLeaf) {
+	if (Current.isLeaf) {
 		// this will run if all nodes are visited, and if all nodes are vis and is not root, then is leaf
         //if not needed then delete
 	}
@@ -44,7 +47,7 @@ void dfsAll(vector<Node> &nodes) {
 }
 
 int main() {
-	int N;
+	
 	cin >> N;
 	vector<Node> V(N); //creates all the nodes; set properties as needed.
 	for (Node &n : V) {
