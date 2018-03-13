@@ -67,11 +67,19 @@ class SegmentTree {
 	};
 
 int main(){
-	int arr[] = {18, 17, 13, 19, 15, 11, 20};
-	VI A(arr, arr + 7);
-	SegmentTree STree(A);
 	printf("This is the Segment Tree Implementation from\n Competitive Programming 3.\n");
 	printf("NOTE: This is a static Segment Tree, it is not dynamic.\n\n");
+
+	//int arr[] = {18, 17, 13, 19, 15, 11, 20};
+	//VI A(arr, arr + 7);
+	VI A;
+	for (int i = 0; i < 7; i++) {
+		int x;
+		cin >> x;
+		A.push_back(x);
+	}
+	SegmentTree STree(A);
+
 	printf("RMQ(1,3) = %d -> %d\n", STree.RMQ(1,3), A[STree.RMQ(1,3)]);
 	printf("RMQ(4,6) = %d -> %d\n", STree.RMQ(4,6), A[STree.RMQ(4,6)]);
 	return 0;

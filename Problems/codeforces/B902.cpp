@@ -37,14 +37,6 @@ void calculateNodeDepth(Node& Current, vector<Node> &Nodes, int Depth = 0) {
 	}
 }
 
-//if we are not dealing with a tree, we'll need this helper function for doing a general DFS.
-// void dfsAll(vector<Node> &nodes) {
-//     for(long long i = 0; i < N; i++) {
-//         //cout << "To node: " << nodes[i].identifier << endl;
-//         dfs(nodes[i], nodes);
-//     }
-// }
-
 int main() {
 	cin >> N;
 	vector<Node> V(N); //creates all the nodes; set properties as needed.

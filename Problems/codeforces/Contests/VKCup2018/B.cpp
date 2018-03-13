@@ -32,22 +32,10 @@ int main(){
     int N, M;
     cin >> N >> M;
     char past[N][M];
-    bool isWolf = 0;
 
     for(int i = 0; i < N; i++) {
         for (int j = 0; j < M; j++) {
             cin >> past[i][j];
-            if (past[i][j] == 'W') isWolf = 1;
-        }
-    }
-
-    if (isWolf == 0) {
-        cout << "Yes" << endl;
-        for(int i = 0; i < N; i++) {
-            for (int j = 0; j < M; j++) {
-                cout << past[i][j];
-            }
-            cout << endl;
         }
     }
 
