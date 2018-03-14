@@ -21,6 +21,4 @@ def parImpar():
     else:
         print x, " es impar"
 
-def isPrime():
-    
 

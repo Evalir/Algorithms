@@ -30,22 +30,53 @@ typedef map<int,int> FREQ;
 int main(){
     int p, n;
     cin >> p >> n;
-    int lowestBranch = n;
-    bool bigDiv = false;
-    while (bigDiv == false) {
-        for(int i = 2; i <= p; i++) {
-            //cout << "on for loop with i: " << i << endl;
-            if (lowestBranch % i == 0) break;
-            if (i == p && lowestBranch % i != 0) bigDiv = true;
-        }
-        if (bigDiv == true) break;
-        lowestBranch--;
-        //cout << "currBranch " << lowestBranch << endl;
-        if (lowestBranch == 1) {
-            cout << -1 << endl;
-            return 0;
-        }
-    }
-    cout << lowestBranch << endl;
+	bool isPrime = false;
+	if (n > 300 && p > 300) {
+    for(int k = n-1; k >= n-1-300; k-= 2) {
+		//cerr << "Trying with " << k << endl;
+		if (k <= p) {
+			cout << -1 << endl;
+			return 0;
+		}
+		for(int i = 2; i*i <= p; i++) {
+			//cout << "dividing " << k << " by " << i << endl;
+			if (k % i == 0) {
+				//cerr << i << " divides " << k << endl;
+				isPrime = false;
+				break;
+			}
+			isPrime = true;
+		}
+		if (isPrime) {
+			cout << k << endl;
+			return 0;
+		}
+		if (k == n-1-300) {
+			cout << -1 << endl;
+			return 0;
+		}
+	}
+	}
+	else {
+		for(int k = n; k >= p; k--) {
+			if (k == p) {
+				cout << -1 << endl;
+				return 0;
+			}
+			for(int i = 2; i <= p; i++) {
+				if (k % i == 0) {
+					isPrime = false;
+					break;
+				}
+				isPrime = true;
+			}
+
+			if (isPrime) {
+				cout << k << endl;
+				return 0;
+			}
+		}
+		
+	}
     return 0;
 }

@@ -49,10 +49,11 @@ int main() {
 		v--;
 		V[v].adj.push_back(i);
 		V[v].identifier = v;
+		V[v].color = 0;s
 		V[i].adj.push_back(v);
 		V[i].identifier = i;
 		V[i].color = 0;
-		V[v].color = 0;
+		
 	}
 
 	for(int i = 0; i < N; i++) {
