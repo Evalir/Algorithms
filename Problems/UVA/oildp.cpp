@@ -49,7 +49,7 @@ void floodAll(vector< vector<Node> >& Land, int N, int M) {
 
 int main() {
 	while(true) {
-		
+		components = 0;
 		cin >> N >> M;
 		if (N == 0 || M == 0)
 			break;
@@ -64,9 +64,9 @@ int main() {
 		}
 	
 		floodAll(Land, N, M);
-	
 		cout << components << endl;
 	
 	}
 	return 0;
 }
+

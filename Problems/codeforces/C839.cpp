@@ -6,13 +6,13 @@ using namespace std;
 
 double totalDepth = 0;
 double nLeaves = 0;
+
 struct Node {
 	vector<int> adj;
 	bool isVisited;
 	int identifier;
     bool isLeaf = true;
 };
-
 
 void dfs(Node& Current, vector<Node>& Nodes, int Depth) {
 	Current.isVisited = true;

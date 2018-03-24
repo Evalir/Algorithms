@@ -1,102 +1,79 @@
 #include <iostream>
-#include <algorithm>
 #include <vector>
+#include <set>
+#include <algorithm>
+#include <utility>
 using namespace std;
 
+int N, M;
+bool hasCycle = 0;
 struct Node {
-	pair<int, int> identifier;
 	char content;
-	bool isVisited = false;
+    pair<int, int> identifier;
+	bool visited;
 };
 
-int N, M;
-bool hasCycle = false;
-
-void floodFill(int r, int c, int& N, int& M, vector< vector<Node> >& Matrix, Node Parent, int Case) {
-
-	if (r < 0 || r >= N || r < 0 || c >= M) 
+void floodFill(int r, int c, vector< vector <Node> > & Land, Node& Parent, char PickedLetter) {
+	if (r < 0 || r >= N || c < 0 || c >= M) //if out of range
 		return;
 		
-	
-	//if it's not the letter we're currently finding a cycle on.
-	if (Parent.content != Matrix[r][c].content) {
-		cerr << "Letters diff: " << Parent.content << ' ' << Matrix[r][c].content << " Case: " << Case << endl;
+    if (Land[r][c].content != PickedLetter)
 		return;
-	}
+        
+	if (Land[r][c].visited && ((Parent.identifier.first == r && Parent.identifier.second != c ) || (Parent.identifier.first != r && Parent.identifier.second == c)) && Parent.content == Land[r][c].content) {
+        cout << "Found cycle on" << r << ' ' << c << endl;
+        hasCycle = true;
+        return;
+    }
+    
+	Land[r][c].visited = true;
+    cout << endl;
+    cout << "on " << r << ' ' << c << endl;
+    for(int i = 0; i < N; i++) {
+        for(int j = 0; j < M; j++) {
+            if (i == r && j == c)
+                cout << '@';
+            else
+                cout << Land[i][j].content;
+        }
+        cout << endl;
+    }
+		
 	
-		//if pickedletter = currentletter and is visited
-	if (Parent.content == Matrix[r][c].content && Matrix[r][c].isVisited && Parent.identifier.first != r && Parent.identifier.second != c) {
-		hasCycle = true;
-		cout << "Found cycle on " << r << ' ' << c << endl;
-		return;
-	}
+	//call flood fill recursively in all cardinal directions
+	floodFill(r-1, c, Land, Land[r][c], PickedLetter);
+	floodFill(r, c-1, Land, Land[r][c], PickedLetter);
+	floodFill(r+1, c, Land, Land[r][c], PickedLetter);
+	floodFill(r, c+1, Land, Land[r][c], PickedLetter);
+}
 
-	if (Matrix[r][c].isVisited)
-		return;
-	else	
-		Matrix[r][c].isVisited = true;
-	
-	cout << "On i: " << r << " j: " << c << endl;
+//Traverses the entire graph looking for connected components
+void floodAll(vector< vector<Node> >& Land, int N, int M) {
 	for(int i = 0; i < N; i++) {
 		for(int j = 0; j < M; j++) {
-			if (i == r && j == c)
-				cout << '@';
-			else
-				cout << Matrix[i][j].content;
+			if (!Land[i][j].visited && Land[i][j].content != '*') {
+				floodFill(i,j, Land, Land[i][j], Land[i][j].content);
+			}
 		}
-		cout << endl;
 	}
-
-
-	Node n = Matrix[r][c];
-	
-	floodFill(r, c+1, N, M, Matrix, n, 1);
-	floodFill(r, c-1, N, M, Matrix, n, 2);
-	floodFill(r+1, c, N, M, Matrix, n, 3);
-	floodFill(r-1, c, N, M, Matrix, n, 4);
 }
 
 int main() {
-	
 	cin >> N >> M;
-	vector< vector<Node> > Matrix(N, vector<Node>(M));
-
-	for(int i = 0; i < N; i++) {
-		for(int j = 0; j < M; j++) {
-			cin >> Matrix[i][j].content;
-			pair<int, int> P;
-			P.first = i;
-			P.second = j;
-			Matrix[i][j].identifier = P;
-		}
-	}
-	
-	for(int i = 0; i < N; i++) {
-		for(int j = 0; j < M; j++) {
-			Node n;
-			pair<int, int> P;
-			P.first = i;
-			P.second = j;
-			n.identifier = P;
-			n.content = Matrix[i][j].content;
-			floodFill(i , j, N, M, Matrix, n, 0);
-		}
-	}
-
-
-	cout << endl;
-	if (hasCycle)
-		cout << "Yes" << endl;
-	else
-		cout << "No" << endl;
-
+    vector<vector<Node> > V(N, vector<Node>(M));
+    for(int i = 0; i < N; i++) {
+        for(int j =0; j < M; j++) {
+            cin >> V[i][j].content;
+            V[i][j].identifier.first = i;
+            V[i][j].identifier.second = j;
+        }
+    }
+    
+    floodAll(V, N, M);
+    
+    if (hasCycle)
+        cout << "Yes" << endl;
+    else
+        cout << "No" << endl;
 	return 0;
 }
-
-/*
- 3 4
-AAAA
-ABCA
-AAAA
-
- * */
