@@ -1,12 +1,11 @@
 #include <cstdio>
-#include <cmath>
+#include <iostream>
 #include <vector>
 #include <algorithm>
+#include <cmath>
+
 using namespace std;
-/*
- Problem from URI ONLINE JUDGE - Rescue in freefall
- * MST: Minimum spanning tree
- * */
+
 class DisjointSet {
    int N;
    int ncomp;
@@ -26,16 +25,6 @@ public:
    int find_rep(int u) {
    // path compression
       return par[u] < 0 ? u : par[u] = find_rep(par[u]);
-      /*
-      vector<int> s;
-      while (parent[u] >= 0) {
-         s.push_back(u);
-         u = parent[u];
-      }
-      for (int i = 0; i < (int) s.size(); ++i)
-         parent[s[i]] = u;
-      return u;
-      */
    }
    bool union_rep(int u, int v) {
       int u_root = find_rep(u);
@@ -56,8 +45,8 @@ public:
 
 struct Edge {
    int u, v;
-   int cost;
-   Edge(int _u, int _v, int _cost) : u(_u), v(_v), cost(_cost) {}
+   double cost;
+   Edge(int _u, int _v, double _cost) : u(_u), v(_v), cost(_cost) {}
 };
 
 class CostCmp {
@@ -69,62 +58,76 @@ public:
    }
 };
 
-
-int N, M;
-vector<Edge> edges;
-
 // vector<bool> in_mst;
-long long kruskal() {
+double kruskal(int N, vector<Edge>& Edges) {
 // in_mst.assign( edges.size(), false );
-   sort(edges.begin(), edges.end(), CostCmp());
+   sort(Edges.begin(), Edges.end(), CostCmp());
    DisjointSet dset(N);
-   long long cost = 0;
-   for (int j = 0; j < int(edges.size()) && int(dset.size()) > 1; ++j) {
-      if (dset.union_rep(edges[j].u, edges[j].v)) {
-         cost += edges[j].cost;
+   double cost = 0;
+   for (int j = 0; j < int(Edges.size()) && int(dset.size()) > 1; ++j) {
+      if (dset.union_rep(Edges[j].u, Edges[j].v)) {
+         // cerr << "Cost is: " << cost << endl;
+         cost += Edges[j].cost;
       // in_mst[ edges[j].id ] = true;
       }
    }
    return cost;
 }
 
-/*
-7 11
-0 1 7
-0 3 5
-1 2 8
-1 3 9
-1 4 7
-2 4 5
-3 4 15
-3 5 6
-4 5 8
-4 6 9
-5 6 11
-*/
 
 int main(int argc, char* argv[]) {
-    int c;
-    scanf("%d", &c);
-    while(c--) {
+    int t;
+    cin >> t;
+    
+    while(t--) {
+        vector<Edge> V;
         int n;
-        scanf("%d", &n);
-        
+        cin >> n;
+        double costs[n][n];
+        pair<double,double> coords[n];
         for(int i = 0; i < n; i++) {
-            scanf("%d %d", &)
+            pair<double, double> c;
+            cin >> c.first >> c.second;
+            c.first /= 100;
+            c.second /= 100;
+            coords[i] = c;
         }
+        
+        //calculate distance costs for each node
+        for(int i = 0; i < n; i++) {
+            for(int j = 0;j < n; j++) {
+                if (i != j) {
+                    double cost = sqrt(pow(coords[i].first-coords[j].first,2)+ pow(coords[i].second-coords[j].second,2));
+                    costs[i][j] = cost;
+                }
+                else
+                    costs[i][j] = -1;
+            }
+        }
+       // cerr << "Costs:\n[ " << endl;
+        //print cost matrix
+        //for(int i = 0; i < n; i++) {
+            
+          //  for(int j = 0; j < n; j++) {
+              //  cout << costs[i][j] << ' ';
+            //}
+          //  cout << endl;
+        //}
+        //push back nodes with costs
+        // node i, j, cost : costs[i][j]
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                if(i != j) {
+                    V.push_back(Edge(i, j, costs[i][j]));
+                    //cerr << "push back node " << i << ' ' << j << " with cost: " << costs[i][j] << endl;
+                }
+            }
+        }
+        
+        double res = kruskal(n, V);
+        printf("%.2lf\n", res);
+        
     }
-
-   scanf("%d %d", &N, &M);
-   for (int j = 0; j < M; ++j) {
-      int u, v,i, j, cost;
-      scanf("%d %d %d %d", &u, &v, &i, &j);
-      edges.push_back(Edge(u, v, cost));
-   }
-
-   long long res = kruskal();
-   printf("%lld\n", res);
 
    return 0;
 }
-
