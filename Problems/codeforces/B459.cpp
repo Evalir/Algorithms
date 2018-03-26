@@ -20,22 +20,19 @@ typedef vector<VI> VII;
 int main(){
     int N;
     cin >> N;
-    vector<long long> el;
-    map<long, int> ways;
+    map<long long, long long> ways;
     for(int i = 0; i < N; i++) {
-        int x;
+        long long x;
         cin >> x;
-        el.push_back(x);
+        ways[x]++;
     }
-    sort(el.begin(), el.end());
-    for(int i = 0; i < N; i++ ) {
-        ways[el[N-1]-el[i]]++;
-    }
-    int maxDif = 0;
-    for(auto x : ways) {
-        if (x.first > maxDif) maxDif = x.first;
+    
+    if(ways.size() == 1) {
+        cout << 0 << ' ' << 1 << endl;
+        return 0;
     }
 
-    cout << maxDif << " " <<ways[maxDif] << endl;
+    long long maxDif = abs(ways.begin()->first-ways.rbegin()->first);
+    cout << maxDif << ' ' << ways.begin()->second * ways.rbegin()->second <<endl;
     return 0;
 }
