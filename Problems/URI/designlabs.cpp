@@ -10,6 +10,7 @@ struct Node {
   int identifier;
   bool isVisited = false;  
 };
+
 int totalSubCall = 0;
 
 void dfs(Node& Current, vector<Node>& Nodes, int subCall) {

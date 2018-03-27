@@ -70,11 +70,14 @@ int main() {
     }
     
     dfsAll(Nodes, V, Components);
+
     cout << "Case #" << count << ':' << endl;
+
     for(int i = 0; i < V; i++) {
       if(!Nodes[i].printed)
         cout << Nodes[i].identifier;
       Nodes[i].printed = true;
+
       for(int j = 0; j < V; j++) {
         if (Nodes[i].group == Nodes[j].group && i != j && Nodes[j].printed == false) {
           cout << ',' << Nodes[j].identifier << ','<< endl;

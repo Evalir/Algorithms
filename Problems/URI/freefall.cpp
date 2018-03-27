@@ -43,7 +43,7 @@ public:
    }
 };
 
-struct Edge {
+struct Edge {                        
    int u, v;
    double cost;
    Edge(int _u, int _v, double _cost) : u(_u), v(_v), cost(_cost) {}
@@ -104,17 +104,7 @@ int main(int argc, char* argv[]) {
                     costs[i][j] = -1;
             }
         }
-       // cerr << "Costs:\n[ " << endl;
-        //print cost matrix
-        //for(int i = 0; i < n; i++) {
-            
-          //  for(int j = 0; j < n; j++) {
-              //  cout << costs[i][j] << ' ';
-            //}
-          //  cout << endl;
-        //}
-        //push back nodes with costs
-        // node i, j, cost : costs[i][j]
+		//set up kruskal edge vector
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
                 if(i != j) {

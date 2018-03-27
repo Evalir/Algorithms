@@ -100,7 +100,7 @@ int main(int argc, char* argv[]) {
            fam.union_rep(i,a);
        }
    }
-    int sizefam = fam.size();
+   int sizefam = fam.size();
    long long res = kruskal(N, edges);
    printf("%d %lld\n", sizefam, res);
 

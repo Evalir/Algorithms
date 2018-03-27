@@ -73,8 +73,8 @@ int main(int argc, char* argv[]) {
     int M, N;
     while(cin >> M >> N && M != 0 && N != 0) {
         
-        int sum = 0;
-        vector<Edge> edges;
+   	    int sum = 0;
+    	vector<Edge> edges;
         for (int j = 0; j < N; ++j) {
             int u, v, cost;
             scanf("%d %d %d", &u, &v, &cost);
