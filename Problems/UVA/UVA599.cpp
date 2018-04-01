@@ -4,7 +4,6 @@
 #include <iostream>
 #include <map>
 #include <set>
-//Problem URI ONLINE JUDGE - Itinerary of Santa Claus
 using namespace std;
 
 class DisjointSet {
@@ -77,9 +76,10 @@ int main() {
             if (eg[i] == ',')
                 continue;
                 
-            if (eg[i] >= 65 && eg[i] <= 90)
+            if (eg[i] >= 65 && eg[i] <= 90) {
                 nOfNodes++;
-                Nodes.push_back(eg[i]-'A');
+				Nodes.push_back(eg[i]-'A');
+			}
         }
         
         DisjointSet DS(26);
@@ -94,7 +94,7 @@ int main() {
         set<int> TreesRep;
         set<int> AcornsRep;
         
-        for(int i = 0; i < Nodes.size(); i++) {
+        for(unsigned int i = 0; i < Nodes.size(); i++) {
             //cerr << "Finding rep for node " << Nodes[i] << endl;
             int NodeRep = DS.find_rep(Nodes[i]);
             if (NodeRep != lQueryRep) {
