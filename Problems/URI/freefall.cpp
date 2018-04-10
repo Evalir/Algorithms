@@ -104,6 +104,14 @@ int main(int argc, char* argv[]) {
                     costs[i][j] = -1;
             }
         }
+        
+        //print matrix
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < n; j++) {
+                cout << costs[i][j] << ' ';
+            }
+            cout << endl;
+        }
 		//set up kruskal edge vector
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
