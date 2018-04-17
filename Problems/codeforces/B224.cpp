@@ -11,7 +11,7 @@ int main() {
 	set<int> diff;
 	set<int> chk;
 	vector<pair<int,int> > sol;
-	
+
 	for(int i = 0 ;i < n; i++) {
 		cin >> nums[i];
 		chk.insert(nums[i]);
@@ -53,6 +53,7 @@ int main() {
 			minsol.second = sol[i].second;
 		}
 	}
+	
 	cout << minsol.first+1 << ' ' << minsol.second+1 << endl;
 	return 0;
 }
