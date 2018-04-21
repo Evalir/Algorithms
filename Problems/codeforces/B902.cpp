@@ -48,7 +48,7 @@ int main() {
 		n.isVisited = false;
 	}
 
-	for(Node n : V) {
+	for(Node& n : V) {
 			cout << "Node: " << n.identifier << endl;	
 			for(int at : n.adj) {
 				cout << "child" << at << endl;

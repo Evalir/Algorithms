@@ -26,7 +26,7 @@ void dfs(Node& current, vector<Node> &nodes) {
 	    for (long long id : current.adj ) {
 		    Node &v = nodes[id];
 		    if (!v.isVisited) {
-                dfs(v, nodes);
+	                dfs(v, nodes);
 		    }
 	    }
 
