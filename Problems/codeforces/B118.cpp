@@ -1,40 +1,73 @@
 #include <iostream>
-#include <vector>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <cmath>
 #include <algorithm>
-#include <bitset>
-#include <list>
-#include <string>
-#define INF (int)1e9
+#include <cmath>
 using namespace std;
-typedef long long llong;
-typedef unsigned long long uint64;
-typedef vector<int> VI;
-typedef vector<VI> VII;
- 
- 
-int main(){
-    int N;
-    cin >> N;
-    N--;
-    int cNum = 0;
-    int ws = N*2;
-    for (int i = 0; i < N+1; i++) {
-        if (ws > 3 ) {
-            for(int j = 0; j < ws; j++) {
-                cout << " ";
-            }
-            cout << 0 << endl;
+
+int main() {
+    int n;
+    cin >> n;
+    int spaces = 2*n;
+    int dig = 1;
+    for(int i = 0; i < n; i++) {
+        int ntoprint = 0;
+        for(int j = 0; j < spaces; j++) {
+            cout << " ";
         }
-        ws -= 2;
-        if (ws != N*2) {
-            for(int j = 0; j < )
+        for(int j = 0; j < dig; j++) {
+            if (j == dig-1)
+                cout << ntoprint;
+            else
+                cout << ntoprint << ' ';
+            if (j >= (dig/2))
+                ntoprint--;
+            else
+                ntoprint++;
         }
+        //cerr << "\t\t debug: " << (dig/2)+1;
+        cout << endl;
+        spaces -= 2;
+        dig += 2;
     }
-
-
+    int ntoprint = 0;
+    for(int i = 0; i < 2*n+1; i++) {
+        spaces = 0;
+        if (i < 2*n)
+            cout << ntoprint << ' ';
+        else
+            cout << ntoprint;
+        if (i >=(n))
+            ntoprint--;
+        else
+            ntoprint++;
+    }
+    cout << endl;
+    spaces = 2;
+    ntoprint = 0;
+    dig -= 2;
+    //cerr << "DIG IS " << dig << endl;
+    for(int i = 0; i < n; i++) {
+        ntoprint = 0;
+        for(int j = 0; j < spaces; j++) {
+            cout << " ";
+        }
+        for(int j = 0; j < dig; j++) {
+            if (j == dig-1)
+                cout << ntoprint;
+            else
+                cout << ntoprint << ' ';
+            if (j >= (dig/2))
+                ntoprint--;
+            else
+                ntoprint++;
+        }
+        cout << endl;
+        spaces += 2;
+        dig -= 2;
+    }
+    
+    
+    
+    
+    
+    
 }

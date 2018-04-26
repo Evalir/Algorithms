@@ -4,6 +4,7 @@
 #include <algorithm>
 using namespace std;
 #define INF 100000007
+
 int main() {
 	int n, k;
 	cin >> n >> k;
