@@ -18,6 +18,7 @@ int main() {
         sort(dh.begin(), dh.end());
         sort(kh.begin(), kh.end());
         int d = 0,k = 0, ans = 0;
+        
         while(d < n && k < m) {
             while (dh[d] > kh[k] && k < m)
                 k++;
