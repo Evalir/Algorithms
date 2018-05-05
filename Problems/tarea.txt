@@ -1,0 +1,101 @@
+PROGRAMA TRIANGULO
+
+Programa: Area de un Triangulo
+Variables: entero base, entero altura, entero resultado
+Algoritmo:
+    Inicio
+        Escribir "Introduzca la base y altura del triangulo"
+        Leer base, altura
+        Si base <= 0 o altura <= 0:
+            Escribir "Valores invalidos"
+        Si no:
+            resultado = (base*altura)/2
+            Escribir resultado
+        FinSi
+    Fin
+    
+PROGRAMA PROMEDIO Y SUMATORIA 2
+
+Programa: Determinar promedio de 10 numeros
+Variables: entero sumatoria, contador, promedio, numero
+Algoritmo:
+    Inicio
+        Escribir "Inserte 10 numeros"
+        Desde i= 1 hasta i = 10:
+            leer numero
+            sumatoria = sumatoria + numero
+        FinDesde
+        Escribir "La sumatoria es ", sumatoria
+        promedio = sumatoria/10
+        Escribir "El promedio es " promedio
+    Fin
+
+
+PROGRAMA SUMA RESTA MURTIPLICACION Y DIVISION
+
+Programa: Sumar, restar, multiplicar y dividir dos numeros
+Variables: entero A, entero B
+Algoritmo:
+    Inicio
+        Escribir "Inserte dos numeros enteros diferentes de 0"
+        Leer A, B
+        Si B = 0:
+            Escribir "Valor invalido para el segundo numero. No se puede efectuar por division con 0."
+        Si no:
+            Escribir "El resultado de la suma es ", A + B
+            Escribir "El resultado de la resta es ", A - B
+            Escribir "El resultado de la multiplicacion es", A*B
+            Escribir "El resultado de la division es ", A/B
+        FinSi
+    Fin
+    
+PROGRAMA Factorial. (Did you mean recursion?)
+
+Programa: Determinar factorial de un numero.
+Variables: entero N, entero resultado
+Algoritmo:
+    Funcion Factorial(entero A):
+    Variables: resultado
+    Inicio
+        Si A < 0
+            devolver -1
+        Si A = 0 O A = 1
+            devolver 1
+        Si no
+            devolver A * Factorial(A-1)
+    Fin-Funcion
+    
+    Inicio
+        Escribir "Ingrese un numero entero positivo"
+        Leer N
+        resultado = Factorial(N)
+        Escribir "El factorial de " N, " es ", resultado
+    Fin
+    
+PROGRAMA EDAD
+
+Programa: Determinar estado civil de edad.
+Variables: entero Edad
+Algoritmo:
+    Inicio
+        Escribir "Ingrese un numero entero positivo"
+        Leer Edad
+        Si Edad < 0
+            Escribir "Esta persona todavia solo suena con nacer!"
+        Si no entonces Si Edad < 18
+            Escribir "Esta persona es menor de edad"
+        Si no entonces Si Edad >= 18 y Edad <= 60
+            Escribir "Esta persona es mayor de edad"
+        Si no entonces Si Edad > 60
+            Escribir "Esta persona pertenece a la tercera edad"
+        FinSi
+    Fin
+
+    
+    
+    
+    
+    
+    
+    
+    
