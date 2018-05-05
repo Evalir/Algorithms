@@ -7,7 +7,7 @@ int val[5] = {5,3,5,3,2};
 int memo[1000][1000];
 int knapsack(int pointer, int capacity) {
 	int res;
-	if (pointer <= 0 || capacity <= 0 )
+	if (pointer < 0 || capacity <= 0 )
 		return 0;
 
 	if (memo[pointer][capacity] != -1)
