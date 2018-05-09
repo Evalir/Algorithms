@@ -21,6 +21,15 @@ void Sieve() {
 	}
 }
 int main() {
-	
-    return 0;
+	Sieve();
+    int n;
+    cin >> n;
+    int k = 0;
+    for(auto x : tPrimes) {
+		k++;
+		cout << x << ' ';
+		if (k == n)
+			break;
+	}
+	return 0;
 }
