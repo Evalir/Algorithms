@@ -2,7 +2,10 @@
 #include <string>
 #include <algorithm>
 using namespace std;
-
+/*input
+1
+10 100
+*/
 int main() {
 	int t;
 	cin >> t;
