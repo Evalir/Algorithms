@@ -54,7 +54,7 @@ int main() {
     	freopen("output.txt", "w", stdout);
  	#endif
     //LIS : 7
-    int ans = solve(V);
+    int ans = solveLIS(V);
     cout << ans << endl;
 
     for(int i = 0; i <= 1000; i++)
