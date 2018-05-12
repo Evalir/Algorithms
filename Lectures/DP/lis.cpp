@@ -31,7 +31,7 @@ int RecursiveLIS(int idx, int last_idx) {
 	return ans;
 }
 
-int solve(vector<int>& V) {
+int solveLIS(vector<int>& V) {
     for(int i = 0; i < V.size(); i++) {
     	dp[i] = 1;
     	for(int k = 0; k < i; k++) {
