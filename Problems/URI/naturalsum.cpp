@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
-
+/*input
+10 100
+*/
 int main() {
 	long long a, b;
 	cin >> a >> b;

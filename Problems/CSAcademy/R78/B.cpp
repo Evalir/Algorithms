@@ -14,51 +14,72 @@ int main() {
     int n;
     cin >> n;
     long maxdif = -1;
-    long md2 = 0;
-    long tx = 0;
+    pair<long,long> pt;
     for(int i = 0; i < n; i++) {
         int x;
         cin >> x;
         points.push_back(x);
-        if (i != 0 && abs(points[i]-points[i-1]) >= maxdif) {
-            maxdif = max(maxdif, abs(points[i]-points[i-1]));
-            tx = i;
-        }
     }
-    //cerr << points[tx] << endl; 
-    points[tx] = -EPS;
-    long x1,x2;
-    for(int i = 0; i < n; i++) {
-        if (i != 0 && abs(points[i]-points[i-1]) < maxdif && abs(points[i]-points[i-1]) > md2) {
-            md2 = max(md2, abs(points[i]-points[i-1]));
-            x1 = points[i-1];
-            x2 = points[i];
-        }
+    vector<long> p;
+    if (points[1]-points[0] > points[n-1]-points[n-2]) {
+           p = points;
+           p.erase(p.begin());
+           //get max dist
+           for(int i = 0; i < n-1; i++) {
+			   cerr << "i " << i << " pi " << p[i] << ' ' << p[i+1] << endl;
+               if(p[i+1]-p[i] > maxdif) {
+                    maxdif = p[i+1]-p[i];
+                    pt.first = i;
+                    pt.second = i+1;
+               }
+           }
+           cerr << "max dist " << maxdif << endl;
+           int np = (p[pt.first]+p[pt.second]) / 2;
+           cerr << "inserting at " << np << endl;
+           p.insert(p.begin() + pt.second, np);
+           maxdif = -1;
+           for(int i = 0 ; i < p.size()-1; i++) {
+                if(p[i+1]-p[i] > maxdif) {
+                    maxdif = p[i+1]-p[i];
+                    pt.first = i;
+                    pt.second = i+1;
+               }
+           }
+           for(auto x : p)
+			cout << x << " ";
+		   
+		   cout << endl;
+           cout << maxdif << endl;
     }
-    //cerr << maxdif << ' ' << md2 << endl;
-    if (md2 == 1) {
-        cout << 1 << endl;
-        return 0;
+    else {
+		p = points;
+		p.erase(p.begin()+n-1);
+		 for(int i = 0; i < p.size(); i++) {
+			   cerr << "i " << i << " pi " << p[i] << ' ' << p[i+1] << endl;
+               if(p[i+1]-p[i] > maxdif) {
+                    maxdif = p[i+1]-p[i];
+                    cerr << "at " << i << " dist is " << maxdif << endl;
+                    pt.first = i;
+                    pt.second = i+1;
+               }
+           }
+           cerr << "max dist " << maxdif << endl;
+           long np = (p[pt.first]+p[pt.second]) / 2;
+           cerr << "inserting at " << np << endl;
+           p.insert(p.begin() + pt.second, np);
+           maxdif = -1;
+           for(int i = 0 ; i < p.size(); i++) {
+                if(p[i+1]-p[i] > maxdif) {
+                    maxdif = p[i+1]-p[i];
+                    pt.first = i;
+                    pt.second = i+1;
+               }
+           }
+           for(auto x : p)
+			cout << x << " ";
+		   
+		   cout << endl;
+           cout << maxdif << endl;
     }
-    if (md2 == 0) {
-        cout << 0 << endl;
-        return 0;
-    }
-    
-    //cerr << x1 << ' ' << x2 << endl;
-    long midpoint = (x1+x2)/2;
-    long ans =0;
-    points.push_back(midpoint);
-    sort(points.begin(), points.end());
-    for(int i = 0; i < n; i++) {
-        if (i != 0) {
-            if (points[i] == EPS || points[i-1] == EPS)
-                continue;
-            ans = max(ans, abs(points[i]-points[i-1]));
-        }
-    }
-    
-    
-    cout << ans << endl;
     return 0;
 }

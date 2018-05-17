@@ -22,6 +22,7 @@ int main() {
         cin >> x;
         xv.push_back(x);
     }
+    
     sort(yh.begin(), yh.end());
     sort(xv.begin(), xv.end());
     //get distances
