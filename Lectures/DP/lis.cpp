@@ -4,10 +4,10 @@
 #include <algorithm>
 using namespace std;
 #define INF (int)-1e9-7
-int dp[1010];
-int memo[1010][1010];
-vector<int> V = {23,12,15,3,21,25,29,32,20,55};
-vector<int> rV = {INF,23,12,15,3,21,25,29,32,20,55};
+int dp[1010]; //arr for iterative LIS
+int memo[1010][1010]; //arr for Recursive LIS
+vector<int> V = {23,12,15,3,21,25,29,32,20,55}; //ditto
+vector<int> rV = {INF,23,12,15,3,21,25,29,32,20,55}; //ditto
 
 int RecursiveLIS(int idx, int last_idx) {
 	if (idx >= rV.size())
@@ -18,6 +18,7 @@ int RecursiveLIS(int idx, int last_idx) {
 	int ans = 0;
 
 	//take
+    {
 	int curr = 0;
 	if (rV[last_idx] < rV[idx])
 		curr = 1 + RecursiveLIS(idx+1, idx);
@@ -26,7 +27,7 @@ int RecursiveLIS(int idx, int last_idx) {
 	//not take
 	curr = RecursiveLIS(idx+1,last_idx);
 	ans = max(ans,curr);
-
+    }
 	memo[idx][last_idx] = ans;
 	return ans;
 }
@@ -61,7 +62,7 @@ int main() {
     	for(int j = 0; j <= 1000; j++)
     		memo[i][j] = -1;
     ans = RecursiveLIS(1,0);
-    cout << "recursive lis: " << ans << endl;
+    cout << "Recursive Lis: " << ans << endl;
 
 }
 

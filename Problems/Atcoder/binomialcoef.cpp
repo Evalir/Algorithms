@@ -11,7 +11,6 @@ int main() {
     vector<long> el(n,0);
     for(int i = 0; i < n; i++)
         cin >> el[i];
-        
     sort(el.begin(), el.end());
     long nC = -1;
     nC = el[n-1];
