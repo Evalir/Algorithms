@@ -82,7 +82,7 @@ int main() {
 			}
         }
         
-        DisjointSet DS(nOfNodes);
+        DisjointSet DS(26);
         
         //union find to every pair
         for(int i = 0; i < edges.size(); i++) {

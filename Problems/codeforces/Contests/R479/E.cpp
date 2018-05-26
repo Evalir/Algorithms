@@ -5,41 +5,46 @@
 #include <string>
 #include <set>
 #include <map>
+#define INF (int)-1e9+7
 using namespace std;
 
 struct Node {
 	vector<int> adj;
 	bool isVisited = false;
 	int identifier;
-	int nb;
 };
-bool isCyclic = 1;
-int nofv = 0;
-int nofe = 0;
+
 int ans = 0;
+int ced = 2;
 void dfs(Node& Current, vector<Node>& Nodes) {
 	Current.isVisited = true;
-	nofe += Current.adj.size();
-	nofv++;
+	int curr = Current.adj.size();
+	if (curr != 2)
+		ced = curr;
+	//cerr << "Current node: " << Current.identifier << " curr: " << curr << " ced: " << ced << endl;
 	for(int id : Current.adj) {
 		Node& v = Nodes[id];
 		if (!v.isVisited) {
-			cerr << "Going to " << v.identifier << " from " << Current.identifier << endl;
+			//cerr << "Going to " << v.identifier << " from " << Current.identifier << endl;
 			dfs(v, Nodes);
 		}
 	}
 }
 
 void dfsAll(vector<Node>& Nodes, int N) {
+	bool it = 0;
 	for(int i = 0; i < N; i++) {
+		it = 0;
 		if (!Nodes[i].isVisited) {
-			nofv = 0;
-			nofe = 0;
-			cerr << "going to component n " << i << endl;
+			it = 1;
+			ced = 2;
+			//cerr << "going to component n " << i << endl;
 			dfs(Nodes[i], Nodes);
 		}
-		if (nofe == nofv*2)
+		if (ced == 2 && it) {
+			//cerr << "Boom answer" << endl;
 			ans++;
+		}
 	}
 }
 
@@ -59,7 +64,7 @@ int main() {
 		V[y].identifier = y+1;
 	}
 	
-	dfsAll(V, 0);
+	dfsAll(V, N);
 	cout << ans << endl;
 	return 0;
 }

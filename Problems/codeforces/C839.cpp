@@ -42,12 +42,12 @@ void dfsAll(vector<Node>& Nodes, int N) {
 		}
 	}
 }
- 
+  
 int main() {
     int N;
     cin >> N;
     vector<Node> V(N);
-	
+
 	for(int i = 0; i < N-1; i++) {
 		int x, y;
 		cin >> x >> y;
