@@ -1,49 +1,24 @@
-#include <iostream>
-#include <vector>
-#include <set>
-#include <map>
-#include <stack>
-#include <queue>
-#include <cmath>
-#include <climits>
-#include <algorithm>
-#include <bitset>
-#include <list>
-#include <string>
-#include <sstream>
-#define INF (int)1e9
-#define pb push_back
-#define EPS 1e-9
-#define all(a) (a).begin(), (a).end()
-#define PI 3.1415926535897932384626
-#define READALL(vec) for(int i = 0; i < N; i++){int x; cin >> x; (vec).pb(x);}
+#include <bits/stdc++.h>
 using namespace std;
-typedef long long llong;
-typedef unsigned long long ull;
-typedef vector<int> VI;
-typedef vector<VI> VII;
-typedef vector<long long> VLL;
-typedef pair<int, int> ii;
-typedef vector<vector<ii> > Graph;
-typedef map<int,int> FREQ;
-
 int main(){ 
-    int N;
-    cin >> N;
-    VI el;
-    READALL(el);
-
-    int maxdist = INF;
-    int temp = 0;
-    
-    for(int i = 1; i < N-1; i++) {
-        for(int j = 0; j < N-1; j++) {
-            if (j == i) continue;
-            else if (j+2 == i) continue;
-            else {
-                temp = max()
-            }
-        }
-    }
-    cout << maxdist << endl;
+	int n;
+	cin >> n;
+	vector<int> d(n);
+	for(int i = 0; i < n; i++)
+		cin >> d[i];
+	int ans  = 1000000000;
+	for(int i = 1; i < n-1; i++) {
+		int curr = 0;
+		for(int j = 0; j < n-1; j++) {
+		    if (j+1 == i)
+				curr = max(curr, d[j+2]-d[j]);
+			else if (j != i)
+				curr =  max(curr, d[j+1]-d[j]);
+			else
+				continue;
+		}
+		ans = min(curr,ans);
+	}   
+	cout << ans << endl;
+	return 0;
 }
