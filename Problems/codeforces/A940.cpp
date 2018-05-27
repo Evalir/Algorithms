@@ -29,7 +29,7 @@ int main() {
 
     sort(points.begin(), points.end());
 
-    for(int i = 0; i < n; i++) {
+    for(int i = n-1; i >= 0; i--) {
         if (abs(points[0] - points[i]) > d) counter++;
         else continue;
     }
