@@ -1,0 +1,86 @@
+<div class="ttypography">
+ <div class="problem-statement">
+  <div class="header">
+   <div class="title">
+    B. Conan and Agasa play a Card Game
+   </div>
+   <div class="time-limit">
+    <div class="property-title">
+     time limit per test
+    </div>2 seconds
+   </div>
+   <div class="memory-limit">
+    <div class="property-title">
+     memory limit per test
+    </div>256 megabytes
+   </div>
+   <div class="input-file">
+    <div class="property-title">
+     input
+    </div>standard input
+   </div>
+   <div class="output-file">
+    <div class="property-title">
+     output
+    </div>standard output
+   </div>
+  </div>
+  <div>
+   <p>Edogawa Conan got tired of solving cases, and invited his friend, Professor Agasa, over. They decided to play a game of cards. Conan has <span class="tex-span"><i>n</i></span> cards, and the <span class="tex-span"><i>i</i></span>-th card has a number <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> written on it.</p>
+   <p>They take turns playing, starting with Conan. In each turn, the player chooses a card and removes it. Also, he removes all cards having a number strictly lesser than the number on the chosen card. Formally, if the player chooses the <span class="tex-span"><i>i</i></span>-th card, he removes that card and removes the <span class="tex-span"><i>j</i></span>-th card for all <span class="tex-span"><i>j</i></span> such that <span class="tex-span"><i>a</i><sub class="lower-index"><i>j</i></sub> &lt; <i>a</i><sub class="lower-index"><i>i</i></sub></span>.</p>
+   <p>A player loses if he cannot make a move on his turn, that is, he loses if there are no cards left. Predict the outcome of the game, assuming both players play optimally.</p>
+  </div>
+  <div class="input-specification">
+   <div class="section-title">
+    Input
+   </div>
+   <p>The first line contains an integer <span class="tex-span"><i>n</i></span> (<span class="tex-span">1 ≤ <i>n</i> ≤ 10<sup class="upper-index">5</sup></span>) — the number of cards Conan has. </p>
+   <p>The next line contains <span class="tex-span"><i>n</i></span> integers <span class="tex-span"><i>a</i><sub class="lower-index">1</sub>, <i>a</i><sub class="lower-index">2</sub>, ..., <i>a</i><sub class="lower-index"><i>n</i></sub></span> (<span class="tex-span">1 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub> ≤ 10<sup class="upper-index">5</sup></span>), where <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> is the number on the <span class="tex-span"><i>i</i></span>-th card.</p>
+  </div>
+  <div class="output-specification">
+   <div class="section-title">
+    Output
+   </div>
+   <p>If Conan wins, print "<span class="tex-font-style-tt">Conan</span>" (without quotes), otherwise print "<span class="tex-font-style-tt">Agasa</span>" (without quotes).</p>
+  </div>
+  <div class="sample-tests">
+   <div class="section-title">
+    Examples
+   </div>
+   <div class="sample-test">
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>3<br>4 5 7<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>Conan<br></pre>
+    </div>
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>2<br>1 1<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>Agasa<br></pre>
+    </div>
+   </div>
+  </div>
+  <div class="note">
+   <div class="section-title">
+    Note
+   </div>
+   <p>In the first example, Conan can just choose the card having number <span class="tex-span">7</span> on it and hence remove all the cards. After that, there are no cards left on Agasa's turn.</p>
+   <p>In the second example, no matter which card Conan chooses, there will be one one card left, which Agasa can choose. After that, there are no cards left when it becomes Conan's turn again.</p>
+  </div>
+ </div>
+ <p> </p>
+</div>

@@ -1,0 +1,96 @@
+<div class="ttypography">
+ <div class="problem-statement">
+  <div class="header">
+   <div class="title">
+    B. Buggy Robot
+   </div>
+   <div class="time-limit">
+    <div class="property-title">
+     time limit per test
+    </div>2 seconds
+   </div>
+   <div class="memory-limit">
+    <div class="property-title">
+     memory limit per test
+    </div>256 megabytes
+   </div>
+   <div class="input-file">
+    <div class="property-title">
+     input
+    </div>standard input
+   </div>
+   <div class="output-file">
+    <div class="property-title">
+     output
+    </div>standard output
+   </div>
+  </div>
+  <div>
+   <p>Ivan has a robot which is situated on an infinite grid. Initially the robot is standing in the starting cell <span class="tex-span">(0, 0)</span>. The robot can process commands. There are four types of commands it can perform:</p>
+   <ul> 
+    <li> <span class="tex-font-style-tt">U</span> — move from the cell <span class="tex-span">(<i>x</i>, <i>y</i>)</span> to <span class="tex-span">(<i>x</i>, <i>y</i> + 1)</span>; </li>
+    <li> <span class="tex-font-style-tt">D</span> — move from <span class="tex-span">(<i>x</i>, <i>y</i>)</span> to <span class="tex-span">(<i>x</i>, <i>y</i> - 1)</span>; </li>
+    <li> <span class="tex-font-style-tt">L</span> — move from <span class="tex-span">(<i>x</i>, <i>y</i>)</span> to <span class="tex-span">(<i>x</i> - 1, <i>y</i>)</span>; </li>
+    <li> <span class="tex-font-style-tt">R</span> — move from <span class="tex-span">(<i>x</i>, <i>y</i>)</span> to <span class="tex-span">(<i>x</i> + 1, <i>y</i>)</span>. </li>
+   </ul>
+   <p>Ivan entered a sequence of <span class="tex-span"><i>n</i></span> commands, and the robot processed it. After this sequence the robot ended up in the starting cell <span class="tex-span">(0, 0)</span>, but Ivan doubts that the sequence is such that after performing it correctly the robot ends up in the same cell. He thinks that some commands were ignored by robot. To acknowledge whether the robot is severely bugged, he needs to calculate the maximum possible number of commands that were performed correctly. Help Ivan to do the calculations!</p>
+  </div>
+  <div class="input-specification">
+   <div class="section-title">
+    Input
+   </div>
+   <p>The first line contains one number <span class="tex-span"><i>n</i></span> — the length of sequence of commands entered by Ivan (<span class="tex-span">1 ≤ <i>n</i> ≤ 100</span>).</p>
+   <p>The second line contains the sequence itself — a string consisting of <span class="tex-span"><i>n</i></span> characters. Each character can be <span class="tex-font-style-tt">U</span>, <span class="tex-font-style-tt">D</span>, <span class="tex-font-style-tt">L</span> or <span class="tex-font-style-tt">R</span>.</p>
+  </div>
+  <div class="output-specification">
+   <div class="section-title">
+    Output
+   </div>
+   <p>Print the maximum possible number of commands from the sequence the robot could perform to end up in the starting cell.</p>
+  </div>
+  <div class="sample-tests">
+   <div class="section-title">
+    Examples
+   </div>
+   <div class="sample-test">
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>4<br>LDUR<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>4<br></pre>
+    </div>
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>5<br>RRRUU<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>0<br></pre>
+    </div>
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>6<br>LLRRRR<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>4<br></pre>
+    </div>
+   </div>
+  </div>
+ </div>
+ <p> </p>
+</div>

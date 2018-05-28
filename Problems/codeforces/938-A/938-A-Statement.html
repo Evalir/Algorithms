@@ -1,0 +1,103 @@
+<div class="ttypography">
+ <div class="problem-statement">
+  <div class="header">
+   <div class="title">
+    A. Word Correction
+   </div>
+   <div class="time-limit">
+    <div class="property-title">
+     time limit per test
+    </div>1 second
+   </div>
+   <div class="memory-limit">
+    <div class="property-title">
+     memory limit per test
+    </div>256 megabytes
+   </div>
+   <div class="input-file">
+    <div class="property-title">
+     input
+    </div>standard input
+   </div>
+   <div class="output-file">
+    <div class="property-title">
+     output
+    </div>standard output
+   </div>
+  </div>
+  <div>
+   <p>Victor tries to write his own text editor, with word correction included. However, the rules of word correction are really strange.</p>
+   <p>Victor thinks that if a word contains two <span class="tex-font-style-bf">consecutive</span> vowels, then it's kinda weird and it needs to be replaced. So the word corrector works in such a way: as long as there are two consecutive vowels in the word, it deletes the first vowel in a word such that there is <span class="tex-font-style-bf">another vowel right before it</span>. If there are no two consecutive vowels in the word, it is considered to be correct.</p>
+   <p>You are given a word <span class="tex-span"><i>s</i></span>. Can you predict what will it become after correction?</p>
+   <p><span class="tex-font-style-bf">In this problem letters <span class="tex-font-style-tt">a</span>, <span class="tex-font-style-tt">e</span>, <span class="tex-font-style-tt">i</span>, <span class="tex-font-style-tt">o</span>, <span class="tex-font-style-tt">u</span> and <span class="tex-font-style-tt">y</span> are considered to be vowels</span>.</p>
+  </div>
+  <div class="input-specification">
+   <div class="section-title">
+    Input
+   </div>
+   <p>The first line contains one integer <span class="tex-span"><i>n</i></span> (<span class="tex-span">1 ≤ <i>n</i> ≤ 100</span>) — the number of letters in word <span class="tex-span"><i>s</i></span> before the correction.</p>
+   <p>The second line contains a string <span class="tex-span"><i>s</i></span> consisting of exactly <span class="tex-span"><i>n</i></span> lowercase Latin letters — the word before the correction.</p>
+  </div>
+  <div class="output-specification">
+   <div class="section-title">
+    Output
+   </div>
+   <p>Output the word <span class="tex-span"><i>s</i></span> after the correction.</p>
+  </div>
+  <div class="sample-tests">
+   <div class="section-title">
+    Examples
+   </div>
+   <div class="sample-test">
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>5<br>weird<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>werd<br></pre>
+    </div>
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>4<br>word<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>word<br></pre>
+    </div>
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>5<br>aaeaa<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>a<br></pre>
+    </div>
+   </div>
+  </div>
+  <div class="note">
+   <div class="section-title">
+    Note
+   </div>
+   <p>Explanations of the examples:</p>
+   <ol> 
+    <li> There is only one replace: w<span class="tex-font-style-bf">ei</span>rd <img align="middle" class="tex-formula" src="/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" style="max-width: 100.0%;max-height: 100.0%;"> werd;</li>
+    <li> No replace needed since there are no two consecutive vowels;</li>
+    <li> <span class="tex-font-style-bf">aa</span>eaa <img align="middle" class="tex-formula" src="/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" style="max-width: 100.0%;max-height: 100.0%;"> <span class="tex-font-style-bf">ae</span>aa <img align="middle" class="tex-formula" src="/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" style="max-width: 100.0%;max-height: 100.0%;"> <span class="tex-font-style-bf">aa</span>a <img align="middle" class="tex-formula" src="/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" style="max-width: 100.0%;max-height: 100.0%;"> <span class="tex-font-style-bf">aa</span> <img align="middle" class="tex-formula" src="/predownloaded/9e/58/9e58594e343ae98e6885aaa282186965f4b9653b.png" style="max-width: 100.0%;max-height: 100.0%;"> a. </li>
+   </ol>
+  </div>
+ </div>
+ <p> </p>
+</div>

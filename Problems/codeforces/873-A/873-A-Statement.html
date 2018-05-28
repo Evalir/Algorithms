@@ -1,0 +1,87 @@
+<div class="ttypography">
+ <div class="problem-statement">
+  <div class="header">
+   <div class="title">
+    A. Chores
+   </div>
+   <div class="time-limit">
+    <div class="property-title">
+     time limit per test
+    </div>2 seconds
+   </div>
+   <div class="memory-limit">
+    <div class="property-title">
+     memory limit per test
+    </div>256 megabytes
+   </div>
+   <div class="input-file">
+    <div class="property-title">
+     input
+    </div>standard input
+   </div>
+   <div class="output-file">
+    <div class="property-title">
+     output
+    </div>standard output
+   </div>
+  </div>
+  <div>
+   <p>Luba has to do <span class="tex-span"><i>n</i></span> chores today. <span class="tex-span"><i>i</i></span>-th chore takes <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> units of time to complete. It is guaranteed that for every <img align="middle" class="tex-formula" src="/predownloaded/3f/a6/3fa650c0136046c8b34926f1981ab3f951f7cd26.png" style="max-width: 100.0%;max-height: 100.0%;"> the condition <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub> ≥ <i>a</i><sub class="lower-index"><i>i</i> - 1</sub></span> is met, so the sequence is sorted.</p>
+   <p>Also Luba can work really hard on some chores. She can choose not more than <span class="tex-span"><i>k</i></span> any chores and do each of them in <span class="tex-span"><i>x</i></span> units of time instead of <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span> (<img align="middle" class="tex-formula" src="/predownloaded/c5/b4/c5b48c86bfcb3e0a81ed42f1c2229be4ede3b81a.png" style="max-width: 100.0%;max-height: 100.0%;">).</p>
+   <p>Luba is very responsible, so she has to do all <span class="tex-span"><i>n</i></span> chores, and now she wants to know the minimum time she needs to do everything. Luba cannot do two chores simultaneously.</p>
+  </div>
+  <div class="input-specification">
+   <div class="section-title">
+    Input
+   </div>
+   <p>The first line contains three integers <span class="tex-span"><i>n</i>, <i>k</i>, <i>x</i> (1 ≤ <i>k</i> ≤ <i>n</i> ≤ 100, 1 ≤ <i>x</i> ≤ 99</span>) — the number of chores Luba has to do, the number of chores she can do in <span class="tex-span"><i>x</i></span> units of time, and the number <span class="tex-span"><i>x</i></span> itself.</p>
+   <p>The second line contains <span class="tex-span"><i>n</i></span> integer numbers <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub> (2 ≤ <i>a</i><sub class="lower-index"><i>i</i></sub> ≤ 100)</span> — the time Luba has to spend to do <span class="tex-span"><i>i</i></span>-th chore.</p>
+   <p>It is guaranteed that <img align="middle" class="tex-formula" src="/predownloaded/c5/b4/c5b48c86bfcb3e0a81ed42f1c2229be4ede3b81a.png" style="max-width: 100.0%;max-height: 100.0%;">, and for each <img align="middle" class="tex-formula" src="/predownloaded/3f/a6/3fa650c0136046c8b34926f1981ab3f951f7cd26.png" style="max-width: 100.0%;max-height: 100.0%;"> <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub> ≥ <i>a</i><sub class="lower-index"><i>i</i> - 1</sub></span>.</p>
+  </div>
+  <div class="output-specification">
+   <div class="section-title">
+    Output
+   </div>
+   <p>Print one number — minimum time Luba needs to do all <span class="tex-span"><i>n</i></span> chores.</p>
+  </div>
+  <div class="sample-tests">
+   <div class="section-title">
+    Examples
+   </div>
+   <div class="sample-test">
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>4 2 2<br>3 6 7 10<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>13<br></pre>
+    </div>
+    <div class="input">
+     <div class="title">
+      Input
+     </div>
+     <pre>5 2 1<br>100 100 100 100 100<br></pre>
+    </div>
+    <div class="output">
+     <div class="title">
+      Output
+     </div>
+     <pre>302<br></pre>
+    </div>
+   </div>
+  </div>
+  <div class="note">
+   <div class="section-title">
+    Note
+   </div>
+   <p>In the first example the best option would be to do the third and the fourth chore, spending <span class="tex-span"><i>x</i> = 2</span> time on each instead of <span class="tex-span"><i>a</i><sub class="lower-index">3</sub></span> and <span class="tex-span"><i>a</i><sub class="lower-index">4</sub></span>, respectively. Then the answer is <span class="tex-span">3 + 6 + 2 + 2 = 13</span>.</p>
+   <p>In the second example Luba can choose any two chores to spend <span class="tex-span"><i>x</i></span> time on them instead of <span class="tex-span"><i>a</i><sub class="lower-index"><i>i</i></sub></span>. So the answer is <span class="tex-span">100·3 + 2·1 = 302</span>.</p>
+  </div>
+ </div>
+ <p> </p>
+</div>
