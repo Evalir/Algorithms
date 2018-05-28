@@ -1,1 +1,0 @@
-A = raw_input()
