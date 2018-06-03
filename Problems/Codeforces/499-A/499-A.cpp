@@ -12,6 +12,13 @@ int main() {
 	for(int i = - 0; i < n; i++) {
 		int l, r;
 		cin >> l >> r;
-		while
+		while(curr+x <= l)
+			curr += x;
+		while(curr <= r) {
+			ans++;
+			curr++;
+		}
 	}
+	cout << ans << endl;
+	return 0;
 }

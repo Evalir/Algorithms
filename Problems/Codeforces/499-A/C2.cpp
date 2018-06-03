@@ -6,48 +6,52 @@
 #include <set>
 using namespace std;
 typedef unsigned long long ull;
-vector<ull> lis(n+10,0);
-vector<ull> prev(n+10,-1);
-vector<ull> ans(n+10);
-vector<ull> si(n);
-vector<ull> ri(n);
-ull go(int n, ull sum) {
-	int ans = 0;
-	if (prev[n] == -1)
-		return sum;
-	else {
-		ans += min(ri[n] + go(n-1,sum), go(n-1,sum));
-	}
-	return ans;
+#define INF (int)1e9
+int n;
+ull lis[3010];
+ull p[3010];
+ull si[3010];
+ull ri[3010];
+
+ull go(int k, ull sum) {
+	if (k == -1)
+		return sum + ri[k];
+	else
+		return go(p[k], sum+ri[k]);
 }
+
 int main() {
-	int n;
 	cin >> n;
-	int l1 = 0,l2 = 0,l3 = 0;
-	int bestEnd = 0;
-	int maxLength = 3;
 	for(int i = 0; i < n; i++)
 		cin >> si[i];
 	for(int i = 0; i < n; i++)
 		cin >> ri[i];
 
-	for(int i = 0; i < si.size(); i++) {
+	for(int i = 0; i < n; i++) {
 		lis[i] = 1;
-		prev[i] = -1;
+		p[i] = -1;
 		for(int j = 0; j < i; j++) {
 			if (si[j] < si[i]) {
-				lis[i] = max(lis[i],lis[j]+1);
-				prev[i] = j;
+				if (lis[i] < lis[j]+1) {
+					lis[i] = lis[j]+1;
+					p[i] = j;
+					cerr << "record lis at i " << i << " of " << lis[i] <<  " breadcrumb " << p[i] << endl;
+
+				}
 			}
-			 if (lis[i] == 3)
-   			{
-      			bestEnd = i;
-      			maxLength = lis[i];
-   			}
 		}
 	}
 
-	ull ans = go(bestEnd,0);
-	cout << ans << endl;
+	ull ans = INF;
+	for(int i = n-1; i >= 0; i--) {
+		if (lis[i] == 3) {
+			cerr << lis[i] << " at " << i << endl;
+			ans = min(ans,go(i,0));
+		}
+	}
+	if (ans == INF)
+		cout << -1 << endl;
+	else
+		cout << ans << endl;
 	return 0;
 }
