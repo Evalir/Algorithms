@@ -29,7 +29,7 @@ int main() {
 		for(int j = 0; j < n; j++) {
 			df dx = sqrt(((ci[j].first-di[i].first)*(ci[j].first-di[i].first)) + 
 			((ci[j].second-di[i].second)*(ci[j].second-di[i].second)));
-			cerr << "dx for ci di " << ci[j].first << ' ' << ci[j].second << " di " << di[i].first << ' ' << di[i].second << " is " << dx << endl;
+			//cerr << "dx for ci di " << ci[j].first << ' ' << ci[j].second << " di " << di[i].first << ' ' << di[i].second << " is " << dx << endl;
 			if (dx < mind) {
 								idx = j;
 				cerr << "chose idx " << idx << endl;
