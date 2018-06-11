@@ -10,6 +10,6 @@ int main() {
 		int n;
 		cin >> n;
 		DisjointSet DS(n);
-		
+		for(int i = )
 	}
 }
