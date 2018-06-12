@@ -14,8 +14,6 @@ pair<int,int> getIntersection(pair<int,int> range1, pair<int,int> range2) {
 	return Inter;
 }
 
-
-
 vector<int> merge(vector<int>& A, vector<int>& B) {
 	vector<int> res;
 	int pA = 0, pB = 0;
@@ -55,4 +53,3 @@ int main()  {
 
 	return 0;
 }
-
