@@ -112,7 +112,7 @@ int main(int argc, char* argv[]) {
             }
             cout << endl;
         }
-		//set up kruskal edge vector
+    		//set up kruskal edge vector
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
                 if(i != j) {
