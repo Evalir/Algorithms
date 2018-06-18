@@ -1,4 +1,9 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <cmath>
+#include <cassert>
+#include <queue>
 using namespace std;
 
 struct Node {
@@ -17,12 +22,12 @@ void BFS(Node& Start, vector<Node>& Nodes) {
         Node V = Q.front();
         Q.pop();
         
-        for(int k : V.adj) {
+        for(int& k : V.adj) {
        // cerr << V.identifier << ": checking node " << k << endl;
             if (Nodes[k].isVisited == false) {
                 Nodes[k].isVisited = true;
                 Q.push(Nodes[k]);
-               // cerr << "Pushed node " << Nodes[k].identifier << endl;
+                cerr << "Pushed node " << k << endl;
             }
         }
     }
