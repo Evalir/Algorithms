@@ -4,10 +4,10 @@ using ll = long long;
 
 int main() {
 	int n;
-	cin >> n;
+	scanf("%d", &n);
 	vector<ll> p(n);
 	for(ll& i : p)
-		cin >> i;
+		scanf("%d", &i);
 	ll ans = 0;
 	ll wall = n;
 	for(int i = n - 1; i >= 0; i--) {
@@ -15,6 +15,6 @@ int main() {
 			++ans;
 		wall = min(wall, i-p[i]);	
 	}
-	cout << ans << endl;
+	printf("%d\n",ans);
 	return 0;
 }
