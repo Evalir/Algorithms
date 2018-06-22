@@ -60,9 +60,9 @@ int main() {
       break;
   }
   if (ok) {
-  for(ll& u : ans)
-      cout << V[u] << ' ';
-  puts("");
+    for(ll& u : ans)
+        cout << V[u] << ' ';
+    puts("");
   }
   return 0;
 }
