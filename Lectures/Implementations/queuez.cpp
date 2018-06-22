@@ -4,8 +4,8 @@
 #include <algorithm>
 #include <cmath> 
 using namespace std;
-template <class T>
 
+template <class T>
 struct MyQueue {
 
     int maxSize, head,tail;

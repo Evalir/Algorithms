@@ -72,5 +72,3 @@ int main() {
         cout << v << " ";
     }
     cout << endl;
-
-}
