@@ -4,6 +4,7 @@
 #include <algorithm>
 using namespace std;
 int inv = 0;
+
 vector<int> merge(vector<int>& A, vector<int>& B) {
     vector<int> res;
     int pA = 0, pB = 0;

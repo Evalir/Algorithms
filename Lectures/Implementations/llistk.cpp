@@ -13,7 +13,7 @@ struct Node {
 
 template <class T>
 struct NodeManager {
-    vector<Node<T>> nodes;
+    vector<Node<T> > nodes;
     int createNode(T value) {
         int newId = nodes.size();
         nodes.push_back(Node<T>(value));
@@ -70,15 +70,30 @@ struct LinkedList {
 
 int main() {
     NodeManager<int> nm;
+
     LinkedList<int> L(nm);
+    LinkedList<int> L2(nm);
 
     L.push_back(1);
     L.push_front(2);
+    L2.push_back(5);
+    L2.push_back(7);
     L.push_back(3);
+    L.pop_front();
+    L2.pop_front();
+    L2.push_front(6);
+    L2.push_back(9);
     L.push_front(4);
+    L2.pop_front();
+    L2.push_front(8);
+
     for (int v : L.toVector()) {
         cout << v << " ";
     }
+
     cout << endl;
+
+    for (int v : L2.toVector())
+      cout << v << ' ';
 
 }
