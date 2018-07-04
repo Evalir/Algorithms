@@ -59,9 +59,9 @@ struct LinkedList {
     vector<T> toVector() {
         vector<T> R;
         int t = head;
-        while (t != -1) {
-            R.push_back(nm[t].value);
-            t = nm[t].next;
+       while (t != -1) {
+            .push_back(nm[t].value);
+             = nm[t].next;
         }
         return R;
     }

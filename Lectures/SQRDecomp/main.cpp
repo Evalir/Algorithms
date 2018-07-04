@@ -82,5 +82,7 @@ struct RangeSumQuery {
 int main() {
     vector<int> V = {1,3,2,4,5,7,6,8,9,10};
     RangeSumQuery SQD(V);
+    cout << SQD.query(4,8) << endl;
+    cout << SQD.query(3,6) << endl;
     return 0;
 }
