@@ -41,7 +41,7 @@ struct RangeSumQuery {
         }
     }
 
-    void increase(int pos, int delta) {
+    void update(int pos, int delta) {
         int row = pos / NC;
         int col = pos % NC;
         B[row][col] += delta;

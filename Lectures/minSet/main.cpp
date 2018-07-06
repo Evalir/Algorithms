@@ -5,7 +5,8 @@
 using namespace std;
 
 //Cuenta cuantos numeros menores que n hay en el arreglo (query)
-//Para esto ordena los elementos y borra duplicados. N de elementos menores a x = elementos diferentes a x a la izquierda.
+//Para esto ordena los elementos y borra duplicados. N de elementos menores a x =
+// elementos diferentes a x a la izquierda.
 struct LowCount {
     vector<int> V;
     LowCount(const vector<int>& v) {
@@ -18,19 +19,22 @@ struct LowCount {
         return Q;
     }
 };
+vector<int> V;
+vector<pair<int,int> > cV;
 
 int main() {
-    vector<int> V = {2,4,4,5,8,9};
-    vector<pair<int,int> > cV;
     LowCount v(V);
     //coordinate compression -> asigna un key x a cada numero del arreglo
+    for(int i =  0; i < 1000000; i++)
+        V.push_back(pow(rand(),2));
+
     for(int& i : V) {
         cV.push_back({v.query(i), i});
     }
 
     for(auto i : cV) {
-        cout << i.first << ' ' << i.second << endl;
+        //cout << i.first << ' ' << i.second << endl;
     }
-
+    cout << "done" << endl;
     return 0;
 }
