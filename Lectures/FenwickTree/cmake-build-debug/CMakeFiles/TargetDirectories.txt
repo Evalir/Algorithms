@@ -1,0 +1,3 @@
+/Users/Evalir/Documents/Programming/Algorithms/Lectures/FenwickTree/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Evalir/Documents/Programming/Algorithms/Lectures/FenwickTree/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Evalir/Documents/Programming/Algorithms/Lectures/FenwickTree/cmake-build-debug/CMakeFiles/FenwickTree.dir

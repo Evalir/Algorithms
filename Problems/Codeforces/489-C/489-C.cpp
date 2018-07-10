@@ -53,3 +53,11 @@ int main() {
 
   return 0;
 }
+int numberOfTrailingZeros(int x) {
+  int cnt = 0;
+  while(!(x & 1)) {
+    ++cnt;
+    x << 1;
+  }
+  return cnt;
+}
