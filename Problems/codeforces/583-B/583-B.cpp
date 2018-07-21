@@ -20,7 +20,7 @@ int main() {
 				break;
 			++idx;
 		}
-		if (curr >= n)
+  if (curr >= n)
 			break;
 		++ans, --idx;
 		while(idx >= 0) {
