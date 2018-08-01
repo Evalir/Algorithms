@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Evalir/Documents/Programming/Algorithms/Problems/Codeforces/486-B/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+cmath
+-
+stack
+-
+queue
+-
+string
+-
+

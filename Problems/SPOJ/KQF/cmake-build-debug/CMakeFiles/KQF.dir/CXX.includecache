@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Evalir/Documents/Programming/Algorithms/Problems/SPOJ/KQF/main.cpp
+iostream
+-
+cstdio
+-
+vector
+-
+algorithm
+-
+set
+-
+queue
+-
+stack
+-
+map
+-
+cmath
+-
+climits
+-
+numeric
+-
+

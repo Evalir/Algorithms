@@ -21,33 +21,25 @@ using namespace std;
 
 struct SQRTDecomp {
     int NC,NR;
-    // sq-root decomposed vector into blocks of size sqrt-n
     vector<vector<ll> > SQMat;
-    //contains block sum for each row
     vector<vector<ll> > sumArr;
     SQRTDecomp(vector<ll> V) {
-        // V.size() has exact SQRT
-        // divide blocks into sizes of SQRT(n)
-        //blockN = sqrt(V.size()); // we use round just to avoid incredibly minimal errors such as sqrt(100) = 9.9999999999999, it may be downcasted to 9 incorrectly when exact sqrt is 10 :)
-        NC = sqrt(V.size());
-        NR = V.size() / NC + 1;
-        //cerr << blockN << endl;
-        // This is how to build the blocks, sqrtN vectors of size sqrt N.
-        // N total, blockN^2
+        NC = 300;
+        while(V.size() % NC != 0) V.push_back((0)); //to make it divisible by NC (NR) so we don't have 0 rows
+        NR = (int)V.size() / NC;
+        cerr << "NC : " << NC << endl;
+        cerr << "NR : " << NR << endl;
+
         SQMat = vector<vector<ll> > (NR, vector<ll> (NC));
-        //cerr << SQMat.size() << endl;
-        // This will hold the sum for *each block*
         sumArr = vector<vector<ll> > (NR);
 
-        //decompose vector
         for(int i = 0; i < (int)V.size(); i++) {
-            int row = i / NR;
+            int row = i / NC;
             int col = i % NC;
             SQMat[row][col] = V[i];
             sumArr[row].push_back(V[i]);
-            //cerr << sumArr[row].size() << endl;
         }
-        //get sum for each row (assume sum will never exceed 10^9)
+
         for(int i = 0; i < NR; i++) {
             sort(sumArr[i].begin(), sumArr[i].end());
         }
@@ -60,37 +52,37 @@ struct SQRTDecomp {
 
     int queryRange(int l, int r, ll x) {
         ll ans = 0;
-        int startRow = l/NR;
-        int endRow = r/NR;
+        int startRow = l/NC;
+        int endRow = r/NC;
         int startCol = l % NC;
         int endCol = r % NC;
-        // query starts and ends on same bucket
         if (startRow == endRow) {
-            cerr << x << " query 1 " << endl;
             for(int i = startCol; i <= endCol; i++)
-                if (SQMat[startRow][i] < x) ans++;
-            return ans;
-        }
-        //query does not start and end on same bucket (start and end row will be different)
-        cerr << x << " query 2 " << endl;
-        for(int i = startCol; i < NC; i++) {
-            if (SQMat[startRow][i] < x)
-                ans++, cout << ans  << " is " << endl;
-        }
-        for(int i = startRow+1; i < endRow; i++) {
-            int tp = lower_bound(sumArr[i].begin(), sumArr[i].end(), x) - sumArr[i].begin();
-            ans += tp;
-            cerr << tp << endl;
-        }
-        for(int i = 0; i <= endCol; i++) {
-            if (SQMat[endRow][i] < x) ans++;
+                if (SQMat[startRow][i] <= x)
+                    ans++;
+            return r-l+1 - ans;
         }
 
-        return ans;
+        for(int i = startCol; i < NC; i++) {
+            if (SQMat[startRow][i] <= x) {
+                ans++;
+            }
+        }
+        for(int i = startRow+1; i < endRow; i++) {
+            int tp = upper_bound(sumArr[i].begin(), sumArr[i].end(), x) - sumArr[i].begin();
+            ans += tp;
+        }
+        for(int i = 0; i <= endCol; i++) {
+            if (SQMat[endRow][i] <= x) ans++;
+        }
+
+        return r-l+1 - ans;
     }
 };
 
 int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
     int n;
     cin >> n;
     VL V(n);
