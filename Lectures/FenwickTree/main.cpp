@@ -4,44 +4,45 @@
 #include <set>
 using namespace std;
 
-class FenwickTree {
-public:
-    const int n = 17;
-    vector<int> nodes(n,0);
-    void init() {
-        for(int i = 0; i <= n; i++)
-            node[i] = 0;
-    }
-    void update(int x, int v) {
-        node[x] += v;
-        if (x == n)
-            return;
-        update(x + (x & -x), v);
+struct FenwickTree {
+
+    vector<int> tri;
+    FenwickTree(int N) : tri(N+10, 0) {}
+    void add(int x, int d) {
+        for (int i = x + 1; i < tri.size(); i += i&(-i)) {
+            tri[i] += d;
+            //cout << i << " :add : " << tri[i] << endl;
+        }
     }
 
     int query(int x) {
-        if (x == 0)
-            return node[x];
-        return node[x] + query(x - (x & -x));
+        int ans = 0;
+        for (int i = x + 1; i > 0; i -= i&(-i)) {
+            ans += tri[i];
+            //cout << i << " get: " << tri[i] << endl;
+        }
+        return ans;
     }
 
-    void print() {
-        for(int i = 0; i <= 16; i++)
-            cout << node[i] << ' ';
+    void pr() {
+        for(int i = 0; i < (int)tri.size(); i++)
+            cout << i+1 << ' ';
+        cout << endl;
+        for(int i = 0; i < (int)tri.size(); i++)
+            cout << tri[i] << ' ';
         cout << endl;
     }
-
 };
 
 int main() {
-    FenwickTree FT;
-    FT.init();
-    FT.update(6,8);
-    FT.update(3,2);
-    FT.print();
+    FenwickTree FT(16);
+    FT.add(6,8);
+    FT.add(3,2);
+    FT.pr();
     cout << FT.query(6) - FT.query(2) << endl;
-    FT.update(8,10);
-    FT.update(14,1);
+    FT.add(8,10);
+    FT.add(14,1);
+    FT.pr();
     cout << FT.query(13) << endl;
     cout << FT.query(14) << endl;
     cout << FT.query(8) << endl;

@@ -8,7 +8,7 @@ using namespace std;
 
 int v[1010];
 int st[1010]; //startime
-int et[1010]; //endtime
+//int et[1010]; // <-> endtime
 int t = 1;
 vector<vector<int> > g(1010);
 

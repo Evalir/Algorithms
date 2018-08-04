@@ -24,8 +24,8 @@ struct SQRTDecomp {
     vector<vector<ll> > SQMat;
     vector<vector<ll> > sumArr;
     SQRTDecomp(vector<ll> V) {
-        NC = 300;
-        while(V.size() % NC != 0) V.push_back((0)); //to make it divisible by NC (NR) so we don't have 0 rows
+        NC = 1000;
+        while(V.size() % NC != 0) V.push_back((0));
         NR = (int)V.size() / NC;
         cerr << "NC : " << NC << endl;
         cerr << "NR : " << NR << endl;

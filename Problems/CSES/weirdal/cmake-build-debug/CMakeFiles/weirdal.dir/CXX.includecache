@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Evalir/Documents/Programming/Algorithms/Problems/CSES/weirdal/main.cpp
+iostream
+-
+vector
+-
+string
+-
+algorithm
+-
+cmath
+-
+
