@@ -42,7 +42,7 @@ vector<int> mergeSort(vector<int> A) {
 	vector<int> vA, vB;
 
 	for(int i = 0; i < (int)A.size()/2; i++)
-		vA.push_back(A[i]);
+        vA.push_back(A[i]);
 
 	for(int i = (int)A.size()/2; i < A.size(); i++)
 		vB.push_back(A[i]);
@@ -61,4 +61,13 @@ int main() {
 		cout << i << ' ';
 	cout << "\n inversions: " << inv << endl;
 	return 0;
+}
+
+
+int countGreater(vector<int> &freq, int el) {
+    int ans = 0;
+    for(int i = el+1; i < freq.size(); i++) {
+            ans += freq[i];
+    }
+    return ans;
 }

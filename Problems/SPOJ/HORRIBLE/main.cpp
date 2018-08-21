@@ -19,7 +19,6 @@ using pll = pair<ll,ll>;
 using VI = vector<int>;
 using VL = vector<ll>;
 using VVI = vector<VI>;
-using namespace std;
 
 struct SQRTDecomp {
     ll NC,NR;

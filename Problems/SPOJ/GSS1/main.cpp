@@ -22,14 +22,14 @@ using VVI = vector<VI>;
 using namespace std;
 
 struct SQRTDecomp {
-    ll NC,NR;
+    int NC,NR;
     vector<vector<ll> > SQMat;
     vector<ll> sumArr;
     vector<ll> lazy;
     SQRTDecomp(vector<ll> &V) {
         NC = 1000;
         while(V.size() % NC != 0) V.push_back((0));
-        NR = (ll)V.size() / NC;
+        NR = (int)V.size() / NC;
         cerr << "NC : " << NC << endl;
         cerr << "NR : " << NR << endl;
 
@@ -50,7 +50,7 @@ struct SQRTDecomp {
         lazy[pos] = 0;
     }
 
-    void update(ll l, ll r, ll delta) {
+    void update(int l, int r, ll delta) {
         int startRow = l/NC;
         int endRow = r/NC;
         int startCol = l % NC;
@@ -58,9 +58,10 @@ struct SQRTDecomp {
         applyLazy(startRow);
         applyLazy(endRow);
         if (startRow == endRow) {
-            for(int i = startCol; i <= endCol; i++)
+            for(int i = startCol; i <= endCol; i++) {
                 SQMat[startRow][i] += delta;
-            sumArr[startRow] += (delta*(r-l+1));
+                sumArr[startRow] += delta;
+            }
             return;
         }
         for(int i = startCol; i < NC; i++) {
