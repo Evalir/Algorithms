@@ -1,24 +1,23 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
+#include <bits/stdc++.h>
 using namespace std;
-#define INF (int)1e9
+
 int main() {
-	int n, d;
-	cin >> n >> d;
-	vector<int> p(n);
-	for(int i = 0; i < n; i++)
-		cin >> p[i];
-	int ans = 0;
-	sort(p.begin(), p.end());
-	for(int i = 0; i < n; i++) {
-		for(int j = i; j < n; j++) {
-			if (p[j]-p[i] <= d) {
-				ans = max(ans, j-i+1);
-			}
-		}
-	}
-	cout << n-ans << endl;
-	return 0;
+    int n,d;
+    cin >> n >> d;
+    vector<int> p(n);
+    for(int i = 0; i < n; i++)
+	cin >> p[i];
+    bool done = false;
+    int ans = 0;
+    sort(p.begin(), p.end());
+    int end = n-1;
+    while(!done) {
+	done = true;
+	if (abs(p[0]-p[end]) > d)
+	    done = false;
+	--end;
+	++ans;
+   }
+   cout << ans << endl;
+   return 0;
 }

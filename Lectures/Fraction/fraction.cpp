@@ -23,3 +23,21 @@ struct Fraction {
         return Fraction(num, dem) * Fraction(f.dem, f.num);
     }
 };
+
+
+int LIS(vector<int>& arr) { //assumiendo max_N = 10000;
+    int ans = 0;
+    int dp[10010];
+    memset(dp,1,sizeof(dp));
+    for(int i = 0; i < (int)arr.size(); i++) {
+        for(int j = 0; j < i; j++) {
+            if (arr[j] < arr[i]) {
+                dp[i] = max(dp[i],dp[j]+1);
+            }
+        }
+    }
+    for(int i = 0; i < (int)arr.size(); i++) {
+            ans = max(ans, dp[i]);
+    }
+    return ans;
+}
