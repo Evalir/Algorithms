@@ -16,6 +16,7 @@ struct LowCount {
     };
     int query(int n) {
         int Q = lower_bound(V.begin(),V.end(), n) - V.begin();
+        cout << "query is " << Q << endl;
         return Q;
     }
 };
@@ -23,13 +24,15 @@ vector<int> V;
 vector<pair<int,int> > cV;
 
 int main() {
-    LowCount v(V);
     //coordinate compression -> asigna un key x a cada numero del arreglo
-    for(int i =  0; i < 1000000; i++)
-        V.push_back(pow(rand(),2));
-
+    for(int i =  0; i < 5; i++) {
+        int x;
+        cin >> x;
+        V.push_back(x);
+    }
+    LowCount v(V);
     for(int& i : V) {
-        cV.push_back({v.query(i), i});
+        cout << " for " << i << " " <<  v.query(i) << endl;
     }
 
     for(auto i : cV) {

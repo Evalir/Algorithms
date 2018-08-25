@@ -11,7 +11,6 @@ struct FenwickTree {
     void add(int x, int d) {
         for (int i = x + 1; i < tri.size(); i += i&(-i)) {
             tri[i] += d;
-            //cout << i << " :add : " << tri[i] << endl;
         }
     }
 
@@ -19,7 +18,6 @@ struct FenwickTree {
         int ans = 0;
         for (int i = x + 1; i > 0; i -= i&(-i)) {
             ans += tri[i];
-            //cout << i << " get: " << tri[i] << endl;
         }
         return ans;
     }
@@ -29,7 +27,7 @@ struct FenwickTree {
             cout << i+1 << ' ';
         cout << endl;
         for(int i = 0; i < (int)tri.size(); i++)
-            cout << tri[i] << ' ';
+            cout << "query for i " << i << " : " << query(i) << ' ';
         cout << endl;
     }
 };
