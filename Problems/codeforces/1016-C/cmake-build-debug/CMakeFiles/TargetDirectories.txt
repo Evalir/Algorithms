@@ -1,0 +1,3 @@
+C:/Users/Evalir/Documents/Programming/Algorithms/Problems/codeforces/1016-C/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Evalir/Documents/Programming/Algorithms/Problems/codeforces/1016-C/cmake-build-debug/CMakeFiles/1016_C.dir
+C:/Users/Evalir/Documents/Programming/Algorithms/Problems/codeforces/1016-C/cmake-build-debug/CMakeFiles/edit_cache.dir
