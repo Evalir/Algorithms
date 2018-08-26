@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Evalir/Documents/Programming/Algorithms/Problems/TeamSelection/DayTwo/F/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+cmath
+-
+cstring
+-
+string
+-
+

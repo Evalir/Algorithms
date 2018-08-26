@@ -29,10 +29,10 @@ void floodFill(int r, int c, vector< vector <Node> > & Land) {
 	floodFill(r, c-1, Land);
 	floodFill(r+1, c, Land);
 	floodFill(r, c+1, Land);
-	floodFill(r+1, c+1, Land);
-	floodFill(r-1, c-1, Land);		
-	floodFill(r+1, c-1, Land);
-	floodFill(r-1, c+1, Land);
+//    floodFill(r+1, c+1, Land);
+//    floodFill(r-1, c-1, Land);
+//    floodFill(r+1, c-1, Land);
+//    floodFill(r-1, c+1, Land);
 }
 
 //Traverses the entire graph looking for connected components
