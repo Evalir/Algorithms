@@ -1,25 +1,11 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <set>
-#include <queue>
-#include <stack>
-#include <map>
-#include <cmath>
-#include <climits>
-#include <numeric>
-#define carlos ios_base::sync_with_stdio(false);
-#define joa cin.tie(NULL);
-#define endl '\n'
-#define MOD 1000000007;
+#include <bits/stdc++.h>
 using namespace std;
-const int INF = -1*(1 << 30);
 using ll = long long;
 using pll = pair<ll,ll>;
 using VI = vector<int>;
 using VL = vector<ll>;
 using VVI = vector<VI>;
-
+const int INF = (1 << 30);
 struct SQRTDecomp {
     int NC,NR;
     vector<vector<ll> > SQMat;
@@ -110,7 +96,6 @@ struct SQRTDecomp {
 };
 
 int main() {
-    carlos joa
     int n;
     cin >> n;
     VL V(n, 0);
