@@ -1,0 +1,3 @@
+C:/Users/Evalir/Documents/Programming/Algorithms/Problems/URI/Madruga/cmake-build-debug/CMakeFiles/Madruga.dir
+C:/Users/Evalir/Documents/Programming/Algorithms/Problems/URI/Madruga/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Evalir/Documents/Programming/Algorithms/Problems/URI/Madruga/cmake-build-debug/CMakeFiles/rebuild_cache.dir
