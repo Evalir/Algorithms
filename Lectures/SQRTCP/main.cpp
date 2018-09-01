@@ -31,11 +31,19 @@ struct SQRTDecomp {
     }
     //applies lazy update over a whole row, modify as needed (or delete)
     void applyLazy(int pos) {
-        for (int i = 0; i < NC; i++)
-            SQMat[pos][i] += lazy[pos];
-        lazy[pos] = 0; //represents lazy update.
+        if (lazy[pos] != 0) {
+            for (int i = 0; i < NC; i++)
+                SQMat[pos][i] += lazy[pos];
+            lazy[pos] = 0; //represents empty update.
+        }
     }
     //updates elements in range by a delta
+    void update(int pos, int delta) {
+        int row = pos / NC;
+        int col = pos % NC;
+        SQMat[row][col] += delta;
+        sumArr[row] += delta;
+    }
     void update(int l, int r, ll delta) {
         int startRow = l/NC;
         int endRow = r/NC;
