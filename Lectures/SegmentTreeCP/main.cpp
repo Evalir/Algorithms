@@ -2,20 +2,16 @@
 using namespace std;
 using Long = long long;
 //This segment tree has lazy propagation.
-//TODO:
-/*
- * - Define sum operator for Node to stop placing .val everywhere
- * */
 struct SegmentTree {
 private:
     struct Node {
         Long val;
         bool isLazy;
         Long lazyVal;
-        Node (Long _v, bool _l, Long _lv) {
+        Node (Long _v) {
             val = _v;
-            isLazy = _l;
-            lazyVal = _lv;
+            isLazy = false;
+            lazyVal = 0;
         }
     };
 
@@ -24,12 +20,27 @@ private:
     const int INF = (1 << 30);
 
     Node merge (Node p1, Node p2) {
-        return Node(p1.val + p2.val, false,0);
+        return p1.val + p2.val;
+    }
+
+    void pushDown(int id, int st, int en, int mid) {
+        if (Tree.at(id).isLazy) {
+            if (st != en) {
+                Tree.at(id*2).lazyVal += Tree.at(id).lazyVal;
+                Tree.at(id*2).val += (mid-st+1) * Tree.at(id).lazyVal;
+                Tree.at(id*2 + 1).lazyVal += Tree.at(id).lazyVal;
+                Tree.at(id*2 + 1).val += ((en)-(mid+1)+1) * Tree.at(id).lazyVal;
+                Tree.at(id*2).isLazy = true;
+                Tree.at(id*2 + 1).isLazy = true;
+            }
+            Tree.at(id).lazyVal = 0;
+            Tree.at(id).isLazy = false;
+        }
     }
 
     void create(int id, int st, int en) {
         if (st == en) {
-            Tree[id] = Node(V[st], 0, 0);
+            Tree.at(id) = V.at(st);
             return;
         }
         int le = id*2;
@@ -37,74 +48,48 @@ private:
         int mid = (st + en) / 2;
         create(le, st, mid);
         create(ri, mid + 1, en);
-        Tree[id] = merge(Tree[le], Tree[ri]);
+        Tree.at(id) = merge(Tree.at(le), Tree.at(ri));
         //cout << "Created tree id " << id << " alo " <<  Tree[id].val << endl;
     }
 
     Node query(int id, int st, int en, int lef, int ri) {
         if (st > ri || en < lef) {
-            return Node(0,0,0); //invalid query;
-        }
-        if (Tree[id].isLazy) {
-            Tree[id].val += (en-st+1) * Tree[id].lazyVal;
-            if (st != en) {
-                Tree[id*2].lazyVal += Tree[id].lazyVal;
-                Tree[id*2 + 1].lazyVal += Tree[id].lazyVal;
-                Tree[id*2].isLazy = true;
-                Tree[id*2 + 1].isLazy = true;
-            }
-            Tree[id].lazyVal = 0;
-            Tree[id].isLazy = false;
-        }
-        if (lef <= st && en <= ri) { //totally inside range
-            return Node(Tree[id].val,0,0);
+            assert(false);
         }
         int mid = (st + en) / 2;
+        if (lef <= st && en <= ri) { //totally inside range
+            return Tree.at(id);
+        }
+        pushDown(id,st,en,mid);
         if (lef > mid) //go right, range is to the right
             return query(id*2 + 1, mid + 1, en, lef, ri);
         else if (ri <= mid) // go left
             return query(id*2, st, mid, lef, ri);
 
-        Node lQ = query(id*2, st, mid, lef, mid);
-        Node rQ = query(id*2 + 1, mid + 1, en, mid + 1, ri);
-        return merge(Node(lQ), Node(rQ));
+        Node lQ = query(id*2, st, mid, lef, ri);
+        Node rQ = query(id*2 + 1, mid + 1, en, lef, ri);
+        return merge(lQ,rQ);
     }
     //range update with delta
     void update(int id, int st, int en, int lIdx, int rIdx, Long delta) {
-        if (Tree[id].isLazy) {
-            Tree[id].val += (en-st+1) * Tree[id].lazyVal;
-            if (st != en) {
-                Tree[id*2].lazyVal += Tree[id].lazyVal;
-                Tree[id*2 + 1].lazyVal += Tree[id].lazyVal;
-                Tree[id*2].isLazy = true;
-                Tree[id*2 + 1].isLazy = true;
-            }
-            Tree[id].lazyVal = 0;
-            Tree[id].isLazy = false;
-        }
-        if (st > en || st > rIdx || en < lIdx) return;
+        int mid = (st+en) / 2;
+        if (st > en) assert(false);
+        if (st > rIdx || en < lIdx) return;
         if (lIdx <= st && en <= rIdx) {
-            Tree[id].val += (en-st+1) * delta;
-            if (st != en) {
-                Tree[id*2].lazyVal += delta;
-                Tree[id*2 + 1].lazyVal += delta;
-                Tree[id*2].isLazy = true;
-                Tree[id*2 + 1].isLazy = true;
-            }
+            Tree.at(id).val += (en - st + 1) * delta;
+            Tree.at(id).lazyVal += delta;
+            Tree.at(id).isLazy = true;
             return;
         }
-
-        int mid = (st+en) / 2;
-
+        pushDown(id,st,en,mid);
         update(id*2 + 1, mid + 1, en, lIdx, rIdx, delta);
         update(id*2, st, mid, lIdx, rIdx, delta);
-
-        Tree[id] = merge(Tree[2*id], Tree[2*id + 1]);
+        Tree.at(id) = merge(Tree.at(2*id), Tree.at(2*id + 1));
     }
 public:
-    SegmentTree(vector<Long> &v) {
+    SegmentTree(vector<Long> v) {
         V = v;
-        Tree = vector<Node>(4*100010, Node(0,0,0));
+        Tree = vector<Node>(4*(int)V.size(), 0);
         create(1, 0, V.size()-1);
     }
 
@@ -115,16 +100,17 @@ public:
         update(1,0,V.size()-1, lIdx, rIdx, delta);
     }
 };
+
 int main() {
     int tc;
-    cin >> tc;
+    scanf("%d", &tc);
     while(tc--) {
         int n, q;
         scanf("%d %d", &n, &q);
         vector<Long> V(n + 10);
         SegmentTree bazooka(V);
         while(q--) {
-            bool ty;
+            int ty;
             scanf("%d", &ty);
             if (!ty) {
                 int a,b;
