@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/evalir/Documents/ICPC/Algorithms/Problems/COJ/Upsolving/Local17/A/main.cpp" "/home/evalir/Documents/ICPC/Algorithms/Problems/COJ/Upsolving/Local17/A/cmake-build-debug/CMakeFiles/A.dir/main.cpp.o"
+  "/Users/Evalir/Documents/Programming/Algorithms/Problems/COJ/Upsolving/Local17/A/main.cpp" "/Users/Evalir/Documents/Programming/Algorithms/Problems/COJ/Upsolving/Local17/A/cmake-build-debug/CMakeFiles/A.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

@@ -7,11 +7,11 @@ int main() {
     scanf("%d", &t);
     while(t--) {
         scanf("%lf %lf", &d1, &d2);
-        double lo = 0, hi = 1200.0;
-        double r1, r2;
+        double lo = 0, hi = 1e9;
+        double r1;
         for(int i = 0; i < 100; i++) {
             double C = (lo+hi) / 2.0; //fix C
-            double l = 0, r = 1200.0;
+            double l = 0, r = 1e9;
             double fixp;
             for(int j = 0; j < 100; j++) {
                 double A = (l+r) / 2.0;
@@ -30,7 +30,6 @@ int main() {
             //cerr << "chck1 " << lo << " hi " << hi << " C " << C << endl;
             if (CtoB > fixp) {
                 r1 = fixp;
-                r2 = C;
                 hi = C;
             }
             else {
