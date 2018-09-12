@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/mainFunctions.dir/main.cpp.o  -o mainFunctions 

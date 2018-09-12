@@ -8,9 +8,7 @@ int main() {
 	vector<int> V(5);
 	for(int& i : V)
 		cin >> i;
-
 	for(auto i : V)
 		cout << i;
-
 	return 0;
 }
