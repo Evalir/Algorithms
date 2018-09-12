@@ -3,7 +3,6 @@
 #include <algorithm>
 #include <cmath>
 using namespace std;
-
 int main() {
     int n, m, x;
     cin >> n >> m >> x;
