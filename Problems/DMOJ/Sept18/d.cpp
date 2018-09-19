@@ -29,19 +29,27 @@ int main() {
 			cnt++;
 		}
 	}
+	vector<int> k;
 	int anw = 0;
 	for(int i = 0; i < cnt; i++) {
-		if (ans[i].size() > 1) anw++;
-	}
-	cout << anw << endl;
-	for(int i = 0; i < cnt; i++) {
 		if (ans[i].size() > 1) {
-		cout << ans[i][ans[i].size()-1]+1 << ' ';
-		for(auto v : ans[i])
-			cout << v+1 << ' ';
-		cout << endl;
+			for(auto &z : ans[i])
+				k.push_back(z+1);
 		}
 	}
+	cout << 2 << endl;
+	cout << k.size() << ' ';
+	for(auto i : k) cout << i << ' ';
+	cout << endl;
+	k.clear();
+	for(int i = 0; i < cnt; i++) {
+		if (ans[i].size() > 1) {
+			k.push_back(ans[i].back());
+		}
+	}
+	cout << k.size() << ' ';
+	for(auto i : k) cout << i << ' ';
+	puts("");
 	
     return 0;
 }

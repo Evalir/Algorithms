@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/579_B.dir/main.cpp.o  -o 579_B 
