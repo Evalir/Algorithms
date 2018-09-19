@@ -1,68 +1,42 @@
-#include <iostream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
-#include <cstdio>
-#include <map>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-using ll = long long;
-using pll = pair<ll,ll>;
-using VI = vector<int>;
-using VL = vector<ll>;
-using VVI = vector<VI>;
+using Long = long long;
 
-const ll INF = 1LL << 60LL;
+const Long INF = 1LL << 60LL;
 int main() {
     int T;
-    cin >> T;
+    scanf("%d", &T);
     while(T--) {
         int n;
-        cin >> n;
-        map<int,int> f;
-        for(int i = 0; i < n; i++) {
-            int x;
-            cin >> x;
-            f[x]++;
-        }
-        pair<ll,pair<ll,ll>> ans;
-        ans.first = INF;
-        pair<ll,ll> cnt = {-1,-1};
-        for(auto x : f) {
-            if (x.second >= 2) {
-                if (cnt.first == -1) {
-                    cnt.first = x.first;
-                }
-                else {
-                    cnt.second = x.first;
-                    ll s,p;
-                    s = cnt.first * cnt.second;
-                    p = 2LL*(cnt.first + cnt.second);
-                    if (ans.first > (p*p)/s) {
-                        ans.first = (p*p)/s;
-                        ans.second.first = cnt.first;
-                        ans.second.second = cnt.second;
-                    }
-                    cnt = {x.first,-1};
-                }
-            }
-            if (x.second >= 4) {
-                ll s, p;
-                s = x.first*1LL*x.first;
-                p = 2LL*(x.first+x.first);
-                if (ans.first > (p*p)/s) {
-                    ans.first = (p*p)/s;
-                    ans.second.first = x.first;
-                    ans.second.second = x.first;
-                }
-                if (cnt.first == x.first) continue;
-                else {
-                    cnt.first = x.first;
-                }
+        scanf("%d", &n);
+        vector<Long> s(n), E;
+        for(Long &t : s) scanf("%lld", &t);
+        sort(s.begin(), s.end());
+        for(int i = 1; i < n; i++) {
+            if (s[i] == s[i-1]) {
+                E.push_back(s[i]);
+                i++;
             }
         }
-        cout << ans.second.first << " " << ans.second.first << " " << ans.second.second << " " << ans.second.second << '\n';
+        Long CN, CD;
+        CN = 1, CD = 0;
+        Long ans, anw;
+        ans = anw = -1;
+        for(int i = 1; i < (int)E.size(); i++) {
+            Long A = E[i-1];
+            Long B = E[i];
+            Long P = (A+B)*2;
+            P *= P;
+            Long S = A*B;
+            if (CN * S > CD * P) {
+                CN = P;
+                CD = S;
+                ans = A;
+                anw = B;
+            }
+        }
+        printf("%lld %lld %lld %lld\n", ans, ans, anw, anw);
     }
     return 0;
 }
