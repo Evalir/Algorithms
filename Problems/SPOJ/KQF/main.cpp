@@ -98,7 +98,7 @@ int main() {
             FT.pr();
             Q.pop();
         }
-        //cerr << "ans for range " << q.r.first << ' ' << q.r.second << " " << " : " << FT.sum(q.r.second)- FT.sum(q.r.first) << endl;
+        //cerr << "ans for range " << q.r.first << ' ' << q.r.second << " " << " : " << FT.sum(q.r.second)- FT.sum(q.r.first-1) << endl;
         ANS[q.id] = FT.sum(q.r.second) - FT.sum(q.r.first-1);
 
     }

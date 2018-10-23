@@ -1,0 +1,3 @@
+/Users/Evalir/Documents/Programming/Algorithms/Problems/TOJ/1471/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Evalir/Documents/Programming/Algorithms/Problems/TOJ/1471/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Evalir/Documents/Programming/Algorithms/Problems/TOJ/1471/cmake-build-debug/CMakeFiles/1471.dir

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Evalir/Documents/Programming/Algorithms/Problems/Codeforces/1008-B/main.cpp
+iostream
+-
+algorithm
+-
+vector
+-
+cmath
+-
+cstring
+-
+utility
+-
+

@@ -13,23 +13,20 @@ int main() {
 		cin >> i;
 
 	int ans = 0;
-	int l = -1, r = -1;
+	int l = 0, r = 0;
 	int cnt = 0;
 	ll sum = 0;
 
 	while(r < n) {
-		r++;
-		if (r > n-1)
-			break;
 		cnt++;
 		sum += books[r];
-		//cerr << sum << ' ' << r << ' ' << cnt << " sum r cnt" << endl;
 		while(sum > t && l < n) {
-			l++;
 			sum -= books[l];
 			cnt--;
+			l++;
 		}
 		ans = max(cnt,ans);
+		r++;
 	}
 	cout << ans << endl;
 	return 0;

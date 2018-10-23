@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CMakeWorkspace" PROJECT_DIR="$PROJECT_DIR$" />
+<<<<<<< HEAD
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+=======
+>>>>>>> f2cc599249e467a1434858c5bf71b79737a30076
 </project>

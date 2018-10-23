@@ -7,16 +7,6 @@
 #IncludeRegexTransform: 
 
 /Users/Evalir/Documents/Programming/Algorithms/Problems/Codeforces/1027-C/main.cpp
-iostream
--
-vector
--
-algorithm
--
-cmath
--
-cstdio
--
-map
+bits/stdc++.h
 -
 
