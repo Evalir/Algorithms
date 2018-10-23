@@ -1,22 +1,14 @@
 #include <bits/stdc++.h>
 using namespace std;
+using Long = long long;
 
 int main() {
-    int a,b;
-    cin >> a >> b;
-    int ans = 0;
-    while(a >= 1 && b >= 1) {
-        if (a == 1 && b == 1) break;
-        if (a >= b) {
-            a -= 2;
-            b++;
-            ans++;
-        } else {
-            b -= 2;
-            a++;
-            ans++;
-        }
-    }
-    cout << ans << endl;
-    return 0;
+	Long N;
+	scanf("%lld", &N);
+	Long ans = 0;
+	for(Long i = 1; i < N; i++) {
+		ans += (N-i)*i;
+	}
+	printf("%lld\n", ans+N);
+	return 0;
 }
