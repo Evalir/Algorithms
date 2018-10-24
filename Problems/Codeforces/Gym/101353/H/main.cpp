@@ -1,73 +1,85 @@
 #include <bits/stdc++.h>
 using namespace std;
 using Long = long long;
+Long MOD = 1000000007LL;
 struct Edge {
-    int to, cost;
+    Long to, cost;
 };
-int sz[100010], lvl[100010];
-vector<vector<Edge>> G(100010);
-const int MOD = 1000000007;
-void dfs(int u, int p, int d = 0) {
-    lvl[u] = d;
-    sz[u] = 1;
+inline int mul(int a, int b) {
+    return a*1LL*b%MOD;
+}
+inline int sub(int a, int b) {
+    return (a>=b ? a-b : (a-b+MOD));
+}
+inline int add(int a, int b) {
+    return (a+b>=MOD ? a+b-MOD : a+b);
+}
+Long sz[300010];
+vector<vector<Edge>> G;
+void dfs(int u, int p) {
+    sz[u] = 1LL;
     for(auto e : G[u]) {
         if (e.to != p) {
-            dfs(e.to, u, d + 1);
+            dfs(e.to, u);
             sz[u] += sz[e.to];
         }
     }
 }
-Long ans = 0;
-void dfsMark(int u, int p, int aSum) {
-    int naSum = aSum + sz[u];
+//klk joa
+Long ans = 0LL;
+void dfsMark(int u, int p, Long dep , Long aSum) {
+    Long naSum = add(aSum, sz[u]);
     for(auto e : G[u]) {
         if (e.to != p) {
-            dfsMark(e.to, u, naSum);
-            ans += sz[e.to] * e.cost * (sz[u]-sz[e.to]);
-            ans %= MOD;
-            if (ans < 0) ans += MOD;
+            dfsMark(e.to, u, dep + 1LL, naSum);
+            Long getSide = sub(naSum, mul(dep, sz[e.to]));
+            Long getWays = mul(getSide, sz[e.to]);
+            ans = add(ans, mul(getWays,e.cost));
         }
     }
 }
 
-queue<int> Q:
-void bfs(int src) {
-    Q.push(src);
-    for(int i = 0; i < N; i++) D[i] = INF;
-    D[src] = 0;
-    while(!Q.empty()) {
-        int u = Q.top(); Q.pop();
-        for(int v : adj[u]) {
-            if (D[v] != INF) {
-                D[v] = D[u] + 1;
-                Q.push(v);
-            }
-        }
-    }
-}
 int main() {
     int T;
     scanf("%d", &T);
     int cas = 0;
     while(T-->0) {
-        ans = 0;
+        ans = 0LL;
         cas++;
         int n;
         scanf("%d", &n);
         memset(sz,0,sizeof(sz));
-        memset(lvl,0,sizeof(lvl));
-        G = vector<vector<Edge>> (10010);
+        G = vector<vector<Edge>> (300010);
         for(int i = 0; i < n - 1; i++) {
-            int u, v, w;
-            scanf("%d%d%d", &u, &v, &w);
+            int u, v;
+            Long w;
+            scanf("%d%d%lld", &u, &v, &w);
             u--,v--;
             G[u].push_back({v,w});
             G[v].push_back({u,w});
         }
         dfs(0,-1);
-        dfsMark(0,-1,0);
-        //ans /= 2;
-        printf("Case %d: %d\n", cas, (int)(ans % MOD));
+        dfsMark(0,-1,1,0);
+        ans %= MOD;
+        if (ans < 0) (ans += MOD) % MOD;
+        printf("Case %d: %lld\n", cas, ans);
     }
     return 0;
 }
+
+/*
+ 2
+7
+1 2 3
+1 3 2
+2 4 1
+2 5 4
+3 6 6
+3 7 8
+6
+1 2 3
+1 3 2
+1 4 4
+3 5 7
+3 6 1
+ * */
