@@ -1,0 +1,3 @@
+/Users/Evalir/Documents/Programming/Algorithms/Problems/KickStart/2018/G/P3/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/Evalir/Documents/Programming/Algorithms/Problems/KickStart/2018/G/P3/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/Evalir/Documents/Programming/Algorithms/Problems/KickStart/2018/G/P3/cmake-build-debug/CMakeFiles/P3.dir
