@@ -1,0 +1,3 @@
+C:/Desarrollo/Local18/Jirthday/cmake-build-debug/CMakeFiles/Jirthday.dir
+C:/Desarrollo/Local18/Jirthday/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Desarrollo/Local18/Jirthday/cmake-build-debug/CMakeFiles/rebuild_cache.dir

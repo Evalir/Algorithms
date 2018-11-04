@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/Evalir/Documents/Programming/Algorithms/Problems/UVA/IntrepidClimber/main.cpp
+iostream
+-
+vector
+-
+algorithm
+-
+cmath
+-
+cassert
+-
+cstring
+-
+string
+-
+map
+-
+queue
+-
+set
+-
+

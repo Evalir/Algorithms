@@ -80,6 +80,7 @@ int main(int argc, char* argv[]) {
    dfs1(Depth2, P2, snode, -1);
 
    VI longestPath;
+   cout << "fnode is " << fnode << " and snode is " << snode << endl;
    backtrack(longestPath, P2, fnode);
 
    VI posInLongestPath(N, -1);
@@ -115,3 +116,22 @@ int main(int argc, char* argv[]) {
 
    return 0;
 }
+
+/*
+15
+1 
+2
+2 3
+3 4
+4 5
+4 6
+6 7
+3 8
+8 9
+9 10
+8 11
+11 12
+11 13
+13 14
+13 15
+ * */
