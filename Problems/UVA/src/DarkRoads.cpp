@@ -1,69 +1,66 @@
 #include <bits/stdc++.h>
 using namespace std;
 using Long = long long;
+using VI = vector<int>;
+using VVI = vector<VI>;
+#define SZ 4
+int n;
+Long mem[1 << 18];
+int a[SZ];
+int cost[1 << SZ];
+const int mod = (int)1e9 + 7;
+//const int INF = 1 << 30;
 
-bool isPrime[20010];
-void Sieve() {
-    for(int i = 2; i <= 20000; i++) {
-        if(!isPrime[i]) {
-            for(int j = i + i; j <= 20000; j += i) {
-                isPrime[j] = true;
-            }
-        }
-    }
-}
 
-int dist[10010];
-
-vector<int> toV(int num) {
-	vector<int> res;
-	while(num) {
-		res.push_back(num % 10);
-		num /= 10;
+int getpd(int mask) {
+	int pd = 1;
+	for(int i = 0; i < SZ; i++) {
+		if (mask & (1 << i)) pd *= a[i];
 	}
-	reverse(res.begin(),res.end());
-	return res;
+	return pd;
 }
-
-int toNum(vector<int> &V) {
-	int res = 0;
-	for(int i = 0; i < V.size(); i++) res = res * 10 + V[i];
-	return res;
-
-}
-
-const int INF = 1 << 30;
-int bfs(int src, int dst) {
-	for(int i = 0; i <= 10000; i++) dist[i] = INF;
-	dist[src] = 0;
-	queue<int> Q;
-	Q.push(src);
-	while(!Q.empty()) {
-		int u = Q.front(); Q.pop();
-		for(int i = 0; i <= 3; i++) {
-			vector<int> cur = toV(u);
-			for(int dgt = (i ? 0 : 1); dgt <= 9; dgt++) {
-				cur[i] = dgt;
-				int nxt = toNum(cur);
-				if (!isPrime[nxt] && dist[nxt] == INF && nxt >= 1000) {
-					dist[nxt] = dist[u] + 1;
-					Q.push(nxt);
-				}
-			}
+void precompute() {
+	for(int i = 0; i < (1 << SZ); i++) {
+		for(int j = 0; j < SZ; j++) {
+			int bitcnt = __builtin_popcount(i);
+			int pd = getpd(i);
+			cout << "bitcnt " << bitcnt << " " << pd << " pr" << endl;
+			cost[i | j] = cost[i] + bitcnt*pd + a[j];
 		}
 	}
-	return dist[dst];
+}
+
+int getcost(int A, int B) {
+	return cost[A | B];
+}
+int concat(int A, int B) {
+	return (A | B);
+}
+Long bf(VI G) {
+    Long w = 1000000000000000000LL;
+    for (int i = 0; i < G.size(); ++i) {
+        for (int j = i+1; j < G.size(); ++j) {
+            VI NG;
+            for (int k = 0; k < G.size(); ++k) {
+                if (k == i || k == j) continue;
+                NG.push_back(G[k]);
+            }
+            Long t = getcost(G[i], G[j]);
+            NG.push_back(concat(G[i], G[j]));
+            w = min(w, t + bf(NG));
+        }
+    }
+    return w;
 }
 
 int main() {
-	Sieve();
-	int t;
-	scanf("%d", &t);
-	while(t--) {
-		int a, b;
-		scanf("%d%d", &a, &b);
-		int ans = bfs(a,b);
-		if (ans == INF) printf("Impossible\n");
-		else printf("%d\n", ans);
+	for(int i = 0; i < SZ; i++) a[i] = i + 1;
+	precompute();
+	for(int i = 0; i < 16; i++) {
+		cout << "cost of mask " << i << " : " << cost[i] << endl;
 	}
+	vector<int> V = {1,2,3,4};
+	Long res = bf(V);
+	cout << res << endl;
+	return 0;
 }
