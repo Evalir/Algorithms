@@ -1,66 +1,49 @@
 #include <bits/stdc++.h>
 using namespace std;
-using Long = long long;
-using VI = vector<int>;
-using VVI = vector<VI>;
-#define SZ 4
-int n;
-Long mem[1 << 18];
-int a[SZ];
-int cost[1 << SZ];
-const int mod = (int)1e9 + 7;
-//const int INF = 1 << 30;
-
-
-int getpd(int mask) {
-	int pd = 1;
-	for(int i = 0; i < SZ; i++) {
-		if (mask & (1 << i)) pd *= a[i];
-	}
-	return pd;
-}
+using pii = pair<int,int>;
+using ll = long long;
+ll a[100010];
+ll pw[100010];
+ll mod = (ll)1e9+7LL;
+char buf[100010];
 void precompute() {
-	for(int i = 0; i < (1 << SZ); i++) {
-		for(int j = 0; j < SZ; j++) {
-			int bitcnt = __builtin_popcount(i);
-			int pd = getpd(i);
-			cout << "bitcnt " << bitcnt << " " << pd << " pr" << endl;
-			cost[i | j] = cost[i] + bitcnt*pd + a[j];
-		}
+	ll p = 1;
+	for(int i = 0; i <= 100000; i++) {
+		pw[i] = p % mod;
+		pw[i] %= mod;
+		p *= 2LL;
+		p %= mod;
 	}
 }
-
-int getcost(int A, int B) {
-	return cost[A | B];
-}
-int concat(int A, int B) {
-	return (A | B);
-}
-Long bf(VI G) {
-    Long w = 1000000000000000000LL;
-    for (int i = 0; i < G.size(); ++i) {
-        for (int j = i+1; j < G.size(); ++j) {
-            VI NG;
-            for (int k = 0; k < G.size(); ++k) {
-                if (k == i || k == j) continue;
-                NG.push_back(G[k]);
-            }
-            Long t = getcost(G[i], G[j]);
-            NG.push_back(concat(G[i], G[j]));
-            w = min(w, t + bf(NG));
-        }
-    }
-    return w;
-}
-
 int main() {
-	for(int i = 0; i < SZ; i++) a[i] = i + 1;
+	string s;
 	precompute();
-	for(int i = 0; i < 16; i++) {
-		cout << "cost of mask " << i << " : " << cost[i] << endl;
+	while(cin >> s) {
+		memset(a,0,sizeof(a));
+		ll cur = 0;
+		int n = s.size();
+		for(int i = n - 1; i >= 0; i--) {
+			if (s[i] == '1' || s[i] == '0') a[i] = cur++;
+			else cur = 0;
+		}
+		cur = 0;
+		bool active = false;
+		for(int i = 0; i < n; i++) {
+			if (s[i] == '1' || s[i] == '0') {
+				active = true;
+				if (s[i] == '1') cur += pw[a[i]] % mod;
+				cur %= mod;
+			} else if (active) {
+				active = false;
+				cout << cur % mod;
+				cout << s[i];
+				cur = 0;
+			} else {
+				cout << s[i];
+			}
+		}
+		if (active) cout << cur % mod;
+		cout << '\n';
 	}
-	vector<int> V = {1,2,3,4};
-	Long res = bf(V);
-	cout << res << endl;
 	return 0;
 }

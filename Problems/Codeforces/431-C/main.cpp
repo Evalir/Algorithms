@@ -6,7 +6,7 @@ using namespace std;
 using Long = long long;
 const int mod = 1000000007LL;
 int n, k, d;
-Long mem[120][120];
+Long mem[120][2];
 Long dp(int sum, bool path) {
     if (sum > n) return 0;
     if (sum == n) return path;

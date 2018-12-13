@@ -35,7 +35,9 @@ struct BinaryLifting {
                 }
     }
     void dfs(int u, int p = -1, int lvl = 0, Long dist = 0) {
-        T[0][u] = p; L[u] = lvl; mx[0][u] = dist; mn[0][u] = dist;
+        T[0][u] = p; L[u] = lvl;
+        mx[0][u] = dist;
+        mn[0][u] = dist;
         for (auto v : adj[u]) if (v.to != p) dfs(v.to, u, lvl+1, v.cost);
     }
     int lca(int u, int v) {

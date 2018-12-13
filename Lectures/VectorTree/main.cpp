@@ -33,6 +33,7 @@ struct R {
         return ret;
     }
 };
+
 struct SegmentTree {
 private:
     struct Node {
@@ -92,6 +93,7 @@ public:
         return query(1, 0, V.size()-1, lef, ri, k);
     }
 };
+
 int main() {
     int n, q;
     scanf("%d%d", &n, &q);
