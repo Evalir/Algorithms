@@ -1,3 +1,0 @@
-/home/evalir/Documents/ICPC/Algorithms/Lectures/SegmentTreeBasic/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/evalir/Documents/ICPC/Algorithms/Lectures/SegmentTreeBasic/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/evalir/Documents/ICPC/Algorithms/Lectures/SegmentTreeBasic/cmake-build-debug/CMakeFiles/SegmentTreeTemplate.dir

@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/SegmentTreeTemplate.dir/main.cpp.o  -o SegmentTreeTemplate 

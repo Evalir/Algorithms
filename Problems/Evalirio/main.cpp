@@ -2,42 +2,23 @@
 using namespace std;
 using Long = long long;
 
-struct QE {
-    enum Type {ELEMENT, QUERY};
-    int p,l,r, id;
-    Long val;
-    Type t;
-    bool operator < (const QE o) const {
-        if (val == o.val) {
-            if (this->t == QUERY) return true;
-            return false;
-        } else {
-            return val < o.val;
-        }
-    }
-};
-int anw[200010];
-struct FenwickTree {
-    //literalmente solo e eta shit
-    vector<Long> tri;
-
-    FenwickTree(int N) : tri(N+10, 0) {}
-
-    void add(int x, long d) {
-        for (int i = x + 1; i < tri.size(); i += i&(-i)) {
-            tri[i] += d;
-        }
-    }
-
-    Long query(int x) {
-        Long ans = 0;
-        for (int i = x + 1; i > 0; i -= i&(-i)) {
-            ans += tri[i];
-        }
-        return ans;
-    }
-};
-
+int a[200010];
+int b[200010];
 int main() {
-
+    int n, m;
+    scanf("%d%d", &n, &m);
+    for(int i = 0; i < n; i++) scanf("%d", &a[i]);
+    for(int i = 0; i < n; i++) {
+        if (!i) b[i] = a[i];
+        else b[i] = a[i] + b[i - 1];
+    }
+    while(m--) {
+        int l, r;
+        scanf("%d%d", &l, &r);
+        l--,r--;
+        int tot = b[r];
+        if (l) tot -= b[l - 1];
+        (!tot) ? puts("1") : puts("0");
+    }
+    return 0;
 }

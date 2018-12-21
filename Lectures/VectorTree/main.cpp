@@ -65,13 +65,13 @@ private:
         int mid = (st + en) / 2;
         create(le, st, mid);
         create(ri, mid + 1, en);
-        Tree.at(id) = merge(Tree.at(le), Tree.at(ri));
+        Tree[id] = merge(Tree[le], Tree[ri]);
     }
 
     Long query(int id, int st, int en, int lef, int ri, int k) {
         int mid = (st + en) / 2;
         if (lef <= st && en <= ri) { //totally inside range
-            return Tree.at(id).r.query(k);
+            return Tree[id].r.query(k);
         }
         if (lef > mid) //go right, range is to the right
             return query(id*2 + 1, mid + 1, en, lef, ri, k);
