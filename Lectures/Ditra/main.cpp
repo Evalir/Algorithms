@@ -1,10 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 struct Edge {
     int to, weight;
 };
+
 int N, M;  // cantidad de nodos y cantidad de edges
 vector<vector<Edge>> adj;
+
 struct State {
     int node_id;
     int dist;
@@ -15,6 +18,7 @@ struct State {
             return false;
     }
 };
+
 vector<int> ditra(int src) {
     const int INF = 1 << 30;
     vector<int> D(N, INF);

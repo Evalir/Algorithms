@@ -4,6 +4,7 @@ map<int,int> *nodeFreq[100010];
 vector<int> value(100010);
 vector<int> SZ(100010);
 vector<vector<int>> adj(100010);
+
 void subtreeSize(int u, int p) {
    SZ[u] = 1;
    for(auto v : adj[u]) {
@@ -13,7 +14,9 @@ void subtreeSize(int u, int p) {
       }
    }
 }
+
 vector<int> ans(100010);
+
 void dfsSicario(int u, int p) {
    int largestChild = -1;
    for(auto v : adj[u]) {
